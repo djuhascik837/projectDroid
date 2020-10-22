@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+uDroid/Library/ArtifactDB
+uDroid/Library/SourceAssetDB
+uDroid/Temp/UnityLockfile
