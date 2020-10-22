@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/uDroid/Library/
-/uDroid/Temp/
-/uDroid/Obj/
-/uDroid/Build/
-/uDroid/Builds/
-/uDroid/Logs/
-/uDroid/MemoryCaptures/
+/uDroid/[Ll]ibrary/
+/uDroid/[Tt]emp/
+/uDroid/[Oo]bj/
+/uDroid/[Bb]uild/
+/uDroid/[Bb]uilds/
+/uDroid/[Ll]ogs/
+/uDroid/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
