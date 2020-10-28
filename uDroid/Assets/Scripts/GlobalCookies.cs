@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class GlobalCookies : MonoBehaviour
 {
-    public static int CookieCount;
+    public static double CookieCount;
     public GameObject CookieDisplay;
-    public int InternalCookie;
+    public double InternalCookie;
 
     void Update()
     {
