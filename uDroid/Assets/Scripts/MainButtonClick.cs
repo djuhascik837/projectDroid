@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MainButtonClick : MonoBehaviour
 {
-    public GameObject textbox;
     public ProgressBar fillBar;
 
     public void ClickButton()
