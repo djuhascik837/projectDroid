@@ -7,6 +7,7 @@ public class ProgressBar : FillBar
 {
     private UnityEvent onProgressComplete;
     public float fillMultiplier = 0.00153f;
+    public bool start = false;
 
     public new float CurrentValue
     {
@@ -35,16 +36,23 @@ public class ProgressBar : FillBar
             onProgressComplete = new UnityEvent();
         }
         onProgressComplete.AddListener(OnProgressComplete);
+
+        
     }
 
     private void Update()
     {
-        CurrentValue += fillMultiplier;
+        //CurrentValue += fillMultiplier;
+        if (start == true)
+        {
+            CurrentValue += fillMultiplier;
+        }
     }
 
     void OnProgressComplete()
     {
-        Debug.Log("Progress Complete");
+        base.CurrentValue = 0;
+        start = false;
     }
 
 }

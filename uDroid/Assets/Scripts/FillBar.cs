@@ -7,6 +7,7 @@ public class FillBar : MonoBehaviour
 {
     public Slider slider;
     public Text displayText;
+    
 
     private float currentValue = 0f;
     public float CurrentValue
