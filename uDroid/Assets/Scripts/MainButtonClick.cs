@@ -8,7 +8,7 @@ public class MainButtonClick : MonoBehaviour
 
     public void ClickButton()
     {
-        GlobalCookies.CookieCount += 1;
+        //GlobalCookies.CookieCount += 1;
         fillBar.start = true;
     }
 }
