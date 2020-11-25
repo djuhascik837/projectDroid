@@ -37,8 +37,6 @@ public class ProgressBar : FillBar
             onProgressComplete = new UnityEvent();
         }
         onProgressComplete.AddListener(OnProgressComplete);
-
-        
     }
 
     private void Update()

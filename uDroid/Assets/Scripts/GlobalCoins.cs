@@ -14,6 +14,4 @@ public class GlobalCoins : MonoBehaviour
         InternalCoins = CoinCount;
         CoinDisplay.GetComponent<Text>().text = "Coins: " + InternalCoins;
     }
-
-    
 }

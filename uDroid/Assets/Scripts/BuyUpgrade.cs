@@ -20,7 +20,6 @@ public class BuyUpgrade : MonoBehaviour
         {
             bool isActive = upgradePanel.panel.activeSelf;
             upgradePanel.panel.SetActive(!isActive);
-            
         }
     }
 
