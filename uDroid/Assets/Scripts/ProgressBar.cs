@@ -19,7 +19,7 @@ public class ProgressBar : FillBar
         {
             if(value >= slider.maxValue)
             {
-                GlobalCookies.CookieCount += 1;
+                GlobalCoins.CoinCount += 1;
                 // If the value exceeds the max fill, invoke the completion function
                 onProgressComplete.Invoke();
             }
