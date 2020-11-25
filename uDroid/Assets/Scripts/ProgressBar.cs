@@ -8,6 +8,7 @@ public class ProgressBar : FillBar
     private UnityEvent onProgressComplete;
     public float fillMultiplier = 0.00153f;
     public bool start = false;
+    public int plot = 0;
 
     public new float CurrentValue
     {
