@@ -9,6 +9,8 @@ public class SliderIncrease : MonoBehaviour
     public Text displayText;
     public float multiplier = 0.153f;
     private bool update = false;
+    public AudioSource playSelectOn;
+    public AudioSource playSelectOff;
 
     public void SetText(string text)
     {
@@ -20,6 +22,7 @@ public class SliderIncrease : MonoBehaviour
     {
         //tells update to start on button
         update = true;
+        playSelectOn.Play();
     }
 
     void Update()
@@ -27,9 +30,11 @@ public class SliderIncrease : MonoBehaviour
         //check if update should be running
         if (update == true)
         {
+            
             //check if slider is == null
             if (sld != null)
             {
+                
                 //increment the slider progress
                 sld.value += multiplier;
 
@@ -40,6 +45,7 @@ public class SliderIncrease : MonoBehaviour
                     SetText("Run Script");
                     sld.value = 0;
                     update = false;
+                    playSelectOff.Play();
                     GlobalCoins.CoinCount += 1;
                 }
 

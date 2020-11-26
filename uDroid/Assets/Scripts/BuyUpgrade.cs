@@ -6,10 +6,20 @@ using UnityEngine.UI;
 public class BuyUpgrade : MonoBehaviour
 {
     public UpgradePanel upgradePanel;
-    public ProgressBar fillBar;
     public GameObject statusText;
     public GameObject statusBox;
-    public GameObject AutoCoin;
+    public GameObject autoCoin;
+    public GameObject fakeButton;
+    public GameObject fakeText;
+    public GameObject realButtton;
+    public GameObject realText;
+    public GameObject droidStats;
+    public double currentCoins;
+    public static double upgradeValue = 4;
+    public static bool turnOffButton = false;
+    public static double numOfDroids;
+    public static double coinsPerSec;
+
 
     public void ClickButton()
     {
@@ -25,26 +35,62 @@ public class BuyUpgrade : MonoBehaviour
 
     private IEnumerator playAnim()
     {
-        if (GlobalCoins.CoinCount == 0)
+        
+
+        if (currentCoins <= 0 || currentCoins < upgradeValue)
         {
+            //This handles Buttons
+            fakeButton.SetActive(false);
+            realButtton.SetActive(true);
+
+            //This Handles Animation
             statusBox.SetActive(true);
             statusText.GetComponent<Text>().text = "Not enough coins to purchase upgrade.";
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             statusBox.GetComponent<Animation>().Play("StatusAnim");
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(0.25f);
             statusBox.SetActive(false);
 
         }
         else
         {
-            GlobalCoins.CoinCount -= 1;
+            //GlobalCoins.CoinCount -= 1;
             StartAutoCoin();
+        }
+
+        if (turnOffButton == true)
+        {
+            realButtton.SetActive(false);
+            fakeButton.SetActive(true);
+            turnOffButton = false;
         }
     }
 
     public void StartAutoCoin()
     {
-        AutoCoin.SetActive(true);
-        fillBar.start = true;
+        autoCoin.SetActive(true);
+        //fillBar.start = true;
+
+        GlobalCoins.CoinCount -= upgradeValue;
+        upgradeValue *= 2;
+        turnOffButton = true;
+        coinsPerSec += 1;
+        numOfDroids += 1;
+
+    }
+
+    private void Update()
+    {
+        //Tracks current coins
+        currentCoins = GlobalCoins.CoinCount;
+
+        droidStats.GetComponent<Text>().text = "Droids: " + numOfDroids + " @ " + coinsPerSec + " coins(s)";
+
+        //Handles upgrade button text
+        fakeText.GetComponent<Text>().text = "Buy upgrade - £" + upgradeValue;
+        realText.GetComponent<Text>().text = "Buy upgrade - £" + upgradeValue;
+
+
+
     }
 }

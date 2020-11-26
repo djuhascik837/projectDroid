@@ -10,7 +10,9 @@ public class AutoCoins : MonoBehaviour
 
     private void Update()
     {
+        coinIncrease = BuyUpgrade.coinsPerSec;
         internalIncrease = coinIncrease;
+        //if coin is being created don't start creating another
         if(!creatingCoin)
         {
             creatingCoin = true;
@@ -19,7 +21,7 @@ public class AutoCoins : MonoBehaviour
     }
 
     IEnumerator CreateCoin()
-    {
+    { 
         GlobalCoins.CoinCount += internalIncrease;
         yield return new WaitForSeconds(1);
         creatingCoin = false;
