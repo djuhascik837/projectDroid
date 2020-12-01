@@ -420,6 +420,8 @@ MonoBehaviour:
   panel: {fileID: 587137224}
   upgradeCoin: {fileID: 537305810}
   upgradeCoinText: {fileID: 53162000}
+  upgradeSlider: {fileID: 1846731446}
+  upgradeSliderText: {fileID: 352404091}
 --- !u!114 &134837129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradePanel: {fileID: 134837128}
+  sliderIncrease: {fileID: 0}
   statusText: {fileID: 770816241}
   statusBox: {fileID: 1015057104}
   autoCoin: {fileID: 339753436}
@@ -1570,6 +1573,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352404091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4221075115840611532, guid: 105447f5ab3b4634582fe71f8bbb331c,
+    type: 3}
+  m_PrefabInstance: {fileID: 415586428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &386686718 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
@@ -1724,6 +1733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SliderMultiplier
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221075115318064654, guid: 105447f5ab3b4634582fe71f8bbb331c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4221075115318064655, guid: 105447f5ab3b4634582fe71f8bbb331c,
         type: 3}
@@ -3800,6 +3814,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 861298831}
+--- !u!1 &1846731446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4221075115318064654, guid: 105447f5ab3b4634582fe71f8bbb331c,
+    type: 3}
+  m_PrefabInstance: {fileID: 415586428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1846731447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4221075115318064655, guid: 105447f5ab3b4634582fe71f8bbb331c,
@@ -4418,6 +4438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: upgradeCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221075115318064654, guid: 105447f5ab3b4634582fe71f8bbb331c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4221075115318064655, guid: 105447f5ab3b4634582fe71f8bbb331c,
         type: 3}
