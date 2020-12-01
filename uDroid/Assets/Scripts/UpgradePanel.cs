@@ -5,6 +5,8 @@ using UnityEngine;
 public class UpgradePanel : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject upgradeCoin;
+    public GameObject upgradeCoinText;
 
     public void OpenPanel()
     {
@@ -12,6 +14,7 @@ public class UpgradePanel : MonoBehaviour
         if (panel != null)
         {
             panel.SetActive(true);
+            upgradeCoin.SetActive(true);
         }
     }
 }
