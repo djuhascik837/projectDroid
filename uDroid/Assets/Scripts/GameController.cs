@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,9 @@ public class GameController : MonoBehaviour
         {
             string lowerCase = userInput.ToString().ToLower();
             string text = textFieldCompare.text;
+
+            text = text.Remove(0,1);
+            text = text.Remove(text.Length - 1, 1);
 
             Debug.Log(lowerCase + ", " + text.ToLower());
 
