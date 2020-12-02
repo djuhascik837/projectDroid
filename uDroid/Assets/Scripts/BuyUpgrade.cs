@@ -91,7 +91,7 @@ public class BuyUpgrade : MonoBehaviour
         //Handles upgrade button text
         upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Auto Coins - £" + Mathf.Round((float)upgradeValue);
         upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider - £" + Mathf.Round((float)upgradeValue);
-        print("SLIDER: " + sliderIncrease.multiplier);
+        //print("SLIDER: " + sliderIncrease.multiplier);
     }
 
     public void ClosePanel()

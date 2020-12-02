@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
             text = text.Remove(0,1);
             text = text.Remove(text.Length - 1, 1);
 
-            Debug.Log(lowerCase + ", " + text.ToLower());
+            //Debug.Log(lowerCase + ", " + text.ToLower());
 
             if (text != null)
             {
