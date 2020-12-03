@@ -30,11 +30,9 @@ public class SliderIncrease : MonoBehaviour
         //check if update should be running
         if (update == true)
         {
-            
             //check if slider is == null
             if (sld != null)
             {
-                
                 //increment the slider progress
                 sld.value += multiplier;
 
