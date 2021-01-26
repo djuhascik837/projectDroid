@@ -62,6 +62,7 @@ public class BuyUpgrade : MonoBehaviour
 
     public void StartAutoCoin()
     {
+        //This automatically generates coins and adds them
         autoCoin.SetActive(true);
         //fillBar.start = true;
 
@@ -75,6 +76,7 @@ public class BuyUpgrade : MonoBehaviour
 
     public void SliderMultiplier()
     {
+        //This increases the time it takes for the slider to finish
         GlobalCoins.CoinCount -= upgradeValue;
         upgradeValue *= upgradeMultiplier;
         sliderIncrease.multiplier *= 1.25f;
