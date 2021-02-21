@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuyUpgrade : MonoBehaviour
 {
     public UpgradePanel upgradePanel;
+    public OpenMenuAnim openAnim;
     public SliderIncrease sliderIncrease;
     public GameObject statusText;
     public GameObject statusBox;
@@ -18,13 +19,15 @@ public class BuyUpgrade : MonoBehaviour
     public static double numOfDroids;
     public static double coinsPerSec;
     public double upgradeMultiplier = 1.5;
+    
 
 
     public void ClickUpgradeCoin()
     {
         autoCoinClicked = true;
         StartCoroutine(playAnim());
-        ClosePanel();
+        //ClosePanel();
+        openAnim.press();
         
     }
 
@@ -32,15 +35,15 @@ public class BuyUpgrade : MonoBehaviour
     {
         sliderMultiClicked = true;
         StartCoroutine(playAnim());
-        ClosePanel();
+        //ClosePanel();
+        openAnim.press();
     }
 
     private IEnumerator playAnim()
     {
-        
 
         if (currentCoins <= 0 || currentCoins < upgradeValue)
-        {           
+        {
             //This Handles Animation
             statusBox.SetActive(true);
             statusText.GetComponent<Text>().text = "Not enough coins to purchase upgrade.";
@@ -105,4 +108,5 @@ public class BuyUpgrade : MonoBehaviour
 
         }
     }
+
 }
