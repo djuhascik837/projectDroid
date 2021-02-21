@@ -26,7 +26,7 @@ public class BuyUpgrade : MonoBehaviour
     {
         autoCoinClicked = true;
         StartCoroutine(playAnim());
-        //ClosePanel();
+        ClosePanel();
         openAnim.press();
         
     }
@@ -35,7 +35,7 @@ public class BuyUpgrade : MonoBehaviour
     {
         sliderMultiClicked = true;
         StartCoroutine(playAnim());
-        //ClosePanel();
+        ClosePanel();
         openAnim.press();
     }
 
