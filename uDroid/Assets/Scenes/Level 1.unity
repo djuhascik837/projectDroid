@@ -1815,6 +1815,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 564019831}
+        m_MethodName: SelectRandomChallenge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &249175410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2846,7 +2857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0002746582, y: -256.17}
+  m_AnchoredPosition: {x: -0.0002746582, y: -256.17004}
   m_SizeDelta: {x: 0, y: -512.3352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &564019828
@@ -2929,6 +2940,7 @@ GameObject:
   - component: {fileID: 580779159}
   - component: {fileID: 580779161}
   - component: {fileID: 580779160}
+  - component: {fileID: 580779162}
   m_Layer: 5
   m_Name: TextEditor - Panel
   m_TagString: Untagged
@@ -2953,8 +2965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -43.868}
-  m_SizeDelta: {x: 275.66708, y: 10.784668}
+  m_AnchoredPosition: {x: 0, y: -1.9}
+  m_SizeDelta: {x: 275.66708, y: 445.00076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580779160
 MonoBehaviour:
@@ -2993,6 +3005,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580779158}
   m_CullTransparentMesh: 0
+--- !u!225 &580779162
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580779158}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &587137224
 GameObject:
   m_ObjectHideFlags: 0

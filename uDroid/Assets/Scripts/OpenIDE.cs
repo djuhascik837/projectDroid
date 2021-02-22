@@ -25,7 +25,7 @@ public class OpenIDE : MonoBehaviour
     {
         Debug.Log("starting Random Challenge");
 
-        testPanel = GameObject.Find("IDE - Panel").transform.Find("TextEditor - Panel Tester").GetComponent<CanvasGroup>();
+        testPanel = GameObject.Find("IDE - Panel").transform.Find("TextEditor - Panel").GetComponent<CanvasGroup>();
 
         if (testPanel.alpha != 0)
         {
