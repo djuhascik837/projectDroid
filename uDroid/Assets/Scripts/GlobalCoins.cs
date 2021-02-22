@@ -13,6 +13,6 @@ public class GlobalCoins : MonoBehaviour
     {
 
         InternalCoins = Mathf.Round((float)CoinCount);
-        CoinDisplay.GetComponent<Text>().text = "Coins: " + InternalCoins;
+        CoinDisplay.GetComponent<Text>().text = "" + InternalCoins;
     }
 }

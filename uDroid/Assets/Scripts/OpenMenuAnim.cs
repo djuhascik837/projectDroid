@@ -23,7 +23,6 @@ public class OpenMenuAnim : MonoBehaviour
     {
         Text.enabled = true;
         AudioSource.PlayClipAtPoint(sound, transform.position);
-        //Animator anim = canvas.GetComponent<Animator>();
         if (anim != null)
         {
             bool isOpen = anim.GetBool("open");

@@ -12,6 +12,7 @@ public class BuyUpgrade : MonoBehaviour
     public GameObject statusBox;
     public GameObject autoCoin;
     public GameObject droidStats;
+    public GameObject[] plots;
     public double currentCoins;
     public static double upgradeValue = 4;
     public static bool autoCoinClicked = false;
@@ -26,7 +27,6 @@ public class BuyUpgrade : MonoBehaviour
     {
         autoCoinClicked = true;
         StartCoroutine(playAnim());
-        ClosePanel();
         openAnim.press();
         
     }
@@ -35,7 +35,6 @@ public class BuyUpgrade : MonoBehaviour
     {
         sliderMultiClicked = true;
         StartCoroutine(playAnim());
-        ClosePanel();
         openAnim.press();
     }
 
@@ -82,7 +81,11 @@ public class BuyUpgrade : MonoBehaviour
         //This increases the time it takes for the slider to finish
         GlobalCoins.CoinCount -= upgradeValue;
         upgradeValue *= upgradeMultiplier;
-        sliderIncrease.multiplier *= 1.25f;
+        if(sliderIncrease != null)
+        {
+            sliderIncrease.multiplier *= 1.25f;
+        }
+        
         upgradePanel.upgradeSlider.SetActive(false);
     }
 
@@ -97,16 +100,18 @@ public class BuyUpgrade : MonoBehaviour
         upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Auto Coins - £" + Mathf.Round((float)upgradeValue);
         upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider - £" + Mathf.Round((float)upgradeValue);
         //print("SLIDER: " + sliderIncrease.multiplier);
+
     }
 
-    public void ClosePanel()
-    {
-        if (upgradePanel != null)
-        {
-            bool isActive = upgradePanel.panel.activeSelf;
-            upgradePanel.panel.SetActive(!isActive);
+    //Method no longer in use, keeping for testing.
+    //public void ClosePanel()
+    //{
+    //    if (upgradePanel != null)
+    //    {
+    //        bool isActive = upgradePanel.panel.activeSelf;
+    //        upgradePanel.panel.SetActive(!isActive);
 
-        }
-    }
+    //    }
+    //}
 
 }
