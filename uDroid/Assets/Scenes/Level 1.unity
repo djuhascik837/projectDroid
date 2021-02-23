@@ -511,6 +511,8 @@ MonoBehaviour:
   upgradeCoinText: {fileID: 53162000}
   upgradeSlider: {fileID: 889836058}
   upgradeSliderText: {fileID: 395718684}
+  upgradeClick: {fileID: 640659059}
+  upgradeClickText: {fileID: 870113774}
 --- !u!114 &134837129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +544,7 @@ MonoBehaviour:
   currentCoins: 0
   upgradeMultiplier: 1.5
   amountPerClick: 1
-  clickPower: 0
+  clickPower: 1.75
 --- !u!1001 &135436251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3083,7 +3085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587137225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5661,6 +5663,11 @@ PrefabInstance:
       propertyPath: multiplier
       value: 0.0153
       objectReference: {fileID: 0}
+    - target: {fileID: 4106988199335691069, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
+        type: 3}
+      propertyPath: buyUpgrade
+      value: 
+      objectReference: {fileID: 134837129}
     - target: {fileID: 4106988199335691070, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_Sprite
