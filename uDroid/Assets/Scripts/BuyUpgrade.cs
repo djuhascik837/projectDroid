@@ -13,18 +13,23 @@ public class BuyUpgrade : MonoBehaviour
     public GameObject statusBox;
     public GameObject autoCoin;
     public GameObject droidStats;
+
     public double currentCoins;
-    public static double upgradeValue = 4;
     public static bool autoCoinClicked = false;
     public static bool sliderMultiClicked = false;
+    public static bool upgradePerClicked = false;
     public static double numOfDroids;
     public static double coinsPerSec;
+    public static double upgradeValue = 4;
     public double upgradeMultiplier = 1.25;
+    public double amountPerClick = 1.0;
+    public double clickPower = 1.75;
 
     private bool UpgradeClick1 = false;
     private bool UpgradeClick2 = false;
     private bool UpgradeClick3 = false;
     private bool UpgradeClick4 = false;
+    private float powerOf;
 
 
     public void ClickUpgradeCoin()
@@ -38,6 +43,13 @@ public class BuyUpgrade : MonoBehaviour
     public void ClickSliderMultiplier()
     {
         sliderMultiClicked = true;
+        StartCoroutine(playAnim());
+        openAnim.press();
+    }
+
+    public void ClickAmountPerClick()
+    {
+        upgradePerClicked = true;
         StartCoroutine(playAnim());
         openAnim.press();
     }
@@ -65,16 +77,17 @@ public class BuyUpgrade : MonoBehaviour
         }
 
     }
-
+    //Sets the upgrade buttons back to false, this is used for tracking which button has been clicked.
+    //Used as an implementation for having upgrades seperate to each plot.
     public void setUpgradeBoolFalse()
     {
         UpgradeClick1 = false;
         UpgradeClick2 = false;
         UpgradeClick3 = false;
         UpgradeClick4 = false;
-        print("Upgrades set to false.");
+        //print("Upgrades set to false.");
     }
-
+    //This drives the main logic behind purchasing upgrades
     private IEnumerator playAnim()
     {
 
@@ -118,6 +131,12 @@ public class BuyUpgrade : MonoBehaviour
             }
 
         }
+        else if (upgradePerClicked == true)
+        {
+            upgradePerClick();
+            setUpgradeBoolFalse();
+            upgradePerClicked = false;
+        }
     }
 
     public void StartAutoCoin()
@@ -125,7 +144,7 @@ public class BuyUpgrade : MonoBehaviour
         //This automatically generates coins and adds them
         autoCoin.SetActive(true);
         //fillBar.start = true;
-
+        //TODO: this is where I can set different upgradevalues for each upgrade
         GlobalCoins.CoinCount -= upgradeValue;
         upgradeValue *= upgradeMultiplier;        
         coinsPerSec += 1;
@@ -137,10 +156,25 @@ public class BuyUpgrade : MonoBehaviour
     public void SliderMultiplier(SliderIncrease sliderIncrease)
     {
         //This increases the time it takes for the slider to finish
+        //TODO: this is where I can set different upgradevalues for each upgrade
         GlobalCoins.CoinCount -= upgradeValue;
         upgradeValue *= upgradeMultiplier;
         sliderIncrease.multiplier *= 1.7f;
         upgradePanel.upgradeSlider.SetActive(false);
+    }
+
+    public void upgradePerClick()
+    {
+        //This increases the amount of coins generated per click
+        //TODO: this is where I can set different upgradevalues for each upgrade
+        GlobalCoins.CoinCount -= upgradeValue;
+        upgradeValue *= upgradeMultiplier;
+        powerOf++;
+        amountPerClick *= clickPower;
+        print("Amount per: " + amountPerClick);
+        //upgradePanel.upgradeClick.SetActive(false);
+
+
     }
 
     private void Update()
@@ -150,9 +184,11 @@ public class BuyUpgrade : MonoBehaviour
 
         droidStats.GetComponent<Text>().text = "Droids: " + numOfDroids + " @ " + coinsPerSec + " coins(s)";
 
-        //Handles upgrade button text
-        upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Auto Coins - £" + Mathf.Round((float)upgradeValue);
-        upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider - £" + Mathf.Round((float)upgradeValue);
+        //Handles upgrade button text 
+        upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Auto Coins: " + Mathf.Round((float)upgradeValue);
+        upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)upgradeValue);
+        upgradePanel.upgradeClickText.GetComponent<Text>().text = "Running script upgrade: " + Mathf.Round((float)upgradeValue);
+
         //print("SLIDER: " + sliderIncrease.multiplier);
 
     }

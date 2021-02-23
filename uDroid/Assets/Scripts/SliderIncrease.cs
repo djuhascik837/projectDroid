@@ -11,6 +11,7 @@ public class SliderIncrease : MonoBehaviour
     private bool update = false;
     public AudioSource playSelectOn;
     public AudioSource playSelectOff;
+    public BuyUpgrade buyUpgrade;
 
     public void SetText(string text)
     {
@@ -44,7 +45,7 @@ public class SliderIncrease : MonoBehaviour
                     sld.value = 0;
                     update = false;
                     playSelectOff.Play();
-                    GlobalCoins.CoinCount += 1;
+                    GlobalCoins.CoinCount += buyUpgrade.amountPerClick;
                 }
 
                 //display progress bar percentages

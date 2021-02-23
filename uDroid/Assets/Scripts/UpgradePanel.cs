@@ -9,6 +9,8 @@ public class UpgradePanel : MonoBehaviour
     public GameObject upgradeCoinText;
     public GameObject upgradeSlider;
     public GameObject upgradeSliderText;
+    public GameObject upgradeClick;
+    public GameObject upgradeClickText;
 
     //public void OpenPanel()
     //{
