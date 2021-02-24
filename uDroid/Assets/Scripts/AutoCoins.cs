@@ -7,10 +7,11 @@ public class AutoCoins : MonoBehaviour
     public bool creatingCoin = false;
     public static double coinIncrease = 1;
     public double internalIncrease;
+    public float seconds = 1f;
 
     private void Update()
     {
-        coinIncrease = BuyUpgrade.coinsPerSec;
+        coinIncrease = BuyUpgrade.coinsPerDroid;
         internalIncrease = coinIncrease;
         //if coin is being created don't start creating another
         if(!creatingCoin)
@@ -23,7 +24,7 @@ public class AutoCoins : MonoBehaviour
     IEnumerator CreateCoin()
     { 
         GlobalCoins.CoinCount += internalIncrease;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         creatingCoin = false;
     }
 }
