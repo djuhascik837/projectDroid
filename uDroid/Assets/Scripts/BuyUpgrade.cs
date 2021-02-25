@@ -11,6 +11,7 @@ public class BuyUpgrade : MonoBehaviour
     public UpgradePanel upgradePanel;
     public OpenMenuAnim openAnim;
     public SliderIncrease[] sliderIncrease;
+    public GameObject[] plots;
     public AutoCoins autoCoins;
     public GlobalCoins globalCoins;
     public GameObject statusText;
@@ -227,8 +228,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             UpgradeClick1 = true;
             //print("1" + UpgradeClick1);
-            Text text = transform.Find("InfoText1").GetComponent<Text>();
-            text.text = "Hello World";
+            
         }
         else if (slider.name == "Slider 2 - Slider")
         {
@@ -339,9 +339,25 @@ public class BuyUpgrade : MonoBehaviour
         upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Upgrade Script Multiplier: " + Mathf.Round((float)clickPowerUpgradeValue);
         upgradePanel.upgradeCLickCoinGenerationText.GetComponent<Text>().text = "Speed up the droids: " + Mathf.Round((float)droidSpeedUpgradeValue);
 
+        //Updates the Information box below the run script buttons;
+        plots[0].transform.Find("InfoText1").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[0].multiplier.ToString("F5") + "x"
+            + "\nCoins per Click: " + amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + clickPower.ToString("F2");
+
+        plots[1].transform.Find("InfoText2").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[1].multiplier.ToString("F5") + "x"
+            + "\nCoins per Click: " + amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + clickPower.ToString("F2");
+
+        plots[2].transform.Find("InfoText3").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[2].multiplier.ToString("F5") + "x"
+            + "\nCoins per Click: " + amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + clickPower.ToString("F2");
+
+        plots[3].transform.Find("InfoText4").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[3].multiplier.ToString("F5") + "x"
+            + "\nCoins per Click: " + amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + clickPower.ToString("F2");
+
+
         //print("SLIDER: " + sliderIncrease.multiplier);
 
     }
+
+    
 
     //Method no longer in use, keeping for testing.
     //public void ClosePanel()
