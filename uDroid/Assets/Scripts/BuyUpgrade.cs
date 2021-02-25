@@ -144,6 +144,7 @@ public class BuyUpgrade : MonoBehaviour
     //////////////////////////////////////
     //The actual logic behind the upgrades
 
+        //This method updates the price of each upgrade separetly
     public void updatePrice()
     {
 
@@ -172,13 +173,12 @@ public class BuyUpgrade : MonoBehaviour
             GlobalCoins.CoinCount -= droidSpeedUpgradeValue;
             droidSpeedUpgradeValue *= upgradeMultiplier;
         }
-        //GlobalCoins.CoinCount -= upgradeValue;
-        //upgradeValue *= upgradeMultiplier;
+
     }
 
+    //This automatically generates coins and adds them
     public void StartAutoCoin()
     {
-        //This automatically generates coins and adds them
         autoCoinObj.SetActive(true);
         //fillBar.start = true;
         //TODO: this is where I can set different upgradevalues for each upgrade
@@ -189,32 +189,30 @@ public class BuyUpgrade : MonoBehaviour
 
     }
 
+    //This increases the time it takes for the slider to finish
     public void SliderMultiplier(SliderIncrease sliderIncrease)
     {
-        //This increases the time it takes for the slider to finish
-        //TODO: this is where I can set different upgradevalues for each upgrade
         updatePrice();
         sliderIncrease.multiplier *= 1.7f;
         upgradePanel.upgradeSlider.SetActive(false);
     }
 
+    //This increases the amount of coins generated per click
     public void upgradePerClick()
     {
-        //This increases the amount of coins generated per click
-        //TODO: this is where I can set different upgradevalues for each upgrade
         updatePrice();
         amountPerClick *= clickPower;
-        print("Amount per: " + amountPerClick);
 
     }
 
+    //This increases the multiplier for coins generated per click
     public void upgradeClickPowerMultiplier()
     {
         updatePrice();
         clickPower *= 1.15;
-        print("Click Power: " + clickPower);
     }
 
+    //This speeds up the generation of coins for the AutoCoins
     public void droidSpeed(AutoCoins autoCoins)
     {
         updatePrice();
@@ -222,6 +220,7 @@ public class BuyUpgrade : MonoBehaviour
         
     }
 
+    //This checks which upgrade button has been clicked per plot
     public void setUpgradeBoolTrue(Slider slider)
     {
         if (slider.name == "Slider 1 - Slider")
@@ -262,6 +261,9 @@ public class BuyUpgrade : MonoBehaviour
     
     ////////////////////////////////////
     
+
+    //This method manages the animations that play when the UpgradePanel has been displayed and
+    //makes sure the menu closes when an upgrade has been purchased.
     private IEnumerator playAnim()
     {
 
@@ -325,6 +327,8 @@ public class BuyUpgrade : MonoBehaviour
         }
     }
 
+    //Update Method which keeps track of the current coins and also updates the texts on screen.
+    //There may be a way to do this more efficiently however this current implementation works.
     private void Update()
     {
         //Tracks current coins
