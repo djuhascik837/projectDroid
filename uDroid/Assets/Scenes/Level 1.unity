@@ -624,8 +624,13 @@ MonoBehaviour:
   autoCoinObj: {fileID: 339753436}
   droidStats: {fileID: 43976256}
   currentCoins: 0
-  upgradeMultiplier: 1.5
-  clickPower: 1.15
+  autoCoinUpgradeValue: 1
+  sliderMulUpgradeValue: 1
+  perClickUpgradeValue: 1
+  clickPowerUpgradeValue: 1
+  droidSpeedUpgradeValue: 1
+  upgradeMultiplier: 1.75
+  sliderNum: 0
 --- !u!1001 &168291820
 PrefabInstance:
   m_ObjectHideFlags: 0
