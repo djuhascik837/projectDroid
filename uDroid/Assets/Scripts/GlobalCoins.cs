@@ -11,7 +11,6 @@ public class GlobalCoins : MonoBehaviour
 
     void Update()
     {
-
         InternalCoins = Mathf.Round((float)CoinCount);
         CoinDisplay.GetComponent<Text>().text = "" + InternalCoins;
     }
