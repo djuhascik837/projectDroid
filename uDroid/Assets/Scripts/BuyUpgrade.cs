@@ -11,8 +11,8 @@ public class BuyUpgrade : MonoBehaviour
     public UpgradePanel upgradePanel;
     public OpenMenuAnim openAnim;
     public SliderIncrease[] sliderIncrease;
-    public Button[] upgradeButton;
     public AutoCoins autoCoins;
+    public GlobalCoins globalCoins;
     public GameObject statusText;
     public GameObject statusBox;
     public GameObject autoCoinObj;
@@ -26,16 +26,24 @@ public class BuyUpgrade : MonoBehaviour
     public static bool droidSpeedClicked = false;
     public static double numOfDroids;
     public static double coinsPerDroid;
-    public static double upgradeValue = 4;
+
+    //All upgrade values
+    public static double autoCoinUpgradeValue = 4;
+    public static double sliderMulUpgradeValue = 6;
+    public static double perClickUpgradeValue = 8;
+    public static double clickPowerUpgradeValue = 10;
+    public static double droidSpeedUpgradeValue = 12;
+
     public double upgradeMultiplier = 1.25;
     public double amountPerClick = 1.0;
     public double clickPower = 1.25;
 
+    //All private variables
     private bool UpgradeClick1 = false;
     private bool UpgradeClick2 = false;
     private bool UpgradeClick3 = false;
     private bool UpgradeClick4 = false;
-    private float powerOf;
+    private bool isAvailable = false;
 
     ////////////////////////////////////
 
@@ -46,38 +54,90 @@ public class BuyUpgrade : MonoBehaviour
 
     public void ClickUpgradeCoin()
     {
-        autoCoinClicked = true;
-        StartCoroutine(playAnim());
-        openAnim.press();
+        if (currentCoins < autoCoinUpgradeValue)
+        {
+            isAvailable = false;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        } 
+        else
+        {
+            isAvailable = true;
+            autoCoinClicked = true;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
         
     }
 
     public void ClickSliderMultiplier()
     {
-        sliderMultiClicked = true;
-        StartCoroutine(playAnim());
-        openAnim.press();
+        if (currentCoins < sliderMulUpgradeValue)
+        {
+            isAvailable = false;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
+        else
+        {
+            isAvailable = true;
+            sliderMultiClicked = true;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
     }
 
     public void ClickAmountPerClick()
     {
-        upgradePerClicked = true;
-        StartCoroutine(playAnim());
-        openAnim.press();
+        if (currentCoins < perClickUpgradeValue)
+        {
+            isAvailable = false;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
+        else
+        {
+            isAvailable = true;
+            upgradePerClicked = true;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
     }
 
     public void ClickPowerMultiplier()
     {
-        upgradeClickPowerMul = true;
-        StartCoroutine(playAnim());
-        openAnim.press();
+        if (currentCoins < clickPowerUpgradeValue)
+        {
+            isAvailable = false;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
+        else
+        {
+            isAvailable = true;
+            upgradeClickPowerMul = true;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
+        
     }
 
     public void ClickDroidSpeed()
     {
-        droidSpeedClicked = true;
-        StartCoroutine(playAnim());
-        openAnim.press();
+        if (currentCoins < droidSpeedUpgradeValue)
+        {
+            isAvailable = false;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
+        else
+        {
+            isAvailable = true;
+            droidSpeedClicked = true;
+            StartCoroutine(playAnim());
+            openAnim.press();
+        }
+        
     }
 
     //////////////////////////////////////
@@ -85,8 +145,34 @@ public class BuyUpgrade : MonoBehaviour
 
     public void updatePrice()
     {
-        GlobalCoins.CoinCount -= upgradeValue;
-        upgradeValue *= upgradeMultiplier;
+
+        if (autoCoinClicked == true)
+        {
+            GlobalCoins.CoinCount -= autoCoinUpgradeValue;
+            autoCoinUpgradeValue *= upgradeMultiplier;
+        } 
+        else if (sliderMultiClicked == true)
+        {
+            GlobalCoins.CoinCount -= sliderMulUpgradeValue;
+            sliderMulUpgradeValue *= upgradeMultiplier;
+        } 
+        else if (upgradePerClicked == true)
+        {
+            GlobalCoins.CoinCount -= perClickUpgradeValue;
+            perClickUpgradeValue *= upgradeMultiplier;
+        } 
+        else if (upgradeClickPowerMul == true)
+        {
+            GlobalCoins.CoinCount -= clickPowerUpgradeValue;
+            clickPowerUpgradeValue *= upgradeMultiplier;
+        } 
+        else if (droidSpeedClicked == true)
+        {
+            GlobalCoins.CoinCount -= droidSpeedUpgradeValue;
+            droidSpeedUpgradeValue *= upgradeMultiplier;
+        }
+        //GlobalCoins.CoinCount -= upgradeValue;
+        //upgradeValue *= upgradeMultiplier;
     }
 
     public void StartAutoCoin()
@@ -116,7 +202,6 @@ public class BuyUpgrade : MonoBehaviour
         //This increases the amount of coins generated per click
         //TODO: this is where I can set different upgradevalues for each upgrade
         updatePrice();
-        powerOf++;
         amountPerClick *= clickPower;
         print("Amount per: " + amountPerClick);
 
@@ -178,7 +263,7 @@ public class BuyUpgrade : MonoBehaviour
     private IEnumerator playAnim()
     {
 
-        if (currentCoins <= 0 || currentCoins < upgradeValue)
+        if (currentCoins <= 0 || isAvailable == false)
         {
             //This Handles Animation of not enough message
             statusBox.SetActive(true);
@@ -246,11 +331,11 @@ public class BuyUpgrade : MonoBehaviour
         droidStats.GetComponent<Text>().text = "Droids: " + numOfDroids + " per(" + autoCoins.seconds.ToString("F2") + "s) " + coinsPerDroid;
 
         //Handles upgrade button text 
-        upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Auto Coins: " + Mathf.Round((float)upgradeValue);
-        upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)upgradeValue);
-        upgradePanel.upgradeClickText.GetComponent<Text>().text = "Running script upgrade: " + Mathf.Round((float)upgradeValue);
-        upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Upgrade Script Multiplier: " + Mathf.Round((float)upgradeValue);
-        upgradePanel.upgradeCLickCoinGenerationText.GetComponent<Text>().text = "Speed up the droids: " + Mathf.Round((float)upgradeValue);
+        upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Auto Coins: " + Mathf.Round((float)autoCoinUpgradeValue);
+        upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)sliderMulUpgradeValue);
+        upgradePanel.upgradeClickText.GetComponent<Text>().text = "Running script upgrade: " + Mathf.Round((float)perClickUpgradeValue);
+        upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Upgrade Script Multiplier: " + Mathf.Round((float)clickPowerUpgradeValue);
+        upgradePanel.upgradeCLickCoinGenerationText.GetComponent<Text>().text = "Speed up the droids: " + Mathf.Round((float)droidSpeedUpgradeValue);
 
         //print("SLIDER: " + sliderIncrease.multiplier);
 
