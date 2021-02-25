@@ -227,6 +227,8 @@ public class BuyUpgrade : MonoBehaviour
         {
             UpgradeClick1 = true;
             //print("1" + UpgradeClick1);
+            Text text = transform.Find("InfoText1").GetComponent<Text>();
+            text.text = "Hello World";
         }
         else if (slider.name == "Slider 2 - Slider")
         {
