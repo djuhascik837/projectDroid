@@ -7,7 +7,7 @@ public class SliderIncrease : MonoBehaviour
 {
     public Slider sld;
     public Text displayText;
-    public float multiplier = 0.153f;
+    public float multiplier = 0.1f;
     private bool update = false;
     public AudioSource playSelectOn;
     public AudioSource playSelectOff;
@@ -15,15 +15,12 @@ public class SliderIncrease : MonoBehaviour
     public GameObject img;
     public Texture textureON;
     public Texture textureIDLE;
+    public ParticleSystem particleSystem0, particleSystem1;
 
     public void SetText(string text)
     {
         Text txt = transform.Find("Text").GetComponent<Text>();
         txt.text = text;
-    }
-    public void SetImage()
-    {
-        
     }
 
     public void execute()
@@ -33,8 +30,29 @@ public class SliderIncrease : MonoBehaviour
         playSelectOn.Play();
     }
 
+    public void ToggleParticleOn()
+    {
+        if (!particleSystem0.isPlaying)
+        {
+            particleSystem0.Play();
+            particleSystem1.Play();
+        }
+
+    }
+
+    public void ToggleParticleOff()
+    {
+        if (particleSystem0.isPlaying)
+        {
+            particleSystem0.Stop();
+            particleSystem1.Stop();
+        }
+    }
+
+
     void Update()
     {
+
         //check if update should be running
         if (update == true)
         {
@@ -44,6 +62,7 @@ public class SliderIncrease : MonoBehaviour
                 //increment the slider progress
                 sld.value += multiplier;
                 img.GetComponent<RawImage>().texture = textureON;
+                ToggleParticleOn();
 
                 //check if slider has reached the end
                 if (sld.value >= 1)
@@ -51,6 +70,7 @@ public class SliderIncrease : MonoBehaviour
                     //change button text, slider value and stop updating
                     SetText("Run Script");
                     img.GetComponent<RawImage>().texture = textureIDLE;
+                    ToggleParticleOff();
                     sld.value = 0;
                     update = false;
                     playSelectOff.Play();

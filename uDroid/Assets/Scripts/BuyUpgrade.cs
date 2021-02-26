@@ -18,6 +18,7 @@ public class BuyUpgrade : MonoBehaviour
     public GameObject statusBox;
     public GameObject autoCoinObj;
     public GameObject droidStats;
+    public GameObject particles;
 
     public double currentCoins;
     public static bool autoCoinClicked = false;
@@ -75,6 +76,7 @@ public class BuyUpgrade : MonoBehaviour
             isAvailable = false;
             StartCoroutine(playAnim());
             openAnim.press();
+            
         }
         else
         {
@@ -82,6 +84,7 @@ public class BuyUpgrade : MonoBehaviour
             sliderMultiClicked = true;
             StartCoroutine(playAnim());
             openAnim.press();
+            
         }
         //print(currentCoins);
         //print(Mathf.RoundToInt((float)sliderMulUpgradeValue));
@@ -225,6 +228,7 @@ public class BuyUpgrade : MonoBehaviour
     //This checks which upgrade button has been clicked per plot
     public void setUpgradeBoolTrue(Slider slider)
     {
+        particles.SetActive(false);
         if (slider.name == "Slider 1 - Slider")
         {
             UpgradeClick1 = true;
@@ -235,16 +239,19 @@ public class BuyUpgrade : MonoBehaviour
         {
             UpgradeClick2 = true;
             //print("2" + UpgradeClick2);
+            
         }
         else if (slider.name == "Slider 3 - Slider")
         {
             UpgradeClick3 = true;
             //print("3" + UpgradeClick3);
+            
         }
         else if (slider.name == "Slider 4 - Slider")
         {
             UpgradeClick4 = true;
             //print("4" + UpgradeClick4);
+            
         }
 
     }
@@ -257,7 +264,8 @@ public class BuyUpgrade : MonoBehaviour
         UpgradeClick2 = false;
         UpgradeClick3 = false;
         UpgradeClick4 = false;
-        //print("Upgrades set to false.");
+
+        particles.SetActive(true);
     }
     //This drives the main logic behind purchasing upgrades
     
@@ -377,7 +385,6 @@ public class BuyUpgrade : MonoBehaviour
             droidSpeedClicked = false;
             isAvailable = false;
         }
-
     }
 
     //Update Method which keeps track of the current coins and also updates the texts on screen.
@@ -397,21 +404,24 @@ public class BuyUpgrade : MonoBehaviour
         upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Click Power Upgrade: " + Mathf.Round((float)clickPowerUpgradeValue);
         upgradePanel.upgradeCLickCoinGenerationText.GetComponent<Text>().text = "Speed up the droids: " + Mathf.Round((float)droidSpeedUpgradeValue);
 
-        float sliderIn0 = sliderIncrease[0].multiplier * 100;
+        float sliderIn0 = sliderIncrease[0].multiplier * 1000;
+        float sliderIn1 = sliderIncrease[1].multiplier * 1000;
+        float sliderIn2 = sliderIncrease[2].multiplier * 1000;
+        float sliderIn3 = sliderIncrease[3].multiplier * 1000;
 
 
         //Updates the Information box below the run script buttons;
         plots[0].transform.Find("InfoText1").GetComponent<Text>().text = "Current Slider Speed: " + sliderIn0.ToString("F2") + "x"
-            + "\nCoins per Click: " + plots[0].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[0].clickPower.ToString("F2");
+            + "\nCoins per Click: " + plots[0].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[0].clickPower.ToString("F2") + "x";
 
-        plots[1].transform.Find("InfoText2").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[1].multiplier.ToString("F5") + "x"
-            + "\nCoins per Click: " + plots[1].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[1].clickPower.ToString("F2");
+        plots[1].transform.Find("InfoText2").GetComponent<Text>().text = "Current Slider Speed: " + sliderIn1.ToString("F2") + "x"
+            + "\nCoins per Click: " + plots[1].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[1].clickPower.ToString("F2") + "x";
 
-        plots[2].transform.Find("InfoText3").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[2].multiplier.ToString("F5") + "x"
-            + "\nCoins per Click: " + plots[2].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[2].clickPower.ToString("F2");
+        plots[2].transform.Find("InfoText3").GetComponent<Text>().text = "Current Slider Speed: " + sliderIn2.ToString("F2") + "x"
+            + "\nCoins per Click: " + plots[2].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[2].clickPower.ToString("F2") + "x";
 
-        plots[3].transform.Find("InfoText4").GetComponent<Text>().text = "Current Slider Speed: " + sliderIncrease[3].multiplier.ToString("F5") + "x"
-            + "\nCoins per Click: " + plots[3].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[3].clickPower.ToString("F2");
+        plots[3].transform.Find("InfoText4").GetComponent<Text>().text = "Current Slider Speed: " + sliderIn3.ToString("F2") + "x"
+            + "\nCoins per Click: " + plots[3].amountPerClick.ToString("F2") + "x" + "\nClick Power Upgrade: " + plots[3].clickPower.ToString("F2") + "x";
 
 
     }
