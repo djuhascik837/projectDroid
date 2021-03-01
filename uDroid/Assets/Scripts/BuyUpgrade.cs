@@ -7,11 +7,13 @@ public class BuyUpgrade : MonoBehaviour
 {
     ////////////////////////////////////
     // Varriables
-    
-    public UpgradePanel upgradePanel;
-    public OpenMenuAnim openAnim;
+
     public SliderIncrease[] sliderIncrease;
     public Plots[] plots;
+    public GameObject[] inactivePlots;
+    public UpgradePanel upgradePanel;
+    public OpenMenuAnim openMenuAnim;
+    public OpenMenuAnim openErrorMsg;
     public AutoCoins autoCoins;
     public GlobalCoins globalCoins;
     public GameObject statusText;
@@ -19,8 +21,10 @@ public class BuyUpgrade : MonoBehaviour
     public GameObject autoCoinObj;
     public GameObject droidStats;
     public GameObject particles;
+    
 
     public double currentCoins;
+    public static bool buyNewPlotClicked = false;
     public static bool autoCoinClicked = false;
     public static bool sliderMultiClicked = false;
     public static bool upgradePerClicked = false;
@@ -30,6 +34,9 @@ public class BuyUpgrade : MonoBehaviour
     public static double coinsPerDroid;
 
     //All upgrade values
+    private float upgradePlotValue1 = 1;
+    private float upgradePlotValue2 = 2;
+    private float upgradePlotValue3 = 3;
     private float autoCoinUpgradeValue = 1;
     private float sliderMulUpgradeValue = 1;
     private float perClickUpgradeValue = 1;
@@ -43,6 +50,9 @@ public class BuyUpgrade : MonoBehaviour
     private bool UpgradeClick2 = false;
     private bool UpgradeClick3 = false;
     private bool UpgradeClick4 = false;
+    private bool unlockPlot1 = false;
+    private bool unlockPlot2 = false;
+    private bool unlockPlot3 = false;
     private bool isAvailable = false;
 
     ////////////////////////////////////
@@ -57,15 +67,15 @@ public class BuyUpgrade : MonoBehaviour
         if (currentCoins < Mathf.RoundToInt((float)autoCoinUpgradeValue))
         {
             isAvailable = false;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         } 
         else
         {
             isAvailable = true;
             autoCoinClicked = true;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
     }
 
@@ -74,16 +84,16 @@ public class BuyUpgrade : MonoBehaviour
         if (currentCoins < Mathf.RoundToInt((float)sliderMulUpgradeValue))
         {
             isAvailable = false;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
             
         }
         else
         {
             isAvailable = true;
             sliderMultiClicked = true;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
             
         }
         //print(currentCoins);
@@ -96,15 +106,15 @@ public class BuyUpgrade : MonoBehaviour
         if (currentCoins < Mathf.RoundToInt((float)perClickUpgradeValue))
         {
             isAvailable = false;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
         else
         {
             isAvailable = true;
             upgradePerClicked = true;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
     }
 
@@ -113,15 +123,15 @@ public class BuyUpgrade : MonoBehaviour
         if (currentCoins < Mathf.RoundToInt((float)clickPowerUpgradeValue))
         {
             isAvailable = false;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
         else
         {
             isAvailable = true;
             upgradeClickPowerMul = true;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
         
     }
@@ -131,23 +141,78 @@ public class BuyUpgrade : MonoBehaviour
         if (currentCoins < Mathf.RoundToInt((float)droidSpeedUpgradeValue))
         {
             isAvailable = false;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
         else
         {
             isAvailable = true;
             droidSpeedClicked = true;
-            StartCoroutine(playAnim());
-            openAnim.press();
+            playAnim();
+            openMenuAnim.pressButton();
         }
 
     }
 
+    ////////////////////////////////////
+    //The below code checks the 3 inactive pltos and which one has been clicked so that they may unlock
+    public void ClickBuyNewPlot1()
+    {
+        if (currentCoins < upgradePlotValue1)
+        {
+            isAvailable = false;
+            playAnim();
+        }
+        else
+        {
+            isAvailable = true;
+            buyNewPlotClicked = true;
+            unlockPlot1 = true;
+            playAnim();
+        }
+        
+    }
+
+    public void ClickBuyNewPlot2()
+    {
+        if (currentCoins < upgradePlotValue2)
+        {
+            isAvailable = false;
+            playAnim();
+        }
+        else
+        {
+            isAvailable = true;
+            buyNewPlotClicked = true;
+            unlockPlot2 = true;
+            playAnim();
+        }
+
+    }
+
+    public void ClickBuyNewPlot3()
+    {
+        if (currentCoins < upgradePlotValue3)
+        {
+            isAvailable = false;
+            playAnim();
+        }
+        else
+        {
+            isAvailable = true;
+            buyNewPlotClicked = true;
+            unlockPlot3 = true;
+            playAnim();
+        }
+
+    }
+
+    ////////////////////////////////////
+
     //////////////////////////////////////
     //The actual logic behind the upgrades
 
-        //This method updates the price of each upgrade separetly
+    //This method updates the price of each upgrade separetly
     public void updatePrice()
     {
 
@@ -178,7 +243,41 @@ public class BuyUpgrade : MonoBehaviour
             GlobalCoins.CoinCount -= droidSpeedUpgradeValue;
             droidSpeedUpgradeValue *= upgradeMultiplier;
         }
+        else if (unlockPlot1 == true)
+        {
+            GlobalCoins.CoinCount -= upgradePlotValue1;
+        }
+        else if (unlockPlot2 == true)
+        {
+            GlobalCoins.CoinCount -= upgradePlotValue2;
+            print(upgradePlotValue2);
+        }
+        else if (unlockPlot3 == true)
+        {
+            GlobalCoins.CoinCount -= upgradePlotValue3;
+        }
 
+    }
+
+    //Code for purchasing new plots, This sets the plots false revealing the usable plots behind.
+    public void buyNewPlot()
+    {
+        if (unlockPlot1 == true)
+        {
+            updatePrice();
+            inactivePlots[0].SetActive(false);
+        } 
+        else if (unlockPlot2 == true)
+        {
+            updatePrice();
+            inactivePlots[1].SetActive(false);
+        } 
+        else if (unlockPlot3 == true)
+        {
+            updatePrice();
+            inactivePlots[2].SetActive(false);
+        }
+        
     }
 
     //This automatically generates coins and adds them
@@ -224,9 +323,8 @@ public class BuyUpgrade : MonoBehaviour
 
     }
 
-
     //This checks which upgrade button has been clicked per plot
-    public void setUpgradeBoolTrue(Slider slider)
+    public void setSliderUpgradeBoolTrue(Slider slider)
     {
         particles.SetActive(false);
         if (slider.name == "Slider 1 - Slider")
@@ -256,6 +354,25 @@ public class BuyUpgrade : MonoBehaviour
 
     }
 
+    public void setPlotUpgradeBoolTrue(GameObject inactivePlots)
+    {
+        if (inactivePlots.name == "InactiveButton1")
+        {
+            unlockPlot1 = true;
+
+        }
+        else if (inactivePlots.name == "InactiveButton2")
+        {
+            unlockPlot2 = true;
+
+        }
+        else if (inactivePlots.name == "InactiveButton3")
+        {
+            unlockPlot3 = true;
+
+        }
+    }
+
     //Sets the upgrade buttons back to false, this is used for tracking which button has been clicked.
     //Used as an implementation for having upgrades seperate to each plot.
     public void setUpgradeBoolFalse()
@@ -264,6 +381,11 @@ public class BuyUpgrade : MonoBehaviour
         UpgradeClick2 = false;
         UpgradeClick3 = false;
         UpgradeClick4 = false;
+
+        unlockPlot1 = false;
+        unlockPlot2 = false;
+        unlockPlot3 = false;
+        buyNewPlotClicked = false;
 
         particles.SetActive(true);
     }
@@ -274,19 +396,21 @@ public class BuyUpgrade : MonoBehaviour
 
     //This method manages the animations that play when the UpgradePanel has been displayed and
     //makes sure the menu closes when an upgrade has been purchased.
-    private IEnumerator playAnim()
+    private void playAnim()
     {
 
         if (currentCoins <= 0 || isAvailable == false)
         {
-            //This Handles Animation of not enough message
-            statusBox.SetActive(true);
-            statusText.GetComponent<Text>().text = "Not enough coins to purchase upgrade.";
-            yield return new WaitForSeconds(0.25f);
-            statusBox.GetComponent<Animation>().Play("StatusAnim");
-            yield return new WaitForSeconds(0.25f);
-            statusBox.SetActive(false);
+            playErrorMsg("Not enough coins to purchase upgrade.");
             setUpgradeBoolFalse();
+            isAvailable = false;
+        }
+        else if (buyNewPlotClicked == true)
+        {
+            buyNewPlot();
+            setUpgradeBoolFalse();
+            isAvailable = false;
+            
         }
         else if (autoCoinClicked == true)
         {
@@ -385,6 +509,13 @@ public class BuyUpgrade : MonoBehaviour
             droidSpeedClicked = false;
             isAvailable = false;
         }
+    }
+    public void playErrorMsg(string errorMsg)
+    {
+        //This Handles Animation of not enough coins message
+        statusText.GetComponent<Text>().text = errorMsg;
+        openErrorMsg.GetComponent<Animation>().Play("statusAnim");
+        setUpgradeBoolFalse();
     }
 
     //Update Method which keeps track of the current coins and also updates the texts on screen.

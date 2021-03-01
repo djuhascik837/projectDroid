@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class OpenMenuAnim : MonoBehaviour
 {
-    public Button Text;
     public AudioClip sound;
     public Animator anim;
     public Canvas canvas;
@@ -14,15 +13,18 @@ public class OpenMenuAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Text = Text.GetComponent<Button>();
         anim.enabled = false;
         canvas.enabled = true;
     }
 
-   public void press()
+   public void pressButton()
     {
-        Text.enabled = true;
         AudioSource.PlayClipAtPoint(sound, transform.position);
+        openAnim();
+    }
+
+    public void openAnim()
+    {
         if (anim != null)
         {
             bool isOpen = anim.GetBool("open");
