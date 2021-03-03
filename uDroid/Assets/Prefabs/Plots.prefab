@@ -870,7 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sld: {fileID: 4106988197835503581}
   displayText: {fileID: 4106988198002077033}
-  multiplier: 0.00153
+  multiplier: 0.001
   playSelectOn: {fileID: 0}
   playSelectOff: {fileID: 0}
   plot: {fileID: 1121747903}
@@ -1046,7 +1046,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: press
+        m_MethodName: pressButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

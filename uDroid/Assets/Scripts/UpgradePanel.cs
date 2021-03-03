@@ -7,6 +7,8 @@ public class UpgradePanel : MonoBehaviour
     public GameObject panel;
     public GameObject upgradeCoin;
     public GameObject upgradeCoinText;
+    public GameObject upgradeCoinIncrease;
+    public GameObject upgradeCoinIncreaseText;
     public GameObject upgradeSlider;
     public GameObject upgradeSliderText;
     public GameObject upgradeClick;
