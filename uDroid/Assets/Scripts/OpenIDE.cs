@@ -48,7 +48,7 @@ public class OpenIDE : MonoBehaviour
         InputField testerField = GameObject.Find(idePanel).transform.Find(tester).Find(ideEditor).GetComponent<InputField>();
         InputField level1Field = GameObject.Find(idePanel).transform.Find(level1).Find(ideEditor).GetComponent<InputField>();
 
-        bool test = false;
+        bool test = true;
 
         if (test)
         {
