@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public InputField input;
+    public static InputField input;
     public Text textFieldCompare;
 
     public void GetInput(string userInput)
@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
             if (text != null)
             {
+                print(lowerCase);
+                print(text.ToLower());
                 if (text.ToLower() == lowerCase) Debug.Log(lowerCase + ", " + text.ToLower());
             }
 
