@@ -10,6 +10,10 @@ public class OpenIDE : MonoBehaviour
     public Text textInput;
     public GameObject[] panels;
     private bool isAnimOpen;
+    private static bool isActive = true;
+    private string strIdePanel = "IDE - Panel";
+    private string tester = "TextEditor - Panel";
+    private string level1 = "Level 1 - Basic If";
 
     public void StartIDEOpenAnim()
     {
@@ -19,10 +23,7 @@ public class OpenIDE : MonoBehaviour
         {
             bool isOpen = anim.GetBool("open");
 
-            foreach (var panel in panels)
-            {
-                if (isOpen) panel.SetActive(false);
-            }
+
 
             anim.SetBool("open", !isOpen);
             isAnimOpen = isOpen;
@@ -36,80 +37,105 @@ public class OpenIDE : MonoBehaviour
     {
         Debug.Log("starting Random Challenge");
 
-        string idePanel = "IDE - Panel";
-        string tester = "TextEditor - Panel";
-        string level1 = "Level 1 - Basic If";
+        CanvasGroup[] canvasGroups = CreateCanvasGroupRef();
         string ideEditor = "IDE Editor - Input Field";
 
-        testPanel = GameObject.Find(idePanel).transform.Find(tester).GetComponent<CanvasGroup>();
-        levelOne = GameObject.Find(idePanel).transform.Find(level1).GetComponent<CanvasGroup>();
-        InputField testerField = GameObject.Find(idePanel).transform.Find(tester).Find(ideEditor).GetComponent<InputField>();
-        InputField level1Field = GameObject.Find(idePanel).transform.Find(level1).Find(ideEditor).GetComponent<InputField>();
+        InputField testerField = GameObject.Find(strIdePanel).transform.Find(tester).Find(ideEditor).GetComponent<InputField>();
+        InputField level1Field = GameObject.Find(strIdePanel).transform.Find(level1).Find(ideEditor).GetComponent<InputField>();
 
-        int randSwitcher = RandomNumber(0, 2);
-        print(randSwitcher);
-
-        if (randSwitcher == 0)
+        if (isActive)
         {
-            if(!isAnimOpen)
+            int randSwitcher = RandomNumber(0, canvasGroups.Length);
+            isActive = false;
+
+            if (randSwitcher == 0)
             {
-                foreach (var panel in panels)
+                if (!isAnimOpen)
                 {
-                    if (panel.name.Equals(tester)) panel.SetActive(true);
+                    foreach (var panel in panels)
+                    {
+                        if (panel.name.Equals(tester)) panel.SetActive(true);
+                    }
+
+                    GameController.input = testerField;
+
+                    text.text = "Test for IDE Panel Tester";
+                    textInput.text = "\"Test me\"";
+
+                    testPanel.alpha = 1;
+                    //CanvasAlphaSetter(testPanel);
                 }
-
-                GameController.input = testerField;
-
-                text.text = "Test for IDE Panel Tester";
-                textInput.text = "\"Test me\"";
-
-                CanvasAlphaSetter(testPanel);
+                else
+                {
+                    foreach (var canvas in canvasGroups)
+                    {
+                        canvas.alpha = 0;
+                    }
+                }
             }
-            else
+            else if (randSwitcher == 1)
             {
-                testPanel.alpha = 0;
-                levelOne.alpha = 0;
+                if (!isAnimOpen)
+                {
+                    foreach (var panel in panels)
+                    {
+                        if (panel.name.Equals(level1)) panel.SetActive(true);
+                    }
+
+                    GameController.input = level1Field;
+
+                    text.text = "Test for Level 1 Basic if";
+                    textInput.text = "\"Test me 2\"";
+
+                    levelOne.alpha = 1;
+                    //CanvasAlphaSetter(levelOne);
+                }
+                else
+                {
+                    foreach (var canvas in canvasGroups)
+                    {
+                        canvas.alpha = 0;
+                    }
+                }
             }
         }
-        else if (randSwitcher == 1)
+        else
         {
-            if (!isAnimOpen)
+            foreach (var panel in panels)
             {
-                foreach (var panel in panels)
-                {
-                    if (panel.name.Equals(level1)) panel.SetActive(true);
-                }
-
-                GameController.input = level1Field;
-
-                text.text = "Test for Level 1 Basic if";
-                textInput.text = "\"Test me 2\"";
-
-                CanvasAlphaSetter(levelOne);
+                panel.SetActive(false);
             }
-            else
-            {
-                testPanel.alpha = 0;
-                levelOne.alpha = 0;
-            }
+            isActive = true;
         }
     }
 
-    public int RandomNumber(int min, int max)
+    private int RandomNumber(int min, int max)
     {
         System.Random random = new System.Random();
         return random.Next(min, max);
     }
 
-    public void CanvasAlphaSetter(CanvasGroup canvasGroup)
+    // Removed as it started causing issues - after changing code to include tutorial button found this was the issue
+    //private void CanvasAlphaSetter(CanvasGroup canvasGroup)
+    //{
+    //    if (canvasGroup.alpha != 0)
+    //    {
+    //        canvasGroup.alpha = 0;
+    //    }
+    //    else if (canvasGroup.alpha != 1)
+    //    {
+    //        canvasGroup.alpha = 1;
+    //    }
+    //}
+
+    public CanvasGroup[] CreateCanvasGroupRef()
     {
-        if (canvasGroup.alpha != 0)
-        {
-            canvasGroup.alpha = 0;
-        }
-        else if (canvasGroup.alpha != 1)
-        {
-            canvasGroup.alpha = 1;
-        }
+        testPanel = GameObject.Find(strIdePanel).transform.Find(tester).GetComponent<CanvasGroup>();
+        levelOne = GameObject.Find(strIdePanel).transform.Find(level1).GetComponent<CanvasGroup>();
+        CanvasGroup[] canvasGroups = new CanvasGroup[2];
+        canvasGroups[0] = testPanel;
+        canvasGroups[1] = levelOne;
+
+        return canvasGroups;
     }
 }
