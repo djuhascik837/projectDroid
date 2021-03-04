@@ -4,26 +4,37 @@ using UnityEngine.UI;
 public class OpenIDE : MonoBehaviour
 {
     public GameObject idePanel;
-    private CanvasGroup testPanel;
-    private CanvasGroup levelOne;
+    //private CanvasGroup testPanel;
+    //private CanvasGroup levelOne;
     public Text text;
     public Text textInput;
     public GameObject[] panels;
     private bool isAnimOpen;
     private static bool isActive = true;
-    private readonly string strIdePanel = "IDE - Panel";
-    private readonly string tester = "TextEditor - Panel";
-    private readonly string level1 = "Level 1 - Basic If";
 
     public void StartIDEOpenAnim()
     {
         Animator anim = idePanel.GetComponent<Animator>();
+        CanvasGroup[] canvasGroups = CreateCanvasGroupRef();
 
         if (anim != null)
         {
             bool isOpen = anim.GetBool("open");
 
+            if(isOpen)
+            {
+                foreach (var panel in panels)
+                {
+                    panel.SetActive(false);
+                }
 
+                foreach (var canvas in canvasGroups)
+                {
+                    canvas.alpha = 0;
+                }
+
+                isActive = true;
+            }
 
             anim.SetBool("open", !isOpen);
             isAnimOpen = isOpen;
@@ -32,6 +43,13 @@ public class OpenIDE : MonoBehaviour
             Debug.LogWarning("Anim == null");
         }
     }
+
+    //Variable for Select Random Challenge
+    private readonly string strIdePanel = "IDE - Panel";
+    private readonly string tester = "TextEditor - Panel";
+    private readonly string level1 = "Level 1 - Basic If";
+    private readonly string tutHelloWorld = "Tutorial - HelloWorld";
+    private readonly string tutHWCodeConsole = "CodeConsole";
 
     public void SelectRandomChallenge()
     {
@@ -42,6 +60,7 @@ public class OpenIDE : MonoBehaviour
 
         InputField testerField = GameObject.Find(strIdePanel).transform.Find(tester).Find(ideEditor).GetComponent<InputField>();
         InputField level1Field = GameObject.Find(strIdePanel).transform.Find(level1).Find(ideEditor).GetComponent<InputField>();
+        InputField tutHelloWorldField = GameObject.Find(strIdePanel).transform.Find(tutHelloWorld).Find(tutHWCodeConsole).Find(ideEditor).GetComponent<InputField>();
 
         if (isActive)
         {
@@ -52,12 +71,19 @@ public class OpenIDE : MonoBehaviour
             {
                 if (!isAnimOpen)
                 {
+                    CanvasGroup testPanel = null;
+
                     foreach (var panel in panels)
                     {
-                        if (panel.name.Equals(tester)) panel.SetActive(true);
+                        if (panel.name.Equals(tester))
+                        {
+                            testPanel = panel.GetComponent<CanvasGroup>();
+                            panel.SetActive(true);
+                        }
                     }
 
                     GameController.input = testerField;
+                    GameController.textFieldCompare = "Test Panel Test";
 
                     text.text = "Test for IDE Panel Tester";
                     textInput.text = "\"Test me\"";
@@ -77,17 +103,50 @@ public class OpenIDE : MonoBehaviour
             {
                 if (!isAnimOpen)
                 {
+                    CanvasGroup levelOne = null;
+
                     foreach (var panel in panels)
                     {
-                        if (panel.name.Equals(level1)) panel.SetActive(true);
+                        if (panel.name.Equals(level1))
+                        {
+                            levelOne = panel.GetComponent<CanvasGroup>();
+                            panel.SetActive(true);
+                        }
                     }
 
                     GameController.input = level1Field;
-
-                    text.text = "Test for Level 1 Basic if";
-                    textInput.text = "\"Test me 2\"";
+                    GameController.textFieldCompare = "Level One Test";
 
                     levelOne.alpha = 1;
+                    //CanvasAlphaSetter(levelOne);
+                }
+                else
+                {
+                    foreach (var canvas in canvasGroups)
+                    {
+                        canvas.alpha = 0;
+                    }
+                }
+            }
+            else if (randSwitcher == 2)
+            {
+                if (!isAnimOpen)
+                {
+                    CanvasGroup tutHelloWorldCanvas = null;
+
+                    foreach (var panel in panels)
+                    {
+                        if (panel.name.Equals(tutHelloWorld))
+                        {
+                            tutHelloWorldCanvas = panel.GetComponent<CanvasGroup>();
+                            panel.SetActive(true);
+                        }
+                    }
+
+                    GameController.input = tutHelloWorldField;
+                    GameController.textFieldCompare = "Hello World";
+
+                    tutHelloWorldCanvas.alpha = 1;
                     //CanvasAlphaSetter(levelOne);
                 }
                 else
@@ -130,11 +189,10 @@ public class OpenIDE : MonoBehaviour
 
     public CanvasGroup[] CreateCanvasGroupRef()
     {
-        testPanel = GameObject.Find(strIdePanel).transform.Find(tester).GetComponent<CanvasGroup>();
-        levelOne = GameObject.Find(strIdePanel).transform.Find(level1).GetComponent<CanvasGroup>();
-        CanvasGroup[] canvasGroups = new CanvasGroup[2];
-        canvasGroups[0] = testPanel;
-        canvasGroups[1] = levelOne;
+        CanvasGroup[] canvasGroups = new CanvasGroup[3];
+        canvasGroups[0] = GameObject.Find(strIdePanel).transform.Find(tester).GetComponent<CanvasGroup>();
+        canvasGroups[1] = GameObject.Find(strIdePanel).transform.Find(level1).GetComponent<CanvasGroup>();
+        canvasGroups[2] = GameObject.Find(strIdePanel).transform.Find(tutHelloWorld).GetComponent<CanvasGroup>();
 
         return canvasGroups;
     }
