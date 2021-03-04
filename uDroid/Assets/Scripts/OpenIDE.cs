@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class OpenIDE : MonoBehaviour
@@ -48,9 +46,10 @@ public class OpenIDE : MonoBehaviour
         InputField testerField = GameObject.Find(idePanel).transform.Find(tester).Find(ideEditor).GetComponent<InputField>();
         InputField level1Field = GameObject.Find(idePanel).transform.Find(level1).Find(ideEditor).GetComponent<InputField>();
 
-        bool test = true;
+        int randSwitcher = RandomNumber(0, 2);
+        print(randSwitcher);
 
-        if (test)
+        if (randSwitcher == 0)
         {
             if(!isAnimOpen)
             {
@@ -58,26 +57,21 @@ public class OpenIDE : MonoBehaviour
                 {
                     if (panel.name.Equals(tester)) panel.SetActive(true);
                 }
-            }
 
-            GameController.input = testerField;
+                GameController.input = testerField;
 
-            text.text = "Test for IDE Panel Tester";
-            textInput.text = "\"Test me\"";
+                text.text = "Test for IDE Panel Tester";
+                textInput.text = "\"Test me\"";
 
-            if (testPanel.alpha != 0)
-            {
-                testPanel.alpha = 0;
-            }
-            else if (testPanel.alpha != 1)
-            {
-                testPanel.alpha = 1;
+                CanvasAlphaSetter(testPanel);
             }
             else
             {
-                Debug.LogWarning("Not 0 or 1");
+                testPanel.alpha = 0;
+                levelOne.alpha = 0;
             }
-        } else
+        }
+        else if (randSwitcher == 1)
         {
             if (!isAnimOpen)
             {
@@ -85,25 +79,37 @@ public class OpenIDE : MonoBehaviour
                 {
                     if (panel.name.Equals(level1)) panel.SetActive(true);
                 }
-            }
 
-            GameController.input = level1Field;
+                GameController.input = level1Field;
 
-            text.text = "Test for Level 1 Basic if";
-            textInput.text = "\"Test me 2\"";
+                text.text = "Test for Level 1 Basic if";
+                textInput.text = "\"Test me 2\"";
 
-            if (levelOne.alpha != 0)
-            {
-                levelOne.alpha = 0;
-            }
-            else if (levelOne.alpha != 1)
-            {
-                levelOne.alpha = 1;
+                CanvasAlphaSetter(levelOne);
             }
             else
             {
-                Debug.LogWarning("Not 0 or 1");
+                testPanel.alpha = 0;
+                levelOne.alpha = 0;
             }
+        }
+    }
+
+    public int RandomNumber(int min, int max)
+    {
+        System.Random random = new System.Random();
+        return random.Next(min, max);
+    }
+
+    public void CanvasAlphaSetter(CanvasGroup canvasGroup)
+    {
+        if (canvasGroup.alpha != 0)
+        {
+            canvasGroup.alpha = 0;
+        }
+        else if (canvasGroup.alpha != 1)
+        {
+            canvasGroup.alpha = 1;
         }
     }
 }
