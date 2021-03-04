@@ -11,9 +11,9 @@ public class OpenIDE : MonoBehaviour
     public GameObject[] panels;
     private bool isAnimOpen;
     private static bool isActive = true;
-    private string strIdePanel = "IDE - Panel";
-    private string tester = "TextEditor - Panel";
-    private string level1 = "Level 1 - Basic If";
+    private readonly string strIdePanel = "IDE - Panel";
+    private readonly string tester = "TextEditor - Panel";
+    private readonly string level1 = "Level 1 - Basic If";
 
     public void StartIDEOpenAnim()
     {
