@@ -9,7 +9,7 @@ public class OpenIDE : MonoBehaviour
     //private CanvasGroup levelOne;
     public Text text;
     public Text textInput;
-    public GameObject[] panels;
+    public GameObject[] challenges;
     public GameObject[] tutorials;
     public GameObject codingChallengePanel;
 
@@ -28,7 +28,7 @@ public class OpenIDE : MonoBehaviour
 
             if(isOpen)
             {
-                foreach (var panel in panels)
+                foreach (var panel in challenges)
                 {
                     panel.SetActive(false);
                 }
@@ -36,6 +36,11 @@ public class OpenIDE : MonoBehaviour
                 foreach (var canvas in canvasGroups)
                 {
                     canvas.alpha = 0;
+                }
+
+                foreach (var tutorial in tutorials)
+                {
+                    tutorial.SetActive(false);
                 }
 
                 isActive = true;
@@ -83,7 +88,7 @@ public class OpenIDE : MonoBehaviour
                 {
                     CanvasGroup testPanel = null;
 
-                    foreach (var panel in panels)
+                    foreach (var panel in challenges)
                     {
                         if (panel.name.Equals(level2))
                         {
@@ -112,7 +117,7 @@ public class OpenIDE : MonoBehaviour
                 {
                     CanvasGroup levelOne = null;
 
-                    foreach (var panel in panels)
+                    foreach (var panel in challenges)
                     {
                         if (panel.name.Equals(level1))
                         {
@@ -168,11 +173,29 @@ public class OpenIDE : MonoBehaviour
         }
         else
         {
-            foreach (var panel in panels)
+            foreach (var panel in challenges)
             {
                 panel.SetActive(false);
             }
             isActive = true;
+        }
+    }
+
+
+    public void StartRandomChallenge()
+    {
+        Debug.Log("Starting Challenge");
+        HideCodingChallengePanel(true);
+
+        int rand = RandomNumber(0, challenges.Length);
+
+        switch (rand)
+        {
+            case 0:
+                break;
+            default:
+                Debug.LogWarning("Challenges rand defaulted");
+                break;
         }
     }
 
@@ -181,6 +204,8 @@ public class OpenIDE : MonoBehaviour
     public InputField[] tutorialThreeInputFields;
     public InputField[] tutorialFourInputFields;
     public InputField[] tutorialFiveInputFields;
+    public InputField[] tutorialSixInputFields;
+    public InputField[] tutorialSevenInputFields;
 
     public void StartTutorial()
     {
@@ -188,7 +213,7 @@ public class OpenIDE : MonoBehaviour
 
         switch (tutLevel)
         {
-            case 0:
+            case 0: // Hello World
                 print("starting first tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsInactive(tutorials, tutLevel);
@@ -198,35 +223,80 @@ public class OpenIDE : MonoBehaviour
 
                 tutLevel++;
                 break;
-            case 1:
+            case 1: // Variables
                 print("starting second tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsInactive(tutorials, tutLevel);
+
+                GameController.input = tutorialTwoInputFields[0];
+                GameController.textFieldCompare = "Hello World";
+
                 tutLevel++;
                 break;
-            case 2:
+            case 2: // Comments
                 print("starting third tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsInactive(tutorials, tutLevel);
+
+                GameController.input = tutorialThreeInputFields[0];
+
+                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
+                GameController.textFieldCompare = "Hello World";
+
                 tutLevel++;
                 break;
-            case 3:
+            case 3: // Casting
                 print("starting fourth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsInactive(tutorials, tutLevel);
+
+                GameController.input = tutorialFourInputFields[0];
+
+                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
+                GameController.textFieldCompare = "Hello World";
+
                 tutLevel++;
                 break;
-            case 4:
+            case 4: // Operators
                 print("starting fifth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsInactive(tutorials, tutLevel);
+
+                GameController.input = tutorialFiveInputFields[0];
+                print("need to work out multiple input fields actually -- not gonna work as i thought");
+                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
+                GameController.textFieldCompare = "Hello World";
+
                 tutLevel++;
                 break;
-            case 5:
+            case 5: // Maths
+                print("starting sixth tutorial");
+                HideCodingChallengePanel(true);
+                SetTutorialsInactive(tutorials, tutLevel);
+
+                GameController.input = tutorialSixInputFields[0];
+                print("need to work out multiple input fields actually -- not gonna work as i thought");
+                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
+                GameController.textFieldCompare = "Hello World";
+
+                tutLevel++;
+                break;
+            case 6: // Methods
+                print("starting seventh tutorial");
+                HideCodingChallengePanel(true);
+                SetTutorialsInactive(tutorials, tutLevel);
+
+                GameController.input = tutorialSevenInputFields[0];
+                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
+                GameController.textFieldCompare = "Hello World";
+
+                tutLevel++;
+                break;
+            case 7:
                 print("Tutorial complete");
                 break;
             default:
-                Debug.LogWarning("tutLevel isn't 0,1,2,3 or 4");
+                Debug.LogWarning("Tutorial tutLevel defaulted");
                 tutLevel = 0;
                 break;
         }
