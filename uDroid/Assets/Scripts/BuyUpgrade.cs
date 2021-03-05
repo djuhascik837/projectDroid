@@ -80,6 +80,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             autoCoinClicked = true;
+            ToggleParticleOn(coinParticles[3]);
             playAnim();
             openMenuAnim.pressButton();
         }
@@ -97,6 +98,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             autoCoinIncreaseClicked = true;
+            ToggleParticleOn(coinParticles[4]);
             playAnim();
             openMenuAnim.pressButton();
         }
@@ -115,6 +117,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             sliderMultiClicked = true;
+            ToggleParticleOn(coinParticles[6]);
             playAnim();
             openMenuAnim.pressButton();
 
@@ -136,6 +139,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             upgradePerClicked = true;
+            ToggleParticleOn(coinParticles[7]);
             playAnim();
             openMenuAnim.pressButton();
         }
@@ -153,6 +157,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             upgradeClickPowerMul = true;
+            ToggleParticleOn(coinParticles[8]);
             playAnim();
             openMenuAnim.pressButton();
         }
@@ -171,6 +176,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             droidSpeedClicked = true;
+            ToggleParticleOn(coinParticles[5]);
             playAnim();
             openMenuAnim.pressButton();
         }
@@ -365,7 +371,7 @@ public class BuyUpgrade : MonoBehaviour
     public void setSliderUpgradeBoolTrue(Slider slider)
     {
         runScriptParticles.SetActive(false);
-        coinParticlesObj.SetActive(false);
+        //coinParticlesObj.SetActive(false);
         if (slider.name == "Slider 1 - Slider")
         {
             UpgradeClick1 = true;
@@ -429,9 +435,12 @@ public class BuyUpgrade : MonoBehaviour
         runScriptParticles.SetActive(true);
         coinParticlesObj.SetActive(true);
 
-        ToggleParticleOff(coinParticles[0]);
-        ToggleParticleOff(coinParticles[1]);
-        ToggleParticleOff(coinParticles[2]);
+        for(int i = 0; i < coinParticles.Length; i++)
+        {
+            ToggleParticleOff(coinParticles[i]);
+        }
+
+        
     }
 
 
@@ -606,7 +615,7 @@ public class BuyUpgrade : MonoBehaviour
 
         //Handles upgrade button text
         upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Droids: " + Mathf.Round((float)autoCoinUpgradeValue);
-        upgradePanel.upgradeCoinIncreaseText.GetComponent<Text>().text = "Increase Droid Manufacturing: " + Mathf.Round((float)autoCoinIncreaseValue);
+        upgradePanel.upgradeCoinIncreaseText.GetComponent<Text>().text = "Droid Manufacturing: " + Mathf.Round((float)autoCoinIncreaseValue);
         upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)sliderMulUpgradeValue);
         upgradePanel.upgradeClickText.GetComponent<Text>().text = "Coins per Click: " + Mathf.Round((float)perClickUpgradeValue);
         upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Click Power Upgrade: " + Mathf.Round((float)clickPowerUpgradeValue);
