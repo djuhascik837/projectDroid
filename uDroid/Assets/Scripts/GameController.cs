@@ -14,8 +14,9 @@ public class GameController : MonoBehaviour
         if(input != null)
         {
             string lowerCase = userInput.ToString().ToLower();
+            print("Enter " + textFieldCompare + " to succeed");
 
-            if(!string.IsNullOrWhiteSpace(textFieldCompare))
+            if (!string.IsNullOrWhiteSpace(textFieldCompare))
             {
                 if (lowerCase.Equals(textFieldCompare.ToLower()))
                 {
