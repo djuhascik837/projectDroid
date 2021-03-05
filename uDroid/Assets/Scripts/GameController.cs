@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     public static InputField input;
     public static string textFieldCompare;
 
+    public OpenMenuAnim openErrorMsg;
+    public GameObject statusText;
+
     public void GetInput(string userInput)
     {
         if(input != null)
@@ -22,6 +25,9 @@ public class GameController : MonoBehaviour
                 {
                     print(lowerCase + ", " + textFieldCompare.ToLower() + ": Success : added Coins");
                     GlobalCoins.CoinCount += 50;
+
+                    print("made it here");
+                    PlayMsg("Test");
                 }
             }
             else
@@ -43,5 +49,13 @@ public class GameController : MonoBehaviour
 
             input.text = "";
         }
+    }
+
+    private void PlayMsg(string Msg)
+    {
+        //This Handles Animation of not enough coins message
+
+        statusText.GetComponent<Text>().text = Msg;
+        openErrorMsg.GetComponent<Animation>().Play("StatusAnim");
     }
 }
