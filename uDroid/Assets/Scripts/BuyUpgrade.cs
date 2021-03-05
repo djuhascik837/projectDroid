@@ -18,7 +18,6 @@ public class BuyUpgrade : MonoBehaviour
     public AutoCoins autoCoins;
     public GlobalCoins globalCoins;
     public GameObject statusText;
-    public GameObject statusBox;
     public GameObject autoCoinObj;
     public GameObject droidStats;
     public GameObject runScriptParticles;
@@ -624,7 +623,7 @@ public class BuyUpgrade : MonoBehaviour
         float sliderIn1 = sliderIncrease[1].multiplier * 1000;
         float sliderIn2 = sliderIncrease[2].multiplier * 1000;
         float sliderIn3 = sliderIncrease[3].multiplier * 1000;
-
+        
 
         //Updates the Information box below the run script buttons;
         plots[0].transform.Find("InfoText1").GetComponent<Text>().text = "Current Slider Speed: " + sliderIn0.ToString("F2") + "x"
