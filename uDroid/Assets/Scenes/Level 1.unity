@@ -8734,8 +8734,12 @@ MonoBehaviour:
   tutorials:
   - {fileID: 1047588881}
   codingChallengePanel: {fileID: 1970333901}
-  tutorialInputFields:
+  tutorialOneInputFields:
   - {fileID: 957059216}
+  tutorialTwoInputFields: []
+  tutorialThreeInputFields: []
+  tutorialFourInputFields: []
+  tutorialFiveInputFields: []
 --- !u!1 &580779158
 GameObject:
   m_ObjectHideFlags: 0

@@ -590,6 +590,7 @@ public class BuyUpgrade : MonoBehaviour
     public void playErrorMsg(string errorMsg)
     {
         //This Handles Animation of not enough coins message
+
         statusText.GetComponent<Text>().text = errorMsg;
         openErrorMsg.GetComponent<Animation>().Play("StatusAnim");
         setUpgradeBoolFalse();

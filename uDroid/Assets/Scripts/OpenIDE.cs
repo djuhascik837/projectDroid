@@ -52,7 +52,7 @@ public class OpenIDE : MonoBehaviour
 
     //Variable for Select Random Challenge
     private readonly string strIdePanel = "IDE - Panel";
-    private readonly string tester = "TextEditor - Panel";
+    private readonly string level2 = "Level 2 - Basic For Loop";
     private readonly string level1 = "Level 1 - Basic If";
 
     // -- to be removed
@@ -67,7 +67,7 @@ public class OpenIDE : MonoBehaviour
         CanvasGroup[] canvasGroups = CreateCanvasGroupRef();
         string ideEditor = "IDE Editor - Input Field";
 
-        InputField testerField = GameObject.Find(strIdePanel).transform.Find(tester).Find(ideEditor).GetComponent<InputField>();
+        InputField level2Field = GameObject.Find(strIdePanel).transform.Find(level2).Find(ideEditor).GetComponent<InputField>();
         InputField level1Field = GameObject.Find(strIdePanel).transform.Find(level1).Find(ideEditor).GetComponent<InputField>();
         // -- to be removed
         //InputField tutHelloWorldField = GameObject.Find(strIdePanel).transform.Find(tutHelloWorld).Find(tutHWCodeConsole).Find(ideEditor).GetComponent<InputField>();
@@ -85,14 +85,14 @@ public class OpenIDE : MonoBehaviour
 
                     foreach (var panel in panels)
                     {
-                        if (panel.name.Equals(tester))
+                        if (panel.name.Equals(level2))
                         {
                             testPanel = panel.GetComponent<CanvasGroup>();
                             panel.SetActive(true);
                         }
                     }
 
-                    GameController.input = testerField;
+                    GameController.input = level2Field;
                     GameController.textFieldCompare = "Test Panel Test";
 
                     testPanel.alpha = 1;
@@ -176,7 +176,11 @@ public class OpenIDE : MonoBehaviour
         }
     }
 
-    public InputField[] tutorialInputFields;
+    public InputField[] tutorialOneInputFields;
+    public InputField[] tutorialTwoInputFields;
+    public InputField[] tutorialThreeInputFields;
+    public InputField[] tutorialFourInputFields;
+    public InputField[] tutorialFiveInputFields;
 
     public void StartTutorial()
     {
@@ -189,7 +193,7 @@ public class OpenIDE : MonoBehaviour
                 HideCodingChallengePanel(true);
                 SetTutorialsInactive(tutorials, tutLevel);
 
-                GameController.input = tutorialInputFields[0];
+                GameController.input = tutorialOneInputFields[0];
                 GameController.textFieldCompare = "Hello World";
 
                 tutLevel++;
@@ -284,7 +288,7 @@ public class OpenIDE : MonoBehaviour
     public CanvasGroup[] CreateCanvasGroupRef()
     {
         CanvasGroup[] canvasGroups = new CanvasGroup[2];
-        canvasGroups[0] = GameObject.Find(strIdePanel).transform.Find(tester).GetComponent<CanvasGroup>();
+        canvasGroups[0] = GameObject.Find(strIdePanel).transform.Find(level2).GetComponent<CanvasGroup>();
         canvasGroups[1] = GameObject.Find(strIdePanel).transform.Find(level1).GetComponent<CanvasGroup>();
         //canvasGroups[2] = GameObject.Find(strIdePanel).transform.Find(tutHelloWorld).GetComponent<CanvasGroup>();
 
