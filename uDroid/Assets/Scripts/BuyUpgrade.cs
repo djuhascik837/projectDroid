@@ -607,7 +607,7 @@ public class BuyUpgrade : MonoBehaviour
         upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Droids: " + Mathf.Round((float)autoCoinUpgradeValue);
         upgradePanel.upgradeCoinIncreaseText.GetComponent<Text>().text = "Increase Droid Manufacturing: " + Mathf.Round((float)autoCoinIncreaseValue);
         upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)sliderMulUpgradeValue);
-        upgradePanel.upgradeClickText.GetComponent<Text>().text = "Coins per Click upgrade: " + Mathf.Round((float)perClickUpgradeValue);
+        upgradePanel.upgradeClickText.GetComponent<Text>().text = "Coins per Click: " + Mathf.Round((float)perClickUpgradeValue);
         upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Click Power Upgrade: " + Mathf.Round((float)clickPowerUpgradeValue);
         upgradePanel.upgradeCLickCoinGenerationText.GetComponent<Text>().text = "Speed up the droids: " + Mathf.Round((float)droidSpeedUpgradeValue);
 
