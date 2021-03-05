@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
                     print(lowerCase + ", " + textFieldCompare.ToLower() + ": Success : added Coins");
                     GlobalCoins.CoinCount += 50;
 
-                    print("made it here");
                     PlayMsg("Test");
                 }
             }
