@@ -92,4 +92,34 @@ public class GameController : MonoBehaviour
         statusText.GetComponent<Text>().text = Msg;
         openErrorMsg.GetComponent<Animation>().Play("StatusAnim");
     }
+
+    private void Start()
+    {
+        DeactivateRequiredComponents();
+        ActivateRequiredComponents();
+    }
+
+    public GameObject[] deactivateList;
+    public GameObject[] ActivateList;
+
+    private void DeactivateRequiredComponents()
+    {
+        foreach (var item in deactivateList)
+        {
+            if(item.activeSelf == true)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
+    private void ActivateRequiredComponents()
+    {
+        foreach (var item in ActivateList)
+        {
+            if (item.activeSelf == false)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
 }

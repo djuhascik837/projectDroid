@@ -12593,13 +12593,15 @@ MonoBehaviour:
   - {fileID: 879520285}
   - {fileID: 221092579}
   - {fileID: 281175432}
+  - {fileID: 554262073}
+  - {fileID: 971118069}
+  - {fileID: 334418125}
   - {fileID: 1195726850}
   - {fileID: 1945753182}
   - {fileID: 582480264}
+  - {fileID: 368954810}
   - {fileID: 182986951}
   - {fileID: 1222857576}
-  - {fileID: 1945753182}
-  - {fileID: 1195726850}
   codingChallengePanel: {fileID: 1970333901}
   tutorialInputFields1:
   - {fileID: 957059216}
@@ -12609,14 +12611,33 @@ MonoBehaviour:
   - {fileID: 1803152797}
   - {fileID: 1882636894}
   - {fileID: 544162399}
-  tutorialInputFields4: []
-  tutorialInputFields5: []
-  tutorialInputFields6: []
-  tutorialInputFields7: []
-  tutorialInputFields8: []
-  tutorialInputFields9: []
-  tutorialInputFields10: []
-  tutorialInputFields11: []
+  tutorialInputFields4:
+  - {fileID: 753979529}
+  - {fileID: 1269599591}
+  - {fileID: 1231565771}
+  - {fileID: 2078620172}
+  tutorialInputFields5:
+  - {fileID: 384067106}
+  tutorialInputFields6:
+  - {fileID: 1612657041}
+  - {fileID: 1849425028}
+  tutorialInputFields7:
+  - {fileID: 843192575}
+  tutorialInputFields8:
+  - {fileID: 692352051}
+  tutorialInputFields9:
+  - {fileID: 363740045}
+  - {fileID: 455019799}
+  - {fileID: 1186053069}
+  tutorialInputFields10:
+  - {fileID: 1213698589}
+  tutorialInputFields11:
+  - {fileID: 190084429}
+  tutorialInputFields12:
+  - {fileID: 1829674116}
+  tutorialInputFields13:
+  - {fileID: 1987940185}
+  - {fileID: 192894961}
 --- !u!1 &579898209
 GameObject:
   m_ObjectHideFlags: 0
@@ -48798,6 +48819,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openErrorMsg: {fileID: 1788781474}
   statusText: {fileID: 770816241}
+  deactivateList:
+  - {fileID: 1047588881}
+  - {fileID: 879520285}
+  - {fileID: 221092579}
+  - {fileID: 281175432}
+  - {fileID: 554262073}
+  - {fileID: 971118069}
+  - {fileID: 334418125}
+  - {fileID: 1195726850}
+  - {fileID: 1945753182}
+  - {fileID: 582480264}
+  - {fileID: 368954810}
+  - {fileID: 182986951}
+  - {fileID: 1222857576}
+  - {fileID: 2125684838}
+  - {fileID: 2029144604}
+  - {fileID: 224642963}
+  ActivateList:
+  - {fileID: 175383063}
+  - {fileID: 1168033670}
+  - {fileID: 846042472}
+  - {fileID: 1788781471}
+  - {fileID: 564019826}
+  - {fileID: 249175407}
+  - {fileID: 1970333901}
+  - {fileID: 1202679405}
 --- !u!1 &1803152793
 GameObject:
   m_ObjectHideFlags: 0
