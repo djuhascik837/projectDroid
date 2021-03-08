@@ -100,18 +100,19 @@ public class OpenIDE : MonoBehaviour
                 print("starting first tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields1[0];
                 GameController.textFieldCompare = "Hello World";
-
+                GameController.inputSuccess = true;
                 break;
             case 1: // Comments
                 print("starting second tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 // First input
-                //GameController.methodsCheck = true;
                 GameController.input = tutorialInputFields2[0];
                 GameController.textFieldCompare = "Hello World";
 
@@ -120,24 +121,29 @@ public class OpenIDE : MonoBehaviour
                 print("starting third tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 // First input
                 GameController.input = tutorialInputFields3[0];
                 GameController.textFieldCompare = "Int";
+                GameController.inputSuccess = true;
 
                 // Second input
                 GameController.input2 = tutorialInputFields3[1];
                 GameController.textFieldCompare2 = "String";
+                GameController.inputSuccess2 = true;
 
                 // Third input
                 GameController.input3 = tutorialInputFields3[2];
                 GameController.textFieldCompare3 = "Bool";
+                GameController.inputSuccess3 = true;
 
                 break;
             case 3: // Operators
                 print("starting fourth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields4[0];
                 GameController.textFieldCompare = "Hello World";
@@ -148,6 +154,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting fifth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields5[0];
                 print("need to work out multiple input fields actually -- not gonna work as i thought");
@@ -159,6 +166,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting sixth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields6[0];
                 print("need to work out multiple input fields actually -- not gonna work as i thought");
@@ -170,6 +178,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields7[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -180,6 +189,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields8[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -190,6 +200,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields9[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -200,6 +211,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields10[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -210,6 +222,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields11[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -220,6 +233,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields11[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -230,6 +244,7 @@ public class OpenIDE : MonoBehaviour
                 print("starting seventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
+                SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields11[0];
                 Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
@@ -252,6 +267,14 @@ public class OpenIDE : MonoBehaviour
 
         tutLevel++;
         StartTutorial();
+    }
+
+    private void SetInputSuccessToFalse()
+    {
+        GameController.inputSuccess = false;
+        GameController.inputSuccess2 = false;
+        GameController.inputSuccess3 = false;
+        GameController.inputSuccess4 = false;
     }
 
     private void SetTutorialsOrChallengesInactive(GameObject[] tutorials, int ignore)

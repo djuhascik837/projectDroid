@@ -11,25 +11,39 @@ public class GameController : MonoBehaviour
     public static string textFieldCompare2;
     public static string textFieldCompare3;
     public static string textFieldCompare4;
+    public static bool inputSuccess;
+    public static bool inputSuccess2;
+    public static bool inputSuccess3;
+    public static bool inputSuccess4;
 
     public static bool methodsCheck = false;
 
-    public OpenMenuAnim openErrorMsg;
-    public GameObject statusText;
-
-    private void CheckInput(InputField input, string compareField, int coinsToGive)
+    private void CheckInput(InputField methodInput, string compareField)
     {
-        string lowerCase = input.text.ToString().ToLower();
-        print("Enter " + textFieldCompare + " to succeed");
+        string lowerCase = methodInput.text.ToString().ToLower();
+        print("Enter " + compareField + " to succeed");
 
         if (!string.IsNullOrWhiteSpace(compareField))
         {
             if (lowerCase.Equals(compareField.ToLower()))
             {
-                print(lowerCase + ", " + compareField.ToLower() + ": Success : added Coins");
-                GlobalCoins.CoinCount += coinsToGive;
-
-                PlayMsg("Test");
+                print(methodInput.name);
+                if (methodInput == input)
+                {
+                    inputSuccess = false;
+                }
+                else if (methodInput == input2)
+                {
+                    inputSuccess2 = false;
+                }
+                else if (methodInput == input3)
+                {
+                    inputSuccess3 = false;
+                }
+                else if (methodInput == input4)
+                {
+                    inputSuccess4 = false;
+                }
             }
         }
         else
@@ -37,60 +51,69 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("textField Compare is null");
         }
 
-        input.text = "";
+        //methodInput.text = "";
+    }
+    private void CheckMethodsInput(InputField methodInput, string compareField)
+    {
+        if (methodInput != null)
+        {
+            string lowerCase = methodInput.text.ToString().ToLower();
+
+            if (lowerCase.Substring(lowerCase.Length - 1, 2).Equals(compareField))
+            {
+                print(lowerCase + ", " + compareField.ToLower() + ": Success");
+
+                inputSuccess = true;
+            }
+
+            //methodInput.text = "";
+        }
+    }
+
+    private void SuccessTrigger(int coinsToGive)
+    {
+        print("Field 1: " + inputSuccess + ", Field 2: " + inputSuccess2 + ", Field 3: " + inputSuccess3 + ", Field 4: " + inputSuccess4);
+        if(!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4)
+        {
+            GlobalCoins.CoinCount += coinsToGive;
+            print("Completed: " + coinsToGive + ", have been given");
+            OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
+            script.StartNextTutorial();
+        }
+        else
+        {
+            print("Failed: No coins have been added, please try again");
+        }
     }
 
     public void GetInput()
     {
+        print("Get Input Started");
         if (!methodsCheck)
         {
             if (input != null)
             {
-                CheckInput(input, textFieldCompare, 50);
+                CheckInput(input, textFieldCompare);
             }
             if (input2 != null)
             {
-                CheckInput(input2, textFieldCompare2, 50);
+                CheckInput(input2, textFieldCompare2);
             }
             if (input3 != null)
             {
-                CheckInput(input3, textFieldCompare3, 50);
+                CheckInput(input3, textFieldCompare3);
             }
             if (input4 != null)
             {
-                CheckInput(input4, textFieldCompare4, 50);
+                CheckInput(input4, textFieldCompare4);
             }
+
+            SuccessTrigger(50);
         }
         else
         {
-            if (input != null)
-            {
-                string lowerCase = input.text.ToString().ToLower();
-                //print("Enter " + textFieldCompare + " to succeed");
-
-                string testCase = "()";
-
-                if (lowerCase.Substring(lowerCase.Length - 1, 2).Equals(testCase))
-                {
-                    print(lowerCase + ", " + textFieldCompare.ToLower() + ": Success : added Coins");
-                    GlobalCoins.CoinCount += 50;
-                }
-                else
-                {
-                    Debug.LogWarning("textField Compare is null");
-                }
-
-                input.text = "";
-            }
+            CheckMethodsInput(input, "()");
         }
-    }
-
-    private void PlayMsg(string Msg)
-    {
-        //This Handles Animation of not enough coins message
-
-        statusText.GetComponent<Text>().text = Msg;
-        openErrorMsg.GetComponent<Animation>().Play("StatusAnim");
     }
 
     private void Start()
