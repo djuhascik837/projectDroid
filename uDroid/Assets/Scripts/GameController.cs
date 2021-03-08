@@ -72,17 +72,19 @@ public class GameController : MonoBehaviour
 
     private void SuccessTrigger(int coinsToGive)
     {
-        print("Field 1: " + inputSuccess + ", Field 2: " + inputSuccess2 + ", Field 3: " + inputSuccess3 + ", Field 4: " + inputSuccess4);
+        print(inputSuccess + ", " + inputSuccess2 + ", " + inputSuccess3 + ", " + inputSuccess4);
         if(!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4)
         {
             GlobalCoins.CoinCount += coinsToGive;
-            print("Completed: " + coinsToGive + ", have been given");
+
+            SuccessMessage("You have successfully completed challenge, you have gotten " + coinsToGive + " coins.");
+
             OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
             script.StartNextTutorial();
         }
         else
         {
-            print("Failed: No coins have been added, please try again");
+            FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
         }
     }
 
@@ -108,11 +110,72 @@ public class GameController : MonoBehaviour
                 CheckInput(input4, textFieldCompare4);
             }
 
-            SuccessTrigger(50);
+            int coinsToGive = 50;
+
+            SuccessTrigger(coinsToGive);
         }
         else
         {
             CheckMethodsInput(input, "()");
+        }
+    }
+
+    public GameObject successFailureMsgPanel;
+
+    private void SuccessMessage(string message)
+    {
+        Text msgText = successFailureMsgPanel.GetComponentInChildren<Text>();
+        msgText.text = message;
+
+        Image msgImage = successFailureMsgPanel.GetComponent<Image>();
+        // rgb colors
+        byte redColor = 6;
+        byte greenColor = 114;
+        byte blueColor = 83;
+        byte alpha = 208;
+
+        Color32 rgb = new Color32(redColor, greenColor, blueColor, alpha);
+
+        msgImage.color = rgb;
+        print(msgImage.color.r);
+
+        if (successFailureMsgPanel)
+        {
+            Animator anim = successFailureMsgPanel.GetComponent<Animator>();
+            if (anim)
+            {
+                anim.Play("Message Open");
+                //bool isOpen = anim.GetBool("OpenMsg");
+                //anim.SetBool("OpenMsg", !isOpen);
+            }
+        }
+    }
+
+    private void FailureMessage(string message)
+    {
+        Text msgText = successFailureMsgPanel.GetComponentInChildren<Text>();
+        msgText.text = message;
+
+        Image msgImage = successFailureMsgPanel.GetComponent<Image>();
+        // rgb colors
+        byte redColor = 217;
+        byte greenColor = 70;
+        byte blueColor = 70;
+        byte alpha = 208;
+
+        Color32 rgb = new Color32(redColor, greenColor, blueColor, alpha);
+
+        msgImage.color = rgb;
+
+        if (successFailureMsgPanel)
+        {
+            Animator anim = successFailureMsgPanel.GetComponent<Animator>();
+            if (anim)
+            {
+                anim.Play("Message Open");
+                //bool isOpen = anim.GetBool("OpenMsg");
+                //anim.SetBool("OpenMsg", !isOpen);
+            }
         }
     }
 
