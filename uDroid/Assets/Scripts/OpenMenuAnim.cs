@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class OpenMenuAnim : MonoBehaviour
 {
-    public AudioClip sound;
     public Animator anim;
     public Canvas canvas;
 
@@ -19,7 +18,6 @@ public class OpenMenuAnim : MonoBehaviour
 
    public void pressButton()
     {
-        AudioSource.PlayClipAtPoint(sound, transform.position);
         openAnim();
     }
 

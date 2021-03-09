@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public static bool successful;
 
     public ParticleSystem starParticles;
+    public SoundManager soundManager;
 
     private void CheckInput(InputField methodInput, string compareField)
     {
@@ -80,7 +81,7 @@ public class GameController : MonoBehaviour
             ToggleParticleOn(starParticles, true);
 
             SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
-
+            soundManager.successSound.Play();
             OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
             script.StartNextTutorial();
         }
@@ -209,6 +210,7 @@ public class GameController : MonoBehaviour
     {
         DeactivateRequiredComponents();
         ActivateRequiredComponents();
+        soundManager.backgroundSound.Play();
     }
 
     public GameObject[] deactivateList;

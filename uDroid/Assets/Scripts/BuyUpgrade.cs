@@ -22,6 +22,7 @@ public class BuyUpgrade : MonoBehaviour
     public GameObject droidStats;
     public GameObject runScriptParticles;
     public GameObject coinParticlesObj;
+    public SoundManager soundManager;
 
     public double currentCoins;
     public int sliderNum;
@@ -82,6 +83,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOn(coinParticles[3]);
             playAnim();
             openMenuAnim.pressButton();
+            soundManager.purchaseSound.Play();
         }
     }
 
@@ -100,6 +102,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOn(coinParticles[4]);
             playAnim();
             openMenuAnim.pressButton();
+            soundManager.purchaseSound.Play();
         }
     }
 
@@ -119,6 +122,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOn(coinParticles[6]);
             playAnim();
             openMenuAnim.pressButton();
+            soundManager.purchaseSound.Play();
 
         }
         //print(currentCoins);
@@ -141,6 +145,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOn(coinParticles[7]);
             playAnim();
             openMenuAnim.pressButton();
+            soundManager.purchaseSound.Play();
         }
     }
 
@@ -159,6 +164,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOn(coinParticles[8]);
             playAnim();
             openMenuAnim.pressButton();
+            soundManager.purchaseSound.Play();
         }
 
     }
@@ -178,6 +184,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOn(coinParticles[5]);
             playAnim();
             openMenuAnim.pressButton();
+            soundManager.purchaseSound.Play();
         }
 
     }
@@ -198,6 +205,7 @@ public class BuyUpgrade : MonoBehaviour
             unlockPlot1 = true;
             ToggleParticleOn(coinParticles[0]);
             playAnim();
+            soundManager.purchaseSound.Play();
         }
 
     }
@@ -218,6 +226,7 @@ public class BuyUpgrade : MonoBehaviour
             unlockPlot2 = true;
             ToggleParticleOn(coinParticles[1]);
             playAnim();
+            soundManager.purchaseSound.Play();
         }
 
     }
@@ -236,6 +245,7 @@ public class BuyUpgrade : MonoBehaviour
             unlockPlot3 = true;
             ToggleParticleOn(coinParticles[2]);
             playAnim();
+            soundManager.purchaseSound.Play();
         }
 
     }
@@ -479,6 +489,7 @@ public class BuyUpgrade : MonoBehaviour
             buyNewPlot();
             setUpgradeBoolFalse();
             isAvailable = false;
+            soundManager.unlockPlotSound.Play();
 
 
         }
