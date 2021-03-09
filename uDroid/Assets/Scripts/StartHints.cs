@@ -19,10 +19,8 @@ public class StartHints : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(messageToDisplay))
             {
-                print("Here");
                 if (msgText)
                 {
-                    print("here2");
                     anim.Play("Hints Open");
                     msgText.text = messageToDisplay;
                 }
