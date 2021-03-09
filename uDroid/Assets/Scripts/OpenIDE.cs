@@ -270,8 +270,12 @@ public class OpenIDE : MonoBehaviour
     {
         Debug.Log("Starting Next Tutorial");
 
-        tutLevel++;
-        StartTutorial();
+        if(tutLevel != tutorials.Length)
+        {
+            tutLevel++;
+            StartTutorial();
+        }
+        print("Tutorials have ended");
     }
 
     private void SetInputSuccessToFalse()
