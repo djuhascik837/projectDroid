@@ -25306,7 +25306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1047588882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52518,7 +52518,6 @@ MonoBehaviour:
   - {fileID: 423167859}
   - {fileID: 1481963834}
   InternalCoins: 0
-  test: THIS IS A TEST
 --- !u!4 &1803127345
 Transform:
   m_ObjectHideFlags: 0
@@ -52584,7 +52583,6 @@ MonoBehaviour:
   - {fileID: 1392611630}
   - {fileID: 1920665535}
   - {fileID: 36749212}
-  - {fileID: 1637771128}
 --- !u!1 &1803152793
 GameObject:
   m_ObjectHideFlags: 0
