@@ -268,29 +268,27 @@ public class OpenIDE : MonoBehaviour
 
     public void Submit()
     {
-        Debug.Log("Submit button pressed");
-        submit = true;
-        StartNextTutorial();
-        submit = false;
-    }
+        GameController.submit = true;
+        print(GameController.submit);
 
-    public static bool submit = false;
+        GameController script = GameObject.Find("GameplayManager").GetComponent<GameController>();
+        script.GetInput();
+
+        GameController.submit = false;
+    }
 
     public void StartNextTutorial()
     {
-        if(submit)
+        if (tutLevel != tutorials.Length)
         {
-            if (tutLevel != tutorials.Length)
-            {
-                Debug.Log("Starting Next Tutorial");
+            Debug.Log("Starting Next Tutorial");
 
-                tutLevel++;
-                StartTutorial();
-            }
-            else
-            {
-                print("Tutorials have ended");
-            }
+            tutLevel++;
+            StartTutorial();
+        }
+        else
+        {
+            print("Tutorials have ended");
         }
     }
 

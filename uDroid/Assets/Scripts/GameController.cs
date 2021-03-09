@@ -21,13 +21,14 @@ public class GameController : MonoBehaviour
     public static int numOfInputs;
     public static bool successful;
 
+    public static bool submit;
+
     public ParticleSystem starParticles;
     public SoundManager soundManager;
 
     private void CheckInput(InputField methodInput, string compareField)
     {
         string lowerCase = methodInput.text.ToString().ToLower();
-        print("Enter " + compareField + " to succeed");
 
         if (!string.IsNullOrWhiteSpace(compareField))
         {
@@ -65,8 +66,6 @@ public class GameController : MonoBehaviour
 
             if (lowerCase.Substring(lowerCase.Length - 1, 2).Equals(compareField))
             {
-                print(lowerCase + ", " + compareField.ToLower() + ": Success");
-
                 inputSuccess = true;
             }
         }
@@ -74,8 +73,9 @@ public class GameController : MonoBehaviour
 
     private void SuccessTrigger(int coinsToGive)
     {
-        print(inputSuccess + ", " + inputSuccess2 + ", " + inputSuccess3 + ", " + inputSuccess4);
-        if(!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4)
+        print(inputSuccess + ", " + inputSuccess2 + ", " + inputSuccess3 + ", " + inputSuccess4 + ", " + submit);
+        //print("inputSuccesses: " + (inputSuccess || inputSuccess2 || inputSuccess3 || inputSuccess4) + ", submit: " + submit);
+        if((!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4) && submit)
         {
             GlobalCoins.CoinCount += coinsToGive;
             ToggleParticleOn(starParticles, true);
@@ -85,7 +85,7 @@ public class GameController : MonoBehaviour
             OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
             script.StartNextTutorial();
         }
-        else
+        else if ((inputSuccess || inputSuccess2 || inputSuccess3 || inputSuccess4) && submit)
         {
             soundManager.wrongAnswerSound.Play();
             switch (numOfInputs)
@@ -112,7 +112,6 @@ public class GameController : MonoBehaviour
                     break;
             }
         }
-
         ToggleParticleOn(starParticles, false);
     }
 

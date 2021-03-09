@@ -3446,7 +3446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &216839250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9396,7 +9396,7 @@ GameObject:
   - component: {fileID: 286406669}
   - component: {fileID: 286406668}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9466,7 +9466,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9669,7 +9669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &310410078
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9779,7 +9779,7 @@ GameObject:
   - component: {fileID: 331764698}
   - component: {fileID: 331764697}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9848,8 +9848,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+      - m_Target: {fileID: 1599496831}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9859,8 +9859,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1599496831}
-        m_MethodName: Play
+      - m_Target: {fileID: 564019831}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10140,7 +10140,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &362187386
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10961,7 +10961,7 @@ GameObject:
   - component: {fileID: 398898241}
   - component: {fileID: 398898240}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11031,7 +11031,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11285,7 +11285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &413849600
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11634,7 +11634,7 @@ GameObject:
   - component: {fileID: 446335781}
   - component: {fileID: 446335780}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11703,8 +11703,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+      - m_Target: {fileID: 1599496831}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11714,8 +11714,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1599496831}
-        m_MethodName: Play
+      - m_Target: {fileID: 564019831}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13778,7 +13778,7 @@ GameObject:
   - component: {fileID: 585518189}
   - component: {fileID: 585518188}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13848,7 +13848,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14202,7 +14202,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &599320830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14358,7 +14358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &625966948
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15076,7 +15076,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &723862858
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15717,7 +15717,7 @@ GameObject:
   - component: {fileID: 779059975}
   - component: {fileID: 779059974}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15786,8 +15786,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564019831}
-        m_MethodName: Submit
+      - m_Target: {fileID: 1599496831}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15797,8 +15797,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1599496831}
-        m_MethodName: Play
+      - m_Target: {fileID: 564019831}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24175,7 +24175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &1018458857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25044,7 +25044,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &1110276197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25122,7 +25122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &1113775613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25144,7 +25144,7 @@ GameObject:
   - component: {fileID: 1117339997}
   - component: {fileID: 1117339996}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25213,8 +25213,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+      - m_Target: {fileID: 1599496831}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25224,8 +25224,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1599496831}
-        m_MethodName: Play
+      - m_Target: {fileID: 564019831}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27013,7 +27013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &1253613613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27999,7 +27999,7 @@ GameObject:
   - component: {fileID: 1383041485}
   - component: {fileID: 1383041484}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28068,8 +28068,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+      - m_Target: {fileID: 1599496831}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28079,8 +28079,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1599496831}
-        m_MethodName: Play
+      - m_Target: {fileID: 564019831}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33152,7 +33152,7 @@ GameObject:
   - component: {fileID: 1466033581}
   - component: {fileID: 1466033580}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33222,7 +33222,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38378,7 +38378,7 @@ GameObject:
   - component: {fileID: 1509711633}
   - component: {fileID: 1509711632}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38448,7 +38448,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38665,7 +38665,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &1535609699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43446,7 +43446,7 @@ GameObject:
   - component: {fileID: 1545863623}
   - component: {fileID: 1545863622}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43515,8 +43515,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+      - m_Target: {fileID: 1599496831}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43526,8 +43526,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1599496831}
-        m_MethodName: Play
+      - m_Target: {fileID: 564019831}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43792,7 +43792,7 @@ GameObject:
   - component: {fileID: 1571742787}
   - component: {fileID: 1571742786}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43862,7 +43862,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50142,7 +50142,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Tutorial
+  m_Text: Submit Code
 --- !u!222 &1629252572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61853,7 +61853,7 @@ GameObject:
   - component: {fileID: 1843975125}
   - component: {fileID: 1843975124}
   m_Layer: 5
-  m_Name: Next Tutorial
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61923,7 +61923,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 564019831}
-        m_MethodName: StartNextTutorial
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
