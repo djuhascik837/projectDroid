@@ -87,6 +87,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            soundManager.wrongAnswerSound.Play();
             switch (numOfInputs)
             {
                 case 1:

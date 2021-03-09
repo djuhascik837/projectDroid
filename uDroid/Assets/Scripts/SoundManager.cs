@@ -9,5 +9,6 @@ public class SoundManager : MonoBehaviour
     public AudioSource backgroundSound;
     public AudioSource unlockPlotSound;
     public AudioSource purchaseSound;
-   
+    public AudioSource wrongAnswerSound;
+
 }
