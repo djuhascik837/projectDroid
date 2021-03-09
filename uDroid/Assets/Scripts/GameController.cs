@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
 
     public static bool methodsCheck = false;
 
+    public ParticleSystem starParticles;
+
     private void CheckInput(InputField methodInput, string compareField)
     {
         string lowerCase = methodInput.text.ToString().ToLower();
@@ -76,6 +78,7 @@ public class GameController : MonoBehaviour
         if(!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4)
         {
             GlobalCoins.CoinCount += coinsToGive;
+            ToggleParticleOn(starParticles);
 
             SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
 
@@ -86,6 +89,8 @@ public class GameController : MonoBehaviour
         {
             FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
         }
+
+        ToggleParticleOff(starParticles);
     }
 
     public void GetInput()
@@ -208,4 +213,22 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+    public void ToggleParticleOn(ParticleSystem particleSystem)
+    {
+        if (!particleSystem.isPlaying)
+        {
+            particleSystem.Play();
+        }
+
+    }
+
+    public void ToggleParticleOff(ParticleSystem particleSystem)
+    {
+        if (particleSystem.isPlaying)
+        {
+            particleSystem.Stop();
+        }
+    }
+
 }
