@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class BuyUpgrade : MonoBehaviour
 {
-    ////////////////////////////////////
-    // Varriables
+    #region Variables
 
     public SliderIncrease[] sliderIncrease;
     public Plots[] plots;
@@ -61,12 +60,11 @@ public class BuyUpgrade : MonoBehaviour
     private bool unlockPlot3 = false;
     private bool isAvailable = false;
 
-    ////////////////////////////////////
+
+    #endregion
 
 
-    ////////////////////////////////////
-    // Upgrade Methods
-    // Checks if upgrade button has been clicked
+    #region Clicking Upgrades
 
     public void ClickUpgradeCoin()
     {
@@ -250,10 +248,12 @@ public class BuyUpgrade : MonoBehaviour
 
     }
 
-    ////////////////////////////////////
+    #endregion
 
-    //////////////////////////////////////
-    //The actual logic behind the upgrades
+
+    #region Logic for Upgrades
+
+
 
     //This method updates the price of each upgrade separetly
     public void updatePrice()
@@ -376,6 +376,11 @@ public class BuyUpgrade : MonoBehaviour
 
     }
 
+    #endregion
+
+
+    #region Set and Toggle Methods
+
     //This checks which upgrade button has been clicked per plot
     public void setSliderUpgradeBoolTrue(Slider slider)
     {
@@ -470,8 +475,10 @@ public class BuyUpgrade : MonoBehaviour
         }
     }
 
-    ////////////////////////////////////
+    #endregion
 
+
+    #region Animation Handlers
 
     //This method manages the animations that play when the UpgradePanel has been displayed and
     //makes sure the menu closes when an upgrade has been purchased.
@@ -607,6 +614,11 @@ public class BuyUpgrade : MonoBehaviour
         setUpgradeBoolFalse();
     }
 
+    #endregion
+
+
+    #region Update
+
     //Update Method which keeps track of the current coins and also updates the texts on screen.
     //There may be a way to do this more efficiently however this current implementation works.
     private void Update()
@@ -654,7 +666,10 @@ public class BuyUpgrade : MonoBehaviour
     }
 
 
+    #endregion
 
+
+    #region Methods no longer used
     //Method no longer in use, keeping for testing.
     //public void ClosePanel()
     //{
@@ -665,5 +680,7 @@ public class BuyUpgrade : MonoBehaviour
 
     //    }
     //}
+
+    #endregion
 
 }

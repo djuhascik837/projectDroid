@@ -2356,7 +2356,7 @@ MonoBehaviour:
   runScriptParticles: {fileID: 224642963}
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
-  currentCoins: 0
+  currentCoins: 5000
   sliderNum: 0
 --- !u!1001 &137894636
 PrefabInstance:
@@ -52518,6 +52518,7 @@ MonoBehaviour:
   - {fileID: 423167859}
   - {fileID: 1481963834}
   InternalCoins: 0
+  test: THIS IS A TEST
 --- !u!4 &1803127345
 Transform:
   m_ObjectHideFlags: 0
@@ -52546,6 +52547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starParticles: {fileID: 1719692373}
   soundManager: {fileID: 1935458178}
+  buyUpgrade: {fileID: 134837129}
+  globalCoins: {fileID: 1803127344}
   successFailureMsgPanel: {fileID: 36749212}
   deactivateList:
   - {fileID: 1047588881}

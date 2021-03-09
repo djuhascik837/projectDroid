@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+
+[System.Serializable]
+public class PlayerData
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public double coins;
+    public string test;
+
+    public PlayerData(GlobalCoins globalCoins)
     {
-        
+        coins = GlobalCoins.CoinCount;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }

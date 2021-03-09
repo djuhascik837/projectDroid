@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour
 
     public ParticleSystem starParticles;
     public SoundManager soundManager;
+    public BuyUpgrade buyUpgrade;
+    public GlobalCoins globalCoins;
 
     private void CheckInput(InputField methodInput, string compareField)
     {
@@ -251,4 +253,51 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+
+    #region Loading and Saving player data
+    private void Awake()
+    {
+        LoadPlayerData();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveSystem.SaveData(globalCoins);
+    }
+
+    public void LoadPlayerData()
+    {
+        PlayerData data = SaveSystem.LoadData();
+
+        buyUpgrade.currentCoins = data.coins;
+        GlobalCoins.CoinCount = buyUpgrade.currentCoins;
+        print(GlobalCoins.CoinCount);
+
+
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            SaveSystem.SaveData(globalCoins);
+        } else
+        {
+            LoadPlayerData();
+        }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SaveSystem.SaveData(globalCoins);
+        } else
+        {
+            LoadPlayerData();
+        }
+    }
+
+    #endregion
 }
