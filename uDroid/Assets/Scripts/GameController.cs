@@ -90,23 +90,23 @@ public class GameController : MonoBehaviour
             switch (numOfInputs)
             {
                 case 1:
-                    if(!string.IsNullOrEmpty(input.text)) FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                    if(!string.IsNullOrEmpty(input.text)) FailureMessage("Failed");
                     break;
                 case 2: if (!(string.IsNullOrEmpty(input.text) && string.IsNullOrEmpty(input2.text)))
                     {
-                        FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                        FailureMessage("Failed");
                     }
                     break;
                 case 3:
                     if (!(string.IsNullOrEmpty(input.text) || string.IsNullOrEmpty(input2.text) || string.IsNullOrEmpty(input3.text)))
                     {
-                        FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                        FailureMessage("Failed");
                     }
                     break;
                 case 4:
                     if (!(string.IsNullOrEmpty(input.text) || string.IsNullOrEmpty(input2.text) || string.IsNullOrEmpty(input4.text) || string.IsNullOrEmpty(input4.text)))
                     {
-                        FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                        FailureMessage("Failed");
                     }
                     break;
             }
@@ -172,8 +172,7 @@ public class GameController : MonoBehaviour
             if (anim)
             {
                 anim.Play("Message Open");
-                //bool isOpen = anim.GetBool("OpenMsg");
-                //anim.SetBool("OpenMsg", !isOpen);
+
             }
         }
     }
@@ -200,8 +199,7 @@ public class GameController : MonoBehaviour
             if (anim)
             {
                 anim.Play("Message Open");
-                //bool isOpen = anim.GetBool("OpenMsg");
-                //anim.SetBool("OpenMsg", !isOpen);
+
             }
         }
     }

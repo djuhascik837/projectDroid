@@ -266,16 +266,32 @@ public class OpenIDE : MonoBehaviour
         }
     }
 
+    public void Submit()
+    {
+        Debug.Log("Submit button pressed");
+        submit = true;
+        StartNextTutorial();
+        submit = false;
+    }
+
+    public static bool submit = false;
+
     public void StartNextTutorial()
     {
-        Debug.Log("Starting Next Tutorial");
-
-        if(tutLevel != tutorials.Length)
+        if(submit)
         {
-            tutLevel++;
-            StartTutorial();
+            if (tutLevel != tutorials.Length)
+            {
+                Debug.Log("Starting Next Tutorial");
+
+                tutLevel++;
+                StartTutorial();
+            }
+            else
+            {
+                print("Tutorials have ended");
+            }
         }
-        print("Tutorials have ended");
     }
 
     private void SetInputSuccessToFalse()
@@ -316,7 +332,7 @@ public class OpenIDE : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("codingChalllengePanle == null in OpenIDE - \"IDE - Panel\"");
+            Debug.LogWarning("codingChalllengePanel == null in OpenIDE - \"IDE - Panel\"");
         }
     }
 
