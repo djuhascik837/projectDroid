@@ -91,23 +91,23 @@ public class GameController : MonoBehaviour
             switch (numOfInputs)
             {
                 case 1:
-                    if(!string.IsNullOrEmpty(input.text)) FailureMessage("Failed");
+                    if(!string.IsNullOrEmpty(input.text)) FailureMessage("Ooops sorry wrong answer, please try again!");
                     break;
                 case 2: if (!(string.IsNullOrEmpty(input.text) && string.IsNullOrEmpty(input2.text)))
                     {
-                        FailureMessage("Failed");
+                        FailureMessage("Ooops sorry wrong answer, please try again!");
                     }
                     break;
                 case 3:
                     if (!(string.IsNullOrEmpty(input.text) || string.IsNullOrEmpty(input2.text) || string.IsNullOrEmpty(input3.text)))
                     {
-                        FailureMessage("Failed");
+                        FailureMessage("Ooops sorry wrong answer, please try again!");
                     }
                     break;
                 case 4:
                     if (!(string.IsNullOrEmpty(input.text) || string.IsNullOrEmpty(input2.text) || string.IsNullOrEmpty(input4.text) || string.IsNullOrEmpty(input4.text)))
                     {
-                        FailureMessage("Failed");
+                        FailureMessage("Ooops sorry wrong answer, please try again!");
                     }
                     break;
             }
