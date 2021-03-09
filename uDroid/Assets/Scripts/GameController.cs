@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
         {
             GlobalCoins.CoinCount += coinsToGive;
 
-            SuccessMessage("You have successfully completed challenge, you have gotten " + coinsToGive + " coins.");
+            SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
 
             OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
             script.StartNextTutorial();

@@ -24,10 +24,10 @@ public class BuyUpgrade : MonoBehaviour
     public GameObject coinParticlesObj;
 
     public double currentCoins;
-    public float upgradeMultiplier;
     public int sliderNum;
 
 
+    public static float upgradeMultiplier;
     public static bool buyNewPlotClicked = false;
     public static bool autoCoinClicked = false;
     public static bool autoCoinIncreaseClicked = false;
