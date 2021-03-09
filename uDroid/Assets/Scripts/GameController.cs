@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour
 
     public static bool methodsCheck = false;
 
+    public static int numOfInputs;
+    public static bool successful;
+
     public ParticleSystem starParticles;
 
     private void CheckInput(InputField methodInput, string compareField)
@@ -52,8 +55,6 @@ public class GameController : MonoBehaviour
         {
             Debug.LogWarning("textField Compare is null");
         }
-
-        //methodInput.text = "";
     }
     private void CheckMethodsInput(InputField methodInput, string compareField)
     {
@@ -67,8 +68,6 @@ public class GameController : MonoBehaviour
 
                 inputSuccess = true;
             }
-
-            //methodInput.text = "";
         }
     }
 
@@ -78,7 +77,7 @@ public class GameController : MonoBehaviour
         if(!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4)
         {
             GlobalCoins.CoinCount += coinsToGive;
-            ToggleParticleOn(starParticles);
+            ToggleParticleOn(starParticles, true);
 
             SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
 
@@ -87,10 +86,32 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+            switch (numOfInputs)
+            {
+                case 1:
+                    if(!string.IsNullOrEmpty(input.text)) FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                    break;
+                case 2: if (!(string.IsNullOrEmpty(input.text) && string.IsNullOrEmpty(input2.text)))
+                    {
+                        FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                    }
+                    break;
+                case 3:
+                    if (!(string.IsNullOrEmpty(input.text) || string.IsNullOrEmpty(input2.text) || string.IsNullOrEmpty(input3.text)))
+                    {
+                        FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                    }
+                    break;
+                case 4:
+                    if (!(string.IsNullOrEmpty(input.text) || string.IsNullOrEmpty(input2.text) || string.IsNullOrEmpty(input4.text) || string.IsNullOrEmpty(input4.text)))
+                    {
+                        FailureMessage("Sorry David you suck Dick, Also i hope no one checks this particular commit history");
+                    }
+                    break;
+            }
         }
 
-        ToggleParticleOff(starParticles);
+        ToggleParticleOn(starParticles, false);
     }
 
     public void GetInput()
@@ -214,21 +235,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ToggleParticleOn(ParticleSystem particleSystem)
+    public void ToggleParticleOn(ParticleSystem particleSystem, bool turnOn)
     {
-        if (!particleSystem.isPlaying)
+        if(turnOn)
         {
-            particleSystem.Play();
-        }
-
-    }
-
-    public void ToggleParticleOff(ParticleSystem particleSystem)
-    {
-        if (particleSystem.isPlaying)
+            if (!particleSystem.isPlaying)
+            {
+                particleSystem.Play();
+            }
+        } else
         {
-            particleSystem.Stop();
+            if (particleSystem.isPlaying)
+            {
+                particleSystem.Stop();
+            }
         }
     }
-
 }

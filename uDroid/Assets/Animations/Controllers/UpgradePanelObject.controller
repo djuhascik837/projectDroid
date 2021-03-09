@@ -190,7 +190,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CloseUpgradePanel
-  m_Speed: -1
+  m_Speed: -5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2796600206830440017}
@@ -275,10 +275,10 @@ AnimatorStateMachine:
     m_Position: {x: 270, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6246647094208693299}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 150, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 42474141007347589}
-    m_Position: {x: 530, y: 130, z: 0}
+    m_Position: {x: 420, y: 130, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -303,9 +303,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.21094611
-  m_TransitionOffset: 0.08883919
-  m_ExitTime: 0.79808056
+  m_TransitionDuration: 0.29735842
+  m_TransitionOffset: 0
+  m_ExitTime: 0.05669874
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -328,9 +328,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.0802235
   m_TransitionOffset: 0
-  m_ExitTime: 0.625
+  m_ExitTime: 0.9869889
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

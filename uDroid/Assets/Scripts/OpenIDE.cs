@@ -105,6 +105,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.input = tutorialInputFields1[0];
                 GameController.textFieldCompare = "Hello World";
                 GameController.inputSuccess = true;
+
+                GameController.numOfInputs = 1;
                 break;
             case 1: // Comments
                 print("starting second tutorial");
@@ -115,7 +117,9 @@ public class OpenIDE : MonoBehaviour
                 // First input
                 GameController.input = tutorialInputFields2[0];
                 GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
 
+                GameController.numOfInputs = 1;
                 break;
             case 2: // Variables
                 print("starting third tutorial");
@@ -138,6 +142,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare3 = "Bool";
                 GameController.inputSuccess3 = true;
 
+                GameController.numOfInputs = 3;
                 break;
             case 3: // Operators
                 print("starting fourth tutorial");
@@ -148,7 +153,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.input = tutorialInputFields4[0];
                 GameController.textFieldCompare = "Hello World";
 
-                tutLevel++;
+                GameController.numOfInputs = 1;
                 break;
             case 4: // If Else
                 print("starting fifth tutorial");
