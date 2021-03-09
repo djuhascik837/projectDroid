@@ -105,6 +105,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.input = tutorialInputFields1[0];
                 GameController.textFieldCompare = "Hello World";
                 GameController.inputSuccess = true;
+                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive";
 
                 GameController.numOfInputs = 1;
                 break;
