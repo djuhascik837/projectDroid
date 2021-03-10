@@ -24,10 +24,9 @@ public class BuyUpgrade : MonoBehaviour
     public SoundManager soundManager;
 
     public double currentCoins;
-    public int sliderNum;
 
 
-    public static float upgradeMultiplier;
+    public static float upgradeMultiplier = 1.25f;
     public static bool buyNewPlotClicked = false;
     public static bool autoCoinClicked = false;
     public static bool autoCoinIncreaseClicked = false;
@@ -35,19 +34,19 @@ public class BuyUpgrade : MonoBehaviour
     public static bool upgradePerClicked = false;
     public static bool upgradeClickPowerMul = false;
     public static bool droidSpeedClicked = false;
-    public static double numOfDroids;
-    public static double coinsPerDroid = 1;
 
     //All upgrade values
     private float upgradePlotValue1 = 1;
     private float upgradePlotValue2 = 2;
     private float upgradePlotValue3 = 3;
-    private float autoCoinUpgradeValue = 1;
-    private float autoCoinIncreaseValue = 1;
-    private float sliderMulUpgradeValue = 1;
-    private float perClickUpgradeValue = 1;
-    private float clickPowerUpgradeValue = 1;
-    private float droidSpeedUpgradeValue = 1;
+    public float autoCoinUpgradeValue = 1;
+    public float autoCoinIncreaseValue = 1;
+    public float sliderMulUpgradeValue = 1;
+    public float perClickUpgradeValue = 1;
+    public float clickPowerUpgradeValue = 1;
+    public float droidSpeedUpgradeValue = 1;
+    public double numOfDroids;
+    public double coinsPerDroid = 1;
 
 
     //All private variables
@@ -273,7 +272,6 @@ public class BuyUpgrade : MonoBehaviour
         {
             GlobalCoins.CoinCount -= sliderMulUpgradeValue;
             sliderMulUpgradeValue *= upgradeMultiplier;
-            sliderNum = Mathf.RoundToInt(sliderMulUpgradeValue);
 
         }
         else if (upgradePerClicked == true)
@@ -420,12 +418,14 @@ public class BuyUpgrade : MonoBehaviour
             unlockPlot1 = true;
 
         }
-        else if (inactivePlots.name == "InactiveButton2")
+
+        if (inactivePlots.name == "InactiveButton2")
         {
             unlockPlot2 = true;
 
         }
-        else if (inactivePlots.name == "InactiveButton3")
+
+        if (inactivePlots.name == "InactiveButton3")
         {
             unlockPlot3 = true;
 

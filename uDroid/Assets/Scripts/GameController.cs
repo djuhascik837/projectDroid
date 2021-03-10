@@ -261,10 +261,7 @@ public class GameController : MonoBehaviour
         LoadPlayerData();
     }
 
-    private void OnApplicationQuit()
-    {
-        SaveSystem.SaveData(globalCoins);
-    }
+    
 
     public void LoadPlayerData()
     {
@@ -272,16 +269,28 @@ public class GameController : MonoBehaviour
 
         buyUpgrade.currentCoins = data.coins;
         GlobalCoins.CoinCount = buyUpgrade.currentCoins;
-        print(GlobalCoins.CoinCount);
+
+        buyUpgrade.autoCoinUpgradeValue = data.autoCoinUpgradeValue;
+        buyUpgrade.autoCoinIncreaseValue = data.autoCoinIncreaseValue;
+        buyUpgrade.perClickUpgradeValue = data.perClickUpgradeValue;
+        buyUpgrade.clickPowerUpgradeValue = data.clickPowerUpgradeValue;
+        buyUpgrade.droidSpeedUpgradeValue = data.droidSpeedUpgradeValue;
+        buyUpgrade.numOfDroids = data.numOfDroids;
+        buyUpgrade.coinsPerDroid = data.coinsPerDroid;
 
 
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveSystem.SaveData(buyUpgrade);
     }
 
     private void OnApplicationFocus(bool focus)
     {
         if (!focus)
         {
-            SaveSystem.SaveData(globalCoins);
+            SaveSystem.SaveData(buyUpgrade);
         } else
         {
             LoadPlayerData();
@@ -292,7 +301,7 @@ public class GameController : MonoBehaviour
     {
         if (pause)
         {
-            SaveSystem.SaveData(globalCoins);
+            SaveSystem.SaveData(buyUpgrade);
         } else
         {
             LoadPlayerData();

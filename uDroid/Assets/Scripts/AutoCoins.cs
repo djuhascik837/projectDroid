@@ -8,10 +8,11 @@ public class AutoCoins : MonoBehaviour
     public double coinIncrease = 1;
     public double internalIncrease;
     public float seconds = 1f;
+    public BuyUpgrade buyUpgrade;
 
     private void Update()
     {
-        coinIncrease = BuyUpgrade.coinsPerDroid;
+        coinIncrease = buyUpgrade.coinsPerDroid;
         internalIncrease = coinIncrease;
         //if coin is being created don't start creating another
         if(!creatingCoin)

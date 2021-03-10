@@ -2356,8 +2356,15 @@ MonoBehaviour:
   runScriptParticles: {fileID: 224642963}
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
-  currentCoins: 5000
-  sliderNum: 0
+  currentCoins: 0
+  autoCoinUpgradeValue: 1
+  autoCoinIncreaseValue: 1
+  sliderMulUpgradeValue: 1
+  perClickUpgradeValue: 1
+  clickPowerUpgradeValue: 1
+  droidSpeedUpgradeValue: 1
+  numOfDroids: 0
+  coinsPerDroid: 1
 --- !u!1001 &137894636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10387,6 +10394,7 @@ MonoBehaviour:
   coinIncrease: 1
   internalIncrease: 0
   seconds: 10
+  buyUpgrade: {fileID: 134837129}
 --- !u!4 &339753438
 Transform:
   m_ObjectHideFlags: 0
@@ -12961,7 +12969,7 @@ PrefabInstance:
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -456.07
+      value: -239.03
       objectReference: {fileID: 0}
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -13031,7 +13039,7 @@ PrefabInstance:
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_Text
-      value: Purchase New Server -         1 million
+      value: "Purchase New Server - \n550"
       objectReference: {fileID: 0}
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -50848,7 +50856,7 @@ PrefabInstance:
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -191.4
+      value: -406.22003
       objectReference: {fileID: 0}
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -62650,7 +62658,7 @@ PrefabInstance:
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -407.04
+      value: -190
       objectReference: {fileID: 0}
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -65540,7 +65548,7 @@ PrefabInstance:
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_Text
-      value: Purchase New Server - 10,000
+      value: "Purchase New Server - \n10,000"
       objectReference: {fileID: 0}
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -67618,7 +67626,7 @@ PrefabInstance:
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -240.18
+      value: -455
       objectReference: {fileID: 0}
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -67664,6 +67672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InactiveButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
+        type: 3}
+      propertyPath: m_Text
+      value: "Purchase New Server - \n10 million"
       objectReference: {fileID: 0}
     - target: {fileID: 6259309550938799185, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}

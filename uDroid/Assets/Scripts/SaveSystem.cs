@@ -5,13 +5,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem 
 {
     
-    public static void SaveData(GlobalCoins playerData)
+    public static void SaveData(BuyUpgrade buyUpgrade)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Path.Combine(Application.persistentDataPath, "playerData.data");
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(playerData);
+        PlayerData data = new PlayerData(buyUpgrade);
 
         //Insert into a file
         formatter.Serialize(stream, data);
