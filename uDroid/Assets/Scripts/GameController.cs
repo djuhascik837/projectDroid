@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public static bool inputSuccess4;
 
     public static bool methodsCheck = false;
+    public static bool commentsCheck = false;
 
     public static int numOfInputs;
     public static bool successful;
@@ -66,9 +67,26 @@ public class GameController : MonoBehaviour
         {
             string lowerCase = methodInput.text.ToString().ToLower();
 
-            if (lowerCase.Substring(lowerCase.Length - 1, 2).Equals(compareField))
+            if (lowerCase.Substring(lowerCase.Length - 2, 2).Equals(compareField))
             {
-                inputSuccess = true;
+                inputSuccess = false;
+                methodsCheck = false;
+            }
+        }
+    }
+
+    private void CheckCommentsInput(InputField commentsInput)
+    {
+        if (commentsInput != null)
+        {
+            string subUserInput = commentsInput.text.Substring(0, 2);
+
+            print("1." + subUserInput.Equals("//"));
+
+            if (subUserInput.Equals("//"))
+            {
+                inputSuccess = false;
+                commentsCheck = false;
             }
         }
     }
@@ -120,7 +138,15 @@ public class GameController : MonoBehaviour
     public void GetInput()
     {
         print("Get Input Started");
-        if (!methodsCheck)
+        if (methodsCheck)
+        {
+            CheckMethodsInput(input, "()");
+        }
+        else if(commentsCheck)
+        {
+            CheckCommentsInput(input);
+        }
+        else
         {
             if (input != null)
             {
@@ -142,10 +168,6 @@ public class GameController : MonoBehaviour
             int coinsToGive = 50;
 
             SuccessTrigger(coinsToGive);
-        }
-        else
-        {
-            CheckMethodsInput(input, "()");
         }
     }
 
@@ -276,7 +298,7 @@ public class GameController : MonoBehaviour
         LoadPlayerData();
     }
 
-    
+
 
     public void LoadPlayerData()
     {

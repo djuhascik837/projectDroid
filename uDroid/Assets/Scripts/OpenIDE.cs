@@ -14,10 +14,12 @@ public class OpenIDE : MonoBehaviour
     public GameObject codingChallengePanel;
 
     private static int tutLevel = 0;
+    private bool closeTutorial = false;
 
     public void StartIDEOpenAnim()
     {
         Animator anim = idePanel.GetComponent<Animator>();
+        closeTutorial = false;
 
         if (anim != null)
         {
@@ -105,8 +107,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.input = tutorialInputFields1[0];
                 GameController.textFieldCompare = "Hello World";
                 GameController.inputSuccess = true;
-                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive";
 
+                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive";
                 GameController.numOfInputs = 1;
                 break;
             case 1: // Comments
@@ -117,9 +119,11 @@ public class OpenIDE : MonoBehaviour
 
                 // First input
                 GameController.input = tutorialInputFields2[0];
-                GameController.textFieldCompare = "Hello World";
+                //GameController.textFieldCompare = "Hello World";
+                GameController.commentsCheck = true;
                 GameController.inputSuccess = true;
 
+                StartHints.messageToDisplay = "Try typing into the box with // as the first two characters";
                 GameController.numOfInputs = 1;
                 break;
             case 2: // Variables
@@ -143,6 +147,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare3 = "Bool";
                 GameController.inputSuccess3 = true;
 
+                StartHints.messageToDisplay = "The primitive code version of an Integer, the name given to the variable that consists of a list of Chars and Lastly used for True/False Statements";
                 GameController.numOfInputs = 3;
                 break;
             case 3: // Operators
@@ -151,10 +156,28 @@ public class OpenIDE : MonoBehaviour
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
+                // First input
                 GameController.input = tutorialInputFields4[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "+";
+                GameController.inputSuccess = true;
 
-                GameController.numOfInputs = 1;
+                // Second input
+                GameController.input2 = tutorialInputFields4[1];
+                GameController.textFieldCompare2 = "-";
+                GameController.inputSuccess2 = true;
+
+                // Third input
+                GameController.input3 = tutorialInputFields4[2];
+                GameController.textFieldCompare3 = "*";
+                GameController.inputSuccess3 = true;
+
+                // Fourth Input
+                GameController.input4 = tutorialInputFields4[3];
+                GameController.textFieldCompare4 = "/";
+                GameController.inputSuccess4 = true;
+
+                StartHints.messageToDisplay = "The four most used mathematical symbols '/', '*', '+', '-', ";
+                GameController.numOfInputs = 4;
                 break;
             case 4: // If Else
                 print("starting fifth tutorial");
@@ -163,10 +186,11 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields5[0];
-                print("need to work out multiple input fields actually -- not gonna work as i thought");
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "If";
+                GameController.inputSuccess = true;
 
+                GameController.numOfInputs = 1;
+                StartHints.messageToDisplay = "If something is true, then do something, otherwise do something else.";
                 break;
             case 5: // Switch
                 print("starting sixth tutorial");
@@ -175,10 +199,15 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields6[0];
-                print("need to work out multiple input fields actually -- not gonna work as i thought");
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "Switch";
+                GameController.inputSuccess = true;
 
+                GameController.input2 = tutorialInputFields6[1];
+                GameController.textFieldCompare2 = "Case";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
+                StartHints.messageToDisplay = "Each case in a block of a switch has a different name/number which is referred to as an identifier.";
                 break;
             case 6: // Break
                 print("starting seventh tutorial");
@@ -187,78 +216,115 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields7[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "Break";
+                GameController.inputSuccess = true;
 
+                GameController.numOfInputs = 1;
+                StartHints.messageToDisplay = "This is often used to exit a loop early, or to break free from the loop";
                 break;
             case 7: // For Loops
-                print("starting seventh tutorial");
+                print("starting eighth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields8[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "For";
+                GameController.inputSuccess = true;
 
+                GameController.input2 = tutorialInputFields8[1];
+                GameController.textFieldCompare2 = "Int";
+                GameController.inputSuccess2 = true;
+
+                GameController.input3 = tutorialInputFields8[2];
+                GameController.textFieldCompare3 = "<";
+                GameController.inputSuccess3 = true;
+
+                GameController.numOfInputs = 3;
+                StartHints.messageToDisplay = "For this hint you will be given the required inputs but not in the correct order. 'Int', '<' and 'for'.";
                 break;
             case 8: // While Loops
-                print("starting seventh tutorial");
+                print("starting ninth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields9[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "While";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = tutorialInputFields9[1];
+                GameController.textFieldCompare2 = "<";
+                GameController.inputSuccess2 = true;
+
+                GameController.input3 = tutorialInputFields9[2];
+                GameController.textFieldCompare3 = "i";
+                GameController.inputSuccess3 = true;
+
+                GameController.numOfInputs = 3;
+                StartHints.messageToDisplay = "For this hint you will be given the required inputs but not necessarily in the correct order. 'i', 'while' and '<'.";
 
                 break;
             case 9: // Methods
-                print("starting seventh tutorial");
+                print("starting tenth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields10[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                //GameController.textFieldCompare = "While";
+                GameController.methodsCheck = true;
+                GameController.inputSuccess = true;
 
+                GameController.numOfInputs = 1;
+                StartHints.messageToDisplay = "All you are required to do here is define a method name, any name as long as it ends with '()' no parenthesis are required.";
                 break;
             case 10: // Arrays
-                print("starting seventh tutorial");
+                print("starting eleventh tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
                 GameController.input = tutorialInputFields11[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "Double[]";
+                GameController.inputSuccess = true;
 
+                GameController.numOfInputs = 1;
+                StartHints.messageToDisplay = "In order to define an array of any var type all is required is [] after typing the variable type.";
                 break;
             case 11: // Casts
-                print("starting seventh tutorial");
+                print("starting twelfth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
-                GameController.input = tutorialInputFields11[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.input = tutorialInputFields12[0];
+                GameController.textFieldCompare = "int";
+                GameController.inputSuccess = true;
 
+                GameController.numOfInputs = 1;
+                StartHints.messageToDisplay = "Casting is used to convert one data type to another and is often indicated with (variable Type) before the right-hand side argument";
                 break;
             case 12: // Math
-                print("starting seventh tutorial");
+                print("starting thirteenth tutorial");
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
 
-                GameController.input = tutorialInputFields11[0];
-                Debug.LogWarning("!!! Add Text field compare string, currently: Hello World");
-                GameController.textFieldCompare = "Hello World";
+                GameController.input = tutorialInputFields13[0];
+                GameController.textFieldCompare = "Max";
+                GameController.inputSuccess = true;
 
+                GameController.input2 = tutorialInputFields13[1];
+                GameController.textFieldCompare2 = "y";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
+                StartHints.messageToDisplay = "In order to find the highest number between two you would be looking for the Maximum value of the given numbers.";
                 break;
             case 13:
                 print("Tutorial complete");
+                SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 break;
             default:
                 Debug.LogWarning("Tutorial tutLevel defaulted");
@@ -289,6 +355,7 @@ public class OpenIDE : MonoBehaviour
         }
         else
         {
+            closeTutorial = true;
             print("Tutorials have ended");
         }
     }
@@ -303,15 +370,28 @@ public class OpenIDE : MonoBehaviour
 
     private void SetTutorialsOrChallengesInactive(GameObject[] tutorials, int ignore)
     {
-        for (int i = 0; i < tutorials.Length; i++)
+        if (closeTutorial)
         {
-            if(i != ignore)
+            print("Tutorials have ended");
+            for (int i = 0; i < tutorials.Length; i++)
             {
                 tutorials[i].SetActive(false);
+                codingChallengePanel.SetActive(true);
             }
-            else
+        }
+        else
+        {
+            for (int i = 0; i < tutorials.Length; i++)
             {
-                tutorials[i].SetActive(true);
+
+                if (i != ignore)
+                {
+                    tutorials[i].SetActive(false);
+                }
+                else
+                {
+                    tutorials[i].SetActive(true);
+                }
             }
         }
     }
