@@ -110,7 +110,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare = "Hello World";
                 GameController.inputSuccess = true;
 
-                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive";
+                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive.";
                 GameController.numOfInputs = 1;
                 break;
             case 1: // Comments
@@ -126,7 +126,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.commentsCheck = true;
                 GameController.inputSuccess = true;
 
-                StartHints.messageToDisplay = "Try typing into the box with // as the first two characters";
+                StartHints.messageToDisplay = "Try typing into the box with // as the first two characters.";
                 GameController.numOfInputs = 1;
                 break;
             case 2: // Variables
@@ -153,7 +153,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare3 = "Bool";
                 GameController.inputSuccess3 = true;
 
-                StartHints.messageToDisplay = "The primitive code version of an Integer, the name given to the variable that consists of a list of Chars and Lastly used for True/False Statements";
+                StartHints.messageToDisplay = "The primitive code version of an Integer, the name given to the variable that consists of a list of Chars and Lastly used for True/False Statements.";
                 GameController.numOfInputs = 3;
                 break;
             case 3: // Operators
@@ -186,7 +186,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare4 = "/";
                 GameController.inputSuccess4 = true;
 
-                StartHints.messageToDisplay = "The four most used mathematical symbols '/', '*', '+', '-', ";
+                StartHints.messageToDisplay = "The four most used mathematical symbols '/', '*', '+', '-'.";
                 GameController.numOfInputs = 4;
                 break;
             case 4: // If Else
@@ -234,7 +234,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
-                StartHints.messageToDisplay = "This is often used to exit a loop early, or to break free from the loop";
+                StartHints.messageToDisplay = "This is often used to exit a loop early, or to break free from the loop.";
                 break;
             case 7: // For Loops
                 print("starting eighth tutorial");
@@ -326,7 +326,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
-                StartHints.messageToDisplay = "Casting is used to convert one data type to another and is often indicated with (variable Type) before the right-hand side argument";
+                StartHints.messageToDisplay = "Casting is used to convert one data type to another and is often indicated with (variable Type) before the right-hand side argument.";
                 break;
             case 12: // Math
                 print("starting thirteenth tutorial");
