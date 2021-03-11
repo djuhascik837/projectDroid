@@ -211,6 +211,21 @@ public class GameController : MonoBehaviour
         DeactivateRequiredComponents();
         ActivateRequiredComponents();
         soundManager.backgroundSound.Play();
+
+        if (buyUpgrade.unlockedPlot1)
+        {
+            buyUpgrade.inactivePlots[0].SetActive(false);
+        }
+
+        if (buyUpgrade.unlockedPlot2)
+        {
+            buyUpgrade.inactivePlots[1].SetActive(false);
+        }
+
+        if (buyUpgrade.unlockedPlot3)
+        {
+            buyUpgrade.inactivePlots[2].SetActive(false);
+        }
     }
 
     public GameObject[] deactivateList;
@@ -267,16 +282,23 @@ public class GameController : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadData();
 
+        //Updates the amount of current coins from the save file
         buyUpgrade.currentCoins = data.coins;
         GlobalCoins.CoinCount = buyUpgrade.currentCoins;
 
-        buyUpgrade.autoCoinUpgradeValue = data.autoCoinUpgradeValue;
-        buyUpgrade.autoCoinIncreaseValue = data.autoCoinIncreaseValue;
-        buyUpgrade.perClickUpgradeValue = data.perClickUpgradeValue;
-        buyUpgrade.clickPowerUpgradeValue = data.clickPowerUpgradeValue;
-        buyUpgrade.droidSpeedUpgradeValue = data.droidSpeedUpgradeValue;
-        buyUpgrade.numOfDroids = data.numOfDroids;
-        buyUpgrade.coinsPerDroid = data.coinsPerDroid;
+        //Updates all the different coin modifiers from the save file
+        //buyUpgrade.autoCoinUpgradeValue = data.autoCoinUpgradeValue;
+        //buyUpgrade.autoCoinIncreaseValue = data.autoCoinIncreaseValue;
+        //buyUpgrade.perClickUpgradeValue = data.perClickUpgradeValue;
+        //buyUpgrade.clickPowerUpgradeValue = data.clickPowerUpgradeValue;
+        //buyUpgrade.droidSpeedUpgradeValue = data.droidSpeedUpgradeValue;
+        //buyUpgrade.numOfDroids = data.numOfDroids;
+        //buyUpgrade.coinsPerDroid = data.coinsPerDroid;
+
+        //Updates whether or not the plots have been purchased or not
+        buyUpgrade.unlockedPlot1 = data.unlockedPlot1;
+        buyUpgrade.unlockedPlot2 = data.unlockedPlot2;
+        buyUpgrade.unlockedPlot3 = data.unlockedPlot3;
 
 
     }

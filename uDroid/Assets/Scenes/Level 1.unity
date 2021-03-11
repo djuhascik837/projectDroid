@@ -627,7 +627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: 157.44998}
+  m_AnchoredPosition: {x: -1, y: 157.44995}
   m_SizeDelta: {x: 320, y: 203.03412}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!95 &36749214
@@ -1523,6 +1523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountPerClick: 1
   clickPower: 1.25
+  sliderMulUpgradeValue: 1
+  perClickUpgradeValue: 1
+  clickPowerUpgradeValue: 1
 --- !u!1 &68643181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,7 +2382,6 @@ MonoBehaviour:
   openMenuAnim: {fileID: 846042475}
   openErrorMsg: {fileID: 1788781474}
   autoCoins: {fileID: 339753437}
-  globalCoins: {fileID: 1803127344}
   statusText: {fileID: 770816241}
   autoCoinObj: {fileID: 339753436}
   droidStats: {fileID: 43976256}
@@ -2387,11 +2389,14 @@ MonoBehaviour:
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
   currentCoins: 0
+  upgradePlotValue1: 1
+  upgradePlotValue2: 2
+  upgradePlotValue3: 3
+  unlockedPlot1: 0
+  unlockedPlot2: 0
+  unlockedPlot3: 0
   autoCoinUpgradeValue: 1
   autoCoinIncreaseValue: 1
-  sliderMulUpgradeValue: 1
-  perClickUpgradeValue: 1
-  clickPowerUpgradeValue: 1
   droidSpeedUpgradeValue: 1
   numOfDroids: 0
   coinsPerDroid: 1
@@ -12999,7 +13004,7 @@ PrefabInstance:
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -239.03
+      value: -453.7
       objectReference: {fileID: 0}
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -13069,7 +13074,7 @@ PrefabInstance:
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_Text
-      value: "Purchase New Server - \n550"
+      value: "Purchase New Server - \n10 million"
       objectReference: {fileID: 0}
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -28859,6 +28864,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountPerClick: 1
   clickPower: 1.25
+  sliderMulUpgradeValue: 1
+  perClickUpgradeValue: 1
+  clickPowerUpgradeValue: 1
 --- !u!1 &1297695582
 GameObject:
   m_ObjectHideFlags: 0
@@ -29668,7 +29676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.095, y: -4.3}
+  m_AnchoredPosition: {x: 1.095, y: -0.93}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &1426990202
@@ -34906,7 +34914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.095, y: -0.94000006}
+  m_AnchoredPosition: {x: 1.095, y: -4.29}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &1492279004
@@ -50941,7 +50949,7 @@ PrefabInstance:
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -406.22003
+      value: -190.8
       objectReference: {fileID: 0}
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -51546,7 +51554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: 157.44998}
+  m_AnchoredPosition: {x: -1, y: 157.44995}
   m_SizeDelta: {x: 320, y: 203.03412}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!95 &1637771130
@@ -52063,7 +52071,7 @@ PrefabInstance:
     - target: {fileID: 6996671518641384777, guid: 65e23b4a25c6a064db923ff1c7a77376,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.11
+      value: -2.136256
       objectReference: {fileID: 0}
     - target: {fileID: 6996671518641384777, guid: 65e23b4a25c6a064db923ff1c7a77376,
         type: 3}
@@ -52871,7 +52879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.095, y: -4.3}
+  m_AnchoredPosition: {x: 1.095, y: -0.9299998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &1807565480
@@ -62487,7 +62495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.095, y: -0.94}
+  m_AnchoredPosition: {x: 1.095, y: -4.29}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1816119361
@@ -62763,7 +62771,7 @@ PrefabInstance:
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: -404.6
       objectReference: {fileID: 0}
     - target: {fileID: 4106988198898323968, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -63425,6 +63433,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountPerClick: 1
   clickPower: 1.25
+  sliderMulUpgradeValue: 1
+  perClickUpgradeValue: 1
+  clickPowerUpgradeValue: 1
 --- !u!1 &1835360374
 GameObject:
   m_ObjectHideFlags: 0
@@ -67256,7 +67267,7 @@ PrefabInstance:
     - target: {fileID: 6996671518641384777, guid: 65e23b4a25c6a064db923ff1c7a77376,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.26
+      value: 1.4037441
       objectReference: {fileID: 0}
     - target: {fileID: 6996671518641384777, guid: 65e23b4a25c6a064db923ff1c7a77376,
         type: 3}
@@ -67453,6 +67464,11 @@ PrefabInstance:
       propertyPath: particleSystem1
       value: 
       objectReference: {fileID: 269161440}
+    - target: {fileID: 4106988199335691069, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
+        type: 3}
+      propertyPath: buyUpgrade
+      value: 
+      objectReference: {fileID: 134837129}
     - target: {fileID: 4106988199602810643, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -67741,7 +67757,7 @@ PrefabInstance:
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -455
+      value: -238.8
       objectReference: {fileID: 0}
     - target: {fileID: 1094146358406143818, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -67791,7 +67807,7 @@ PrefabInstance:
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_Text
-      value: "Purchase New Server - \n10 million"
+      value: "Purchase New Server - \n550"
       objectReference: {fileID: 0}
     - target: {fileID: 6259309550938799185, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}

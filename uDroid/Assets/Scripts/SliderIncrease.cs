@@ -16,6 +16,7 @@ public class SliderIncrease : MonoBehaviour
     public Texture textureON;
     public Texture textureIDLE;
     public ParticleSystem particleSystem0, particleSystem1;
+    public BuyUpgrade buyUpgrade;
 
     public void SetText(string text)
     {
@@ -74,7 +75,7 @@ public class SliderIncrease : MonoBehaviour
                     sld.value = 0;
                     update = false;
                     playSelectOff.Play();
-                    GlobalCoins.CoinCount += plot.amountPerClick;
+                    buyUpgrade.currentCoins += plot.amountPerClick;
                 }
 
                 //display progress bar percentages

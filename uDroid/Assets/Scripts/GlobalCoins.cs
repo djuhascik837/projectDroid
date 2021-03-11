@@ -47,6 +47,7 @@ public class GlobalCoins : MonoBehaviour
     {
         InternalCoins = Mathf.Round((float)CoinCount);
         RoundCoins(InternalCoins);
-         
+
+
     }
 }
