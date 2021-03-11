@@ -2388,7 +2388,7 @@ MonoBehaviour:
   runScriptParticles: {fileID: 224642963}
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
-  currentCoins: 0
+  currentCoins: 50
   upgradePlotValue1: 1
   upgradePlotValue2: 2
   upgradePlotValue3: 3
@@ -3419,7 +3419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &182986952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52657,6 +52657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae679b05a18b8804eabcf540e9867d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsToGive: 50
   starParticles: {fileID: 1719692373}
   soundManager: {fileID: 1935458178}
   buyUpgrade: {fileID: 134837129}

@@ -83,6 +83,8 @@ public class BuyUpgrade : MonoBehaviour
             playAnim();
             openMenuAnim.pressButton();
             soundManager.purchaseSound.Play();
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
@@ -102,6 +104,8 @@ public class BuyUpgrade : MonoBehaviour
             playAnim();
             openMenuAnim.pressButton();
             soundManager.purchaseSound.Play();
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
@@ -121,10 +125,12 @@ public class BuyUpgrade : MonoBehaviour
             playAnim();
             openMenuAnim.pressButton();
             soundManager.purchaseSound.Play();
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
-    
+
 
 
     ////////////////////////////////////
@@ -146,6 +152,7 @@ public class BuyUpgrade : MonoBehaviour
             soundManager.purchaseSound.Play();
             unlockPlot1 = false;
             unlockedPlot1 = true;
+
         }
 
     }
@@ -212,6 +219,7 @@ public class BuyUpgrade : MonoBehaviour
             openMenuAnim.pressButton();
             soundManager.purchaseSound.Play();
 
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
@@ -231,6 +239,8 @@ public class BuyUpgrade : MonoBehaviour
             playAnim();
             openMenuAnim.pressButton();
             soundManager.purchaseSound.Play();
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
@@ -250,6 +260,8 @@ public class BuyUpgrade : MonoBehaviour
             playAnim();
             openMenuAnim.pressButton();
             soundManager.purchaseSound.Play();
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
@@ -260,24 +272,24 @@ public class BuyUpgrade : MonoBehaviour
 
 
 
-    //This method updates the price of each upgrade separetly
+    //This method updates the price of each upgrade separately
     public void updatePrice()
     {
 
         if (autoCoinClicked == true)
         {
-            GlobalCoins.CoinCount -= autoCoinUpgradeValue;
+            currentCoins -= autoCoinUpgradeValue;
             autoCoinUpgradeValue *= upgradeMultiplier;
         }
-        
+
         else if (autoCoinIncreaseClicked == true)
         {
-            GlobalCoins.CoinCount -= autoCoinIncreaseValue;
+            currentCoins -= autoCoinIncreaseValue;
             autoCoinIncreaseValue *= upgradeMultiplier;
         }
         else if (droidSpeedClicked == true)
         {
-            GlobalCoins.CoinCount -= droidSpeedUpgradeValue;
+            currentCoins -= droidSpeedUpgradeValue;
             droidSpeedUpgradeValue *= upgradeMultiplier;
         }
 
@@ -329,7 +341,7 @@ public class BuyUpgrade : MonoBehaviour
 
 
         }
-        
+
         else if (upgradePerClicked == true)
         {
             currentCoins -= plot.perClickUpgradeValue;
@@ -337,7 +349,7 @@ public class BuyUpgrade : MonoBehaviour
             print(plot.perClickUpgradeValue);
 
         }
-        
+
         else if (upgradeClickPowerMul == true)
         {
             currentCoins -= plot.clickPowerUpgradeValue;
@@ -400,7 +412,7 @@ public class BuyUpgrade : MonoBehaviour
 
     public void ClickAmountPerClick()
     {
-        if (UpgradeClick1 == true) 
+        if (UpgradeClick1 == true)
         {
             checkAmountPerClick(plots[0]);
         }
@@ -552,7 +564,7 @@ public class BuyUpgrade : MonoBehaviour
             ToggleParticleOff(coinParticles[i]);
         }
 
-        
+
     }
 
 
@@ -788,8 +800,9 @@ public class BuyUpgrade : MonoBehaviour
         //Tracks current coins
         //currentCoins = Mathf.Round((float)GlobalCoins.CoinCount);
         GlobalCoins.CoinCount = currentCoins;
+        currentCoins = Mathf.RoundToInt((float)currentCoins);
 
-        if(numOfDroids == 0)
+        if (numOfDroids == 0)
         {
             droidStats.GetComponent<Text>().text = "Droids help to generate coins";
         } else
@@ -803,6 +816,12 @@ public class BuyUpgrade : MonoBehaviour
 
     }
 
+    private void IncreaseCoinsToGiveOnChallengeCompletion(float balancer)
+    {
+        float coinsToGiveFloat = (float)GameController.globalCoinsToGive;
+        coinsToGiveFloat *= upgradeMultiplier * balancer;
+        GameController.globalCoinsToGive = (int)coinsToGiveFloat;
+    }
 
     #endregion
 

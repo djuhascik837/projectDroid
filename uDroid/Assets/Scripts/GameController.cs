@@ -7,10 +7,12 @@ public class GameController : MonoBehaviour
     public static InputField input2;
     public static InputField input3;
     public static InputField input4;
+
     public static string textFieldCompare;
     public static string textFieldCompare2;
     public static string textFieldCompare3;
     public static string textFieldCompare4;
+
     public static bool inputSuccess;
     public static bool inputSuccess2;
     public static bool inputSuccess3;
@@ -20,9 +22,12 @@ public class GameController : MonoBehaviour
     public static bool commentsCheck = false;
 
     public static int numOfInputs;
-    public static bool successful;
 
+    public static bool successful;
     public static bool submit;
+
+    public int coinsToGive = 50;
+    public static int globalCoinsToGive = 50;
 
     public ParticleSystem starParticles;
     public SoundManager soundManager;
@@ -81,8 +86,6 @@ public class GameController : MonoBehaviour
         {
             string subUserInput = commentsInput.text.Substring(0, 2);
 
-            print("1." + subUserInput.Equals("//"));
-
             if (subUserInput.Equals("//"))
             {
                 inputSuccess = false;
@@ -93,11 +96,12 @@ public class GameController : MonoBehaviour
 
     private void SuccessTrigger(int coinsToGive)
     {
-        print(inputSuccess + ", " + inputSuccess2 + ", " + inputSuccess3 + ", " + inputSuccess4 + ", " + submit);
+        //print(inputSuccess + ", " + inputSuccess2 + ", " + inputSuccess3 + ", " + inputSuccess4 + ", " + submit);
         //print("inputSuccesses: " + (inputSuccess || inputSuccess2 || inputSuccess3 || inputSuccess4) + ", submit: " + submit);
         if((!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4) && submit)
         {
-            GlobalCoins.CoinCount += coinsToGive;
+            //GlobalCoins.CoinCount += coinsToGive;
+            buyUpgrade.currentCoins += coinsToGive;
             ToggleParticleOn(starParticles, true);
 
             SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
@@ -137,7 +141,7 @@ public class GameController : MonoBehaviour
 
     public void GetInput()
     {
-        print("Get Input Started");
+        //print("Get Input Started");
         if (methodsCheck)
         {
             CheckMethodsInput(input, "()");
@@ -165,7 +169,8 @@ public class GameController : MonoBehaviour
                 CheckInput(input4, textFieldCompare4);
             }
 
-            int coinsToGive = 50;
+            //coins to give etc...
+            coinsToGive = globalCoinsToGive;
 
             SuccessTrigger(coinsToGive);
         }
@@ -188,7 +193,7 @@ public class GameController : MonoBehaviour
         Color32 rgb = new Color32(redColor, greenColor, blueColor, alpha);
 
         msgImage.color = rgb;
-        print(msgImage.color.r);
+        //print(msgImage.color.r);
 
         if (successFailureMsgPanel)
         {
