@@ -13,8 +13,7 @@ public class OpenIDE : MonoBehaviour
     public GameObject[] tutorials;
     public GameObject codingChallengePanel;
 
-    private static int tutLevel = 0;
-    public int tutorialLevelStore;
+    public static int tutLevel = 0;
 
     private bool closeTutorial = false;
 

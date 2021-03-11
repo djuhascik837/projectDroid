@@ -46,9 +46,9 @@ public class BuyUpgrade : MonoBehaviour
     public bool unlockedPlot2 = false;
     public bool unlockedPlot3 = false;
 
-    public float autoCoinUpgradeValue = 1;
-    public float autoCoinIncreaseValue = 1;
-    public float droidSpeedUpgradeValue = 1;
+    public double autoCoinUpgradeValue = 1;
+    public double autoCoinIncreaseValue = 1;
+    public double droidSpeedUpgradeValue = 1;
 
     public double numOfDroids;
     public double coinsPerDroid = 1;
@@ -79,10 +79,7 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             autoCoinClicked = true;
-            ToggleParticleOn(coinParticles[3]);
-            playAnim();
-            openMenuAnim.pressButton();
-            soundManager.purchaseSound.Play();
+            upgradePurchased(3);
 
             IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
@@ -100,10 +97,8 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             autoCoinIncreaseClicked = true;
-            ToggleParticleOn(coinParticles[4]);
-            playAnim();
-            openMenuAnim.pressButton();
-            soundManager.purchaseSound.Play();
+
+            upgradePurchased(4);
 
             IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
@@ -121,17 +116,67 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             droidSpeedClicked = true;
-            ToggleParticleOn(coinParticles[5]);
-            playAnim();
-            openMenuAnim.pressButton();
-            soundManager.purchaseSound.Play();
+
+            upgradePurchased(5);
 
             IncreaseCoinsToGiveOnChallengeCompletion(1);
         }
     }
 
+    public void checkSliderMultiplier(Plots plot)
+    {
+        if (currentCoins < Mathf.RoundToInt((float)plot.sliderMulUpgradeValue))
+        {
+            isAvailable = false;
+            playAnim();
+            openMenuAnim.pressButton();
 
+        }
+        else
+        {
+            isAvailable = true;
+            sliderMultiClicked = true;
+            upgradePurchased(6);
 
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
+        }
+    }
+
+    public void checkAmountPerClick(Plots plot)
+    {
+        if (currentCoins < Mathf.RoundToInt((float)plot.perClickUpgradeValue))
+        {
+            isAvailable = false;
+            playAnim();
+            openMenuAnim.pressButton();
+        }
+        else
+        {
+            isAvailable = true;
+            upgradePerClicked = true;
+            upgradePurchased(7);
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
+        }
+    }
+
+    public void checkClickPower(Plots plot)
+    {
+        if (currentCoins < Mathf.RoundToInt((float)plot.clickPowerUpgradeValue))
+        {
+            isAvailable = false;
+            playAnim();
+            openMenuAnim.pressButton();
+        }
+        else
+        {
+            isAvailable = true;
+            upgradeClickPowerMul = true;
+            upgradePurchased(8);
+
+            IncreaseCoinsToGiveOnChallengeCompletion(1);
+        }
+    }
 
     ////////////////////////////////////
     //The below code checks the 3 inactive pltos and which one has been clicked so that they may unlock
@@ -147,9 +192,7 @@ public class BuyUpgrade : MonoBehaviour
             isAvailable = true;
             buyNewPlotClicked = true;
             unlockPlot1 = true;
-            ToggleParticleOn(coinParticles[0]);
-            playAnim();
-            soundManager.purchaseSound.Play();
+            plotPurchased(0);
             unlockPlot1 = false;
             unlockedPlot1 = true;
 
@@ -171,9 +214,7 @@ public class BuyUpgrade : MonoBehaviour
             isAvailable = true;
             buyNewPlotClicked = true;
             unlockPlot2 = true;
-            ToggleParticleOn(coinParticles[1]);
-            playAnim();
-            soundManager.purchaseSound.Play();
+            plotPurchased(1);
             unlockPlot2 = false;
             unlockedPlot2 = true;
         }
@@ -192,77 +233,11 @@ public class BuyUpgrade : MonoBehaviour
             isAvailable = true;
             buyNewPlotClicked = true;
             unlockPlot3 = true;
-            ToggleParticleOn(coinParticles[2]);
-            playAnim();
-            soundManager.purchaseSound.Play();
+            plotPurchased(2);
             unlockPlot3 = false;
             unlockedPlot3 = true;
         }
 
-    }
-
-    public void checkSliderMultiplier(Plots plot)
-    {
-        if (currentCoins < Mathf.RoundToInt((float)plot.sliderMulUpgradeValue))
-        {
-            isAvailable = false;
-            playAnim();
-            openMenuAnim.pressButton();
-
-        }
-        else
-        {
-            isAvailable = true;
-            sliderMultiClicked = true;
-            ToggleParticleOn(coinParticles[6]);
-            playAnim();
-            openMenuAnim.pressButton();
-            soundManager.purchaseSound.Play();
-
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
-        }
-    }
-
-    public void checkAmountPerClick(Plots plot)
-    {
-        if (currentCoins < Mathf.RoundToInt((float)plot.perClickUpgradeValue))
-        {
-            isAvailable = false;
-            playAnim();
-            openMenuAnim.pressButton();
-        }
-        else
-        {
-            isAvailable = true;
-            upgradePerClicked = true;
-            ToggleParticleOn(coinParticles[7]);
-            playAnim();
-            openMenuAnim.pressButton();
-            soundManager.purchaseSound.Play();
-
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
-        }
-    }
-
-    public void checkClickPower(Plots plot)
-    {
-        if (currentCoins < Mathf.RoundToInt((float)plot.clickPowerUpgradeValue))
-        {
-            isAvailable = false;
-            playAnim();
-            openMenuAnim.pressButton();
-        }
-        else
-        {
-            isAvailable = true;
-            upgradeClickPowerMul = true;
-            ToggleParticleOn(coinParticles[8]);
-            playAnim();
-            openMenuAnim.pressButton();
-            soundManager.purchaseSound.Play();
-
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
-        }
     }
 
     #endregion
@@ -612,7 +587,7 @@ public class BuyUpgrade : MonoBehaviour
     {
         //Handles upgrade button text
         upgradePanel.upgradeCoinText.GetComponent<Text>().text = "Buy Droids: " + Mathf.Round((float)autoCoinUpgradeValue);
-        upgradePanel.upgradeCoinIncreaseText.GetComponent<Text>().text = "Droid Manufacturing: " + Mathf.Round((float)autoCoinIncreaseValue);
+        upgradePanel.upgradeCoinIncreaseText.GetComponent<Text>().text = "Coin Production: " + Mathf.Round((float)autoCoinIncreaseValue);
         upgradePanel.upgradeCLickCoinGenerationText.GetComponent<Text>().text = "Speed up the droids: " + Mathf.Round((float)droidSpeedUpgradeValue);
 
         if (UpgradeClick1 == true)
@@ -647,6 +622,21 @@ public class BuyUpgrade : MonoBehaviour
         upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)plot.sliderMulUpgradeValue);
         upgradePanel.upgradeClickText.GetComponent<Text>().text = "Coins per Click: " + Mathf.Round((float)plot.perClickUpgradeValue);
         upgradePanel.upgradeCLickMultiplierText.GetComponent<Text>().text = "Click Power Upgrade: " + Mathf.Round((float)plot.clickPowerUpgradeValue);
+    }
+
+    private void upgradePurchased(int coinParticlesNum)
+    {
+        ToggleParticleOn(coinParticles[coinParticlesNum]);
+        playAnim();
+        openMenuAnim.pressButton();
+        soundManager.purchaseSound.Play();
+    }
+
+    private void plotPurchased(int coinParticlesNum)
+    {
+        ToggleParticleOn(coinParticles[coinParticlesNum]);
+        playAnim();
+        soundManager.purchaseSound.Play();
     }
 
     #endregion

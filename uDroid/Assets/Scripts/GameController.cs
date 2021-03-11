@@ -313,20 +313,50 @@ public class GameController : MonoBehaviour
         buyUpgrade.currentCoins = data.coins;
         GlobalCoins.CoinCount = buyUpgrade.currentCoins;
 
+        coinsToGive = data.globalCoinsToGive;
+        globalCoinsToGive = data.globalCoinsToGive;
+        OpenIDE.tutLevel = data.tutLevel;
+
         //Updates all the different coin modifiers from the save file
-        //buyUpgrade.autoCoinUpgradeValue = data.autoCoinUpgradeValue;
-        //buyUpgrade.autoCoinIncreaseValue = data.autoCoinIncreaseValue;
-        //buyUpgrade.perClickUpgradeValue = data.perClickUpgradeValue;
-        //buyUpgrade.clickPowerUpgradeValue = data.clickPowerUpgradeValue;
-        //buyUpgrade.droidSpeedUpgradeValue = data.droidSpeedUpgradeValue;
-        //buyUpgrade.numOfDroids = data.numOfDroids;
-        //buyUpgrade.coinsPerDroid = data.coinsPerDroid;
+        buyUpgrade.autoCoinUpgradeValue = data.autoCoinUpgradeValue;
+        buyUpgrade.autoCoinIncreaseValue = data.autoCoinIncreaseValue;
+        buyUpgrade.droidSpeedUpgradeValue = data.droidSpeedUpgradeValue;
+        buyUpgrade.numOfDroids = data.numOfDroids;
+        buyUpgrade.coinsPerDroid = data.coinsPerDroid;
 
         //Updates whether or not the plots have been purchased or not
         buyUpgrade.unlockedPlot1 = data.unlockedPlot1;
         buyUpgrade.unlockedPlot2 = data.unlockedPlot2;
         buyUpgrade.unlockedPlot3 = data.unlockedPlot3;
 
+        #region Plot Data
+
+        buyUpgrade.plots[0].amountPerClick = data.amountPerClick1;
+        buyUpgrade.plots[1].amountPerClick = data.amountPerClick2;
+        buyUpgrade.plots[2].amountPerClick = data.amountPerClick3;
+        buyUpgrade.plots[3].amountPerClick = data.amountPerClick4;
+
+        buyUpgrade.plots[0].clickPower = data.clickPower1;
+        buyUpgrade.plots[1].clickPower = data.clickPower2;
+        buyUpgrade.plots[2].clickPower = data.clickPower3;
+        buyUpgrade.plots[3].clickPower = data.clickPower4;
+
+        buyUpgrade.plots[0].sliderMulUpgradeValue = Mathf.RoundToInt((float)data.sliderMulUpgradeValue1);
+        buyUpgrade.plots[1].sliderMulUpgradeValue = Mathf.RoundToInt((float)data.sliderMulUpgradeValue2);
+        buyUpgrade.plots[2].sliderMulUpgradeValue = Mathf.RoundToInt((float)data.sliderMulUpgradeValue3);
+        buyUpgrade.plots[3].sliderMulUpgradeValue = Mathf.RoundToInt((float)data.sliderMulUpgradeValue4);
+
+        buyUpgrade.plots[0].perClickUpgradeValue = Mathf.RoundToInt((float)data.perClickUpgradeValue1);
+        buyUpgrade.plots[1].perClickUpgradeValue = Mathf.RoundToInt((float)data.perClickUpgradeValue2);
+        buyUpgrade.plots[2].perClickUpgradeValue = Mathf.RoundToInt((float)data.perClickUpgradeValue3);
+        buyUpgrade.plots[3].perClickUpgradeValue = Mathf.RoundToInt((float)data.perClickUpgradeValue4);
+
+        buyUpgrade.plots[0].clickPowerUpgradeValue = Mathf.RoundToInt((float)data.clickPowerUpgradeValue1);
+        buyUpgrade.plots[1].clickPowerUpgradeValue = Mathf.RoundToInt((float)data.clickPowerUpgradeValue2);
+        buyUpgrade.plots[2].clickPowerUpgradeValue = Mathf.RoundToInt((float)data.clickPowerUpgradeValue3);
+        buyUpgrade.plots[3].clickPowerUpgradeValue = Mathf.RoundToInt((float)data.clickPowerUpgradeValue4);
+
+        #endregion
 
     }
 
@@ -339,7 +369,7 @@ public class GameController : MonoBehaviour
     {
         if (!focus)
         {
-            SaveSystem.SaveData(buyUpgrade);
+           SaveSystem.SaveData(buyUpgrade);
         } else
         {
             LoadPlayerData();
