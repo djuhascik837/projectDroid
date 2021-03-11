@@ -100,7 +100,8 @@ public class OpenIDE : MonoBehaviour
         switch (tutLevel)
         {
             case 0: // Hello World
-                //print("starting first tutorial");
+                print("starting first tutorial");
+                tutorialInputFields1[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -113,7 +114,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.numOfInputs = 1;
                 break;
             case 1: // Comments
-                //print("starting second tutorial");
+                print("starting second tutorial");
+                tutorialInputFields2[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -128,7 +130,10 @@ public class OpenIDE : MonoBehaviour
                 GameController.numOfInputs = 1;
                 break;
             case 2: // Variables
-                //print("starting third tutorial");
+                print("starting third tutorial");
+                tutorialInputFields3[0].text = "";
+                tutorialInputFields3[1].text = "";
+                tutorialInputFields3[2].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -152,7 +157,11 @@ public class OpenIDE : MonoBehaviour
                 GameController.numOfInputs = 3;
                 break;
             case 3: // Operators
-                //print("starting fourth tutorial");
+                print("starting fourth tutorial");
+                tutorialInputFields4[0].text = "";
+                tutorialInputFields4[1].text = "";
+                tutorialInputFields4[2].text = "";
+                tutorialInputFields4[3].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -181,7 +190,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.numOfInputs = 4;
                 break;
             case 4: // If Else
-                //print("starting fifth tutorial");
+                print("starting fifth tutorial");
+                tutorialInputFields5[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -194,7 +204,9 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "If something is true, then do something, otherwise do something else.";
                 break;
             case 5: // Switch
-                //print("starting sixth tutorial");
+                print("starting sixth tutorial");
+                tutorialInputFields6[0].text = "";
+                tutorialInputFields6[1].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -211,7 +223,8 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "Each case in a block of a switch has a different name/number which is referred to as an identifier.";
                 break;
             case 6: // Break
-                //print("starting seventh tutorial");
+                print("starting seventh tutorial");
+                tutorialInputFields7[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -224,7 +237,10 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "This is often used to exit a loop early, or to break free from the loop";
                 break;
             case 7: // For Loops
-                //print("starting eighth tutorial");
+                print("starting eighth tutorial");
+                tutorialInputFields8[0].text = "";
+                tutorialInputFields8[1].text = "";
+                tutorialInputFields8[2].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -245,7 +261,10 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "For this hint you will be given the required inputs but not in the correct order. 'Int', '<' and 'for'.";
                 break;
             case 8: // While Loops
-                //print("starting ninth tutorial");
+                print("starting ninth tutorial");
+                tutorialInputFields9[0].text = "";
+                tutorialInputFields9[1].text = "";
+                tutorialInputFields9[2].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -267,7 +286,8 @@ public class OpenIDE : MonoBehaviour
 
                 break;
             case 9: // Methods
-                //print("starting tenth tutorial");
+                print("starting tenth tutorial");
+                tutorialInputFields10[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -281,7 +301,8 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "All you are required to do here is define a method name, any name as long as it ends with '()' no parenthesis are required.";
                 break;
             case 10: // Arrays
-                //print("starting eleventh tutorial");
+                print("starting eleventh tutorial");
+                tutorialInputFields11[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -294,7 +315,8 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "In order to define an array of any var type all is required is [] after typing the variable type.";
                 break;
             case 11: // Casts
-                //print("starting twelfth tutorial");
+                print("starting twelfth tutorial");
+                tutorialInputFields12[0].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -307,7 +329,9 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "Casting is used to convert one data type to another and is often indicated with (variable Type) before the right-hand side argument";
                 break;
             case 12: // Math
-                //print("starting thirteenth tutorial");
+                print("starting thirteenth tutorial");
+                tutorialInputFields13[0].text = "";
+                tutorialInputFields13[1].text = "";
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 SetInputSuccessToFalse();
@@ -324,7 +348,8 @@ public class OpenIDE : MonoBehaviour
                 StartHints.messageToDisplay = "In order to find the highest number between two you would be looking for the Maximum value of the given numbers.";
                 break;
             case 13:
-                //print("Tutorial complete");
+                print("Tutorial complete");
+                closeTutorial = true;
                 SetTutorialsOrChallengesInactive(tutorials, tutLevel);
                 break;
             default:
@@ -376,7 +401,9 @@ public class OpenIDE : MonoBehaviour
             for (int i = 0; i < tutorials.Length; i++)
             {
                 tutorials[i].SetActive(false);
-                codingChallengePanel.SetActive(true);
+                HideCodingChallengePanel(false);
+                tutLevel = 0;
+                closeTutorial = false;
             }
         }
         else
@@ -402,10 +429,12 @@ public class OpenIDE : MonoBehaviour
         {
             if (hide == true)
             {
+                print("Hiding Coding Challenge");
                 codingChallengePanel.SetActive(false);
             }
             else
             {
+                print("Showing Coding Challenge");
                 codingChallengePanel.SetActive(true);
             }
         }

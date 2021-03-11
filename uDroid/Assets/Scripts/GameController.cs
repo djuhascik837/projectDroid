@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
     public static bool successful;
     public static bool submit;
 
-    public int coinsToGive = 50;
     public static int globalCoinsToGive = 50;
 
     public ParticleSystem starParticles;
@@ -168,10 +167,7 @@ public class GameController : MonoBehaviour
                 CheckInput(input4, textFieldCompare4);
             }
 
-            //coins to give etc...
-            coinsToGive = globalCoinsToGive;
-
-            SuccessTrigger(coinsToGive);
+            SuccessTrigger(globalCoinsToGive);
         }
     }
 
@@ -312,7 +308,6 @@ public class GameController : MonoBehaviour
         buyUpgrade.currentCoins = data.coins;
         GlobalCoins.CoinCount = buyUpgrade.currentCoins;
 
-        coinsToGive = data.globalCoinsToGive;
         globalCoinsToGive = data.globalCoinsToGive;
         OpenIDE.tutLevel = data.tutLevel;
 
