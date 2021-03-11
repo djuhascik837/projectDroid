@@ -2388,7 +2388,7 @@ MonoBehaviour:
   runScriptParticles: {fileID: 224642963}
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
-  currentCoins: 50
+  currentCoins: 6000
   upgradePlotValue1: 1
   upgradePlotValue2: 2
   upgradePlotValue3: 3
@@ -3309,7 +3309,8 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1121747903, guid: 09455e7bfa7b7bf4eb817c0ae9705207, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 09455e7bfa7b7bf4eb817c0ae9705207, type: 3}
 --- !u!1 &175383063
 GameObject:
@@ -51441,7 +51442,8 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1121747903, guid: 09455e7bfa7b7bf4eb817c0ae9705207, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 09455e7bfa7b7bf4eb817c0ae9705207, type: 3}
 --- !u!1 &1629252569
 GameObject:
@@ -63266,7 +63268,8 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1121747903, guid: 09455e7bfa7b7bf4eb817c0ae9705207, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 09455e7bfa7b7bf4eb817c0ae9705207, type: 3}
 --- !u!1 &1829674114
 GameObject:
