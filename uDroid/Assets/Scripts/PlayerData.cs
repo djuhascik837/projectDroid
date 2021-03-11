@@ -20,6 +20,11 @@ public class PlayerData
     public bool unlockedPlot2;
     public bool unlockedPlot3;
 
+    public double sliderMultiplier1;
+    public double sliderMultiplier2;
+    public double sliderMultiplier3;
+    public double sliderMultiplier4;
+
     #region Plot Variables
 
     public double amountPerClick1;
@@ -64,6 +69,12 @@ public class PlayerData
         unlockedPlot1 = buyUpgrade.unlockedPlot1;
         unlockedPlot2 = buyUpgrade.unlockedPlot2;
         unlockedPlot3 = buyUpgrade.unlockedPlot3;
+
+        sliderMultiplier1 = buyUpgrade.sliderIncrease[0].multiplier;
+        sliderMultiplier2 = buyUpgrade.sliderIncrease[1].multiplier;
+        sliderMultiplier3 = buyUpgrade.sliderIncrease[2].multiplier;
+        sliderMultiplier4 = buyUpgrade.sliderIncrease[3].multiplier;
+
 
         #region Plots Data
 

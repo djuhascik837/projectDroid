@@ -323,6 +323,13 @@ public class GameController : MonoBehaviour
         buyUpgrade.unlockedPlot2 = data.unlockedPlot2;
         buyUpgrade.unlockedPlot3 = data.unlockedPlot3;
 
+        //This loads the speed of the sliders
+        buyUpgrade.sliderIncrease[0].multiplier = data.sliderMultiplier1;
+        buyUpgrade.sliderIncrease[1].multiplier = data.sliderMultiplier2;
+        buyUpgrade.sliderIncrease[2].multiplier = data.sliderMultiplier3;
+        buyUpgrade.sliderIncrease[3].multiplier = data.sliderMultiplier4;
+
+
         #region Plot Data
 
         buyUpgrade.plots[0].amountPerClick = data.amountPerClick1;

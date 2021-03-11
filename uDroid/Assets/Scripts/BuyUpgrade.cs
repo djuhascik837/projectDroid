@@ -562,10 +562,10 @@ public class BuyUpgrade : MonoBehaviour
 
     private void setPlotsInfo()
     {
-        float sliderIn0 = sliderIncrease[0].multiplier * 1000;
-        float sliderIn1 = sliderIncrease[1].multiplier * 1000;
-        float sliderIn2 = sliderIncrease[2].multiplier * 1000;
-        float sliderIn3 = sliderIncrease[3].multiplier * 1000;
+        double sliderIn0 = sliderIncrease[0].multiplier * 1000;
+        double sliderIn1 = sliderIncrease[1].multiplier * 1000;
+        double sliderIn2 = sliderIncrease[2].multiplier * 1000;
+        double sliderIn3 = sliderIncrease[3].multiplier * 1000;
 
 
         //Updates the Information box below the run script buttons;

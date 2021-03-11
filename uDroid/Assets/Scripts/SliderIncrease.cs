@@ -7,7 +7,7 @@ public class SliderIncrease : MonoBehaviour
 {
     public Slider sld;
     public Text displayText;
-    public float multiplier = 0.1f;
+    public double multiplier = 0.1f;
     private bool update = false;
     public AudioSource playSelectOn;
     public AudioSource playSelectOff;
@@ -61,7 +61,7 @@ public class SliderIncrease : MonoBehaviour
             if (sld != null)
             {
                 //increment the slider progress
-                sld.value += multiplier;
+                sld.value += (float)multiplier;
                 img.GetComponent<RawImage>().texture = textureON;
                 ToggleParticleOn();
 
