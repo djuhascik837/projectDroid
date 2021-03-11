@@ -609,7 +609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &36749213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3419,7 +3419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &182986952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12328,7 +12328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -4.6070843, y: -0.000030517578}
+  m_AnchoredPosition: {x: -4.6070843, y: 3}
   m_SizeDelta: {x: 351.6569, y: 39.53296}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &448954914
@@ -14080,6 +14080,7 @@ MonoBehaviour:
   - {fileID: 182986951}
   - {fileID: 1222857576}
   codingChallengePanel: {fileID: 1970333901}
+  tutorialLevelStore: 0
   tutorialInputFields1:
   - {fileID: 957059216}
   tutorialInputFields2:
@@ -23797,7 +23798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &977411530
 Transform:
   m_ObjectHideFlags: 0
@@ -26804,7 +26805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -5.441, y: -0.7904053}
+  m_AnchoredPosition: {x: -5.3635, y: 2.2000122}
   m_SizeDelta: {x: 351.6569, y: 39.53296}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1168033672
@@ -27379,7 +27380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1210128609
 GameObject:
   m_ObjectHideFlags: 0
@@ -51538,7 +51539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1637771129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52679,7 +52680,7 @@ MonoBehaviour:
   - {fileID: 1222857576}
   - {fileID: 2125684838}
   - {fileID: 2029144604}
-  - {fileID: 224642963}
+  - {fileID: 587137224}
   ActivateList:
   - {fileID: 175383063}
   - {fileID: 1168033670}
@@ -52697,6 +52698,8 @@ MonoBehaviour:
   - {fileID: 1392611630}
   - {fileID: 1920665535}
   - {fileID: 36749212}
+  - {fileID: 224642963}
+  - {fileID: 977411529}
 --- !u!1 &1803152793
 GameObject:
   m_ObjectHideFlags: 0

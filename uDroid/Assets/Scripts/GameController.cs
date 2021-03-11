@@ -42,7 +42,6 @@ public class GameController : MonoBehaviour
         {
             if (lowerCase.Equals(compareField.ToLower()))
             {
-                print(methodInput.name);
                 if (methodInput == input)
                 {
                     inputSuccess = false;
