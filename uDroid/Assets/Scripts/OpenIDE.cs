@@ -14,6 +14,8 @@ public class OpenIDE : MonoBehaviour
     public GameObject codingChallengePanel;
 
     private static int tutLevel = 0;
+    public int tutorialLevelStore;
+
     private bool closeTutorial = false;
 
     public void StartIDEOpenAnim()
