@@ -312,12 +312,14 @@ public class BuyUpgrade : MonoBehaviour
             updatePrice();
             inactivePlots[0].SetActive(false);
         }
-        else if (unlockPlot2 == true)
+
+        if (unlockPlot2 == true)
         {
             updatePrice();
             inactivePlots[1].SetActive(false);
         }
-        else if (unlockPlot3 == true)
+
+        if (unlockPlot3 == true)
         {
             updatePrice();
             inactivePlots[2].SetActive(false);
@@ -441,9 +443,9 @@ public class BuyUpgrade : MonoBehaviour
         UpgradeClick3 = false;
         UpgradeClick4 = false;
 
-        unlockPlot1 = false;
-        unlockPlot2 = false;
-        unlockPlot3 = false;
+        //unlockPlot1 = false;
+        //unlockPlot2 = false;
+        //unlockPlot3 = false;
         buyNewPlotClicked = false;
 
         runScriptParticles.SetActive(true);
