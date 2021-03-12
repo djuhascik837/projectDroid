@@ -80,6 +80,50 @@ public class OpenIDE : MonoBehaviour
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
                 break;
+            case 2:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 3:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 4:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 5:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 6:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 7:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 8:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 9:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 10:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 11:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
+            case 12:
+                HideCodingChallengePanel(true);
+                SetTutorialsOrChallengesInactive(challenges, rand);
+                break;
             default:
                 Debug.LogWarning("Challenges rand defaulted");
                 break;
