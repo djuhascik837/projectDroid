@@ -27,10 +27,10 @@ public class VolumeValueChange : MonoBehaviour
 
     public void MuteSound()
     {
-
+        musicVolume = 0.001f;
     }
     public void unMuteSound()
     {
-
+        musicVolume = 1f;
     }
 }
