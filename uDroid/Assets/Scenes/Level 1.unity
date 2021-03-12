@@ -53471,6 +53471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsMenu: {fileID: 1991875074}
+  runScriptParticles:
+  - {fileID: 269161437}
+  - {fileID: 1615615835}
 --- !u!1 &1803152793
 GameObject:
   m_ObjectHideFlags: 0
