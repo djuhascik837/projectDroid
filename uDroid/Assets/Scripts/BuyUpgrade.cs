@@ -797,7 +797,7 @@ public class BuyUpgrade : MonoBehaviour
             droidStats.GetComponent<Text>().text = "Droids help to generate coins";
         } else
         {
-            droidStats.GetComponent<Text>().text = numOfDroids + " Droids: " + coinsPerDroid + " per " + autoCoins.seconds.ToString("F2") + "(s) ";
+            droidStats.GetComponent<Text>().text = numOfDroids + " Droids: " + coinsPerDroid + " coins per " + autoCoins.seconds.ToString("F2") + "(s) ";
         }
 
 
