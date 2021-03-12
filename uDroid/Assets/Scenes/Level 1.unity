@@ -11539,7 +11539,7 @@ RectTransform:
   - {fileID: 1041664838}
   - {fileID: 1853585970}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -12237,7 +12237,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 564019827}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16147,14 +16147,15 @@ RectTransform:
   - {fileID: 918874378}
   - {fileID: 2125684839}
   - {fileID: 2029144605}
-  - {fileID: 2106401680}
   - {fileID: 809412668}
   - {fileID: 664334306}
   - {fileID: 829850081}
+  - {fileID: 2106401680}
+  - {fileID: 1287442828}
+  - {fileID: 1067953656}
   - {fileID: 365637990}
   - {fileID: 316148964}
   - {fileID: 1970333902}
-  - {fileID: 809412668}
   m_Father: {fileID: 1102936364}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17767,7 +17768,7 @@ RectTransform:
   - {fileID: 85061820}
   - {fileID: 1495155347}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -19661,7 +19662,7 @@ RectTransform:
   - {fileID: 1559917669}
   - {fileID: 455615961}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -19859,7 +19860,7 @@ RectTransform:
   - {fileID: 1491397551}
   - {fileID: 859509346}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -29330,12 +29331,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1067953656}
   m_Layer: 5
-  m_Name: Challenge 103 - Modulo
+  m_Name: Challenge 8 - Modulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1067953656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29350,7 +29351,7 @@ RectTransform:
   - {fileID: 550697229}
   - {fileID: 217152246}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 21
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -33244,7 +33245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1287442828}
   m_Layer: 5
-  m_Name: Challenge 102 - Strings
+  m_Name: Challenge 7 - Strings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33264,7 +33265,7 @@ RectTransform:
   - {fileID: 1333940839}
   - {fileID: 1189966621}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -71137,7 +71138,7 @@ RectTransform:
   - {fileID: 781103013}
   - {fileID: 2146965221}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -73254,7 +73255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2106401680}
   m_Layer: 5
-  m_Name: Challenge 101 - Mathematics
+  m_Name: Challenge 6 - Mathematics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73274,7 +73275,7 @@ RectTransform:
   - {fileID: 1380169298}
   - {fileID: 1141828080}
   m_Father: {fileID: 564019827}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
