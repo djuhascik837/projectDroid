@@ -13556,7 +13556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394484453}
   m_Layer: 5
-  m_Name: Challenge 13 - StringsAndIf
+  m_Name: Challenge 12 - StringsAndIf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60918,12 +60918,19 @@ MonoBehaviour:
   - {fileID: 368954810}
   - {fileID: 182986951}
   - {fileID: 1222857576}
+  - {fileID: 587137224}
   - {fileID: 2125684838}
   - {fileID: 2029144604}
   - {fileID: 809412667}
   - {fileID: 664334305}
   - {fileID: 829850080}
-  - {fileID: 587137224}
+  - {fileID: 2106401679}
+  - {fileID: 1287442827}
+  - {fileID: 1067953655}
+  - {fileID: 668960443}
+  - {fileID: 254696516}
+  - {fileID: 25542700}
+  - {fileID: 394484452}
   - {fileID: 1991875074}
   ActivateList:
   - {fileID: 175383063}
