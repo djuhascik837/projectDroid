@@ -5,6 +5,8 @@ using UnityEngine;
 public class VolumeValueChange : MonoBehaviour
 {
     private AudioSource audioSrc;
+    public AudioSource Background;
+    public AudioSource[] otherSounds;
 
     private float musicVolume = 1f;
 
@@ -18,6 +20,19 @@ public class VolumeValueChange : MonoBehaviour
     void Update()
     {
         audioSrc.volume = musicVolume;
+    }
+
+    public void SetBackgroundVol(float vol)
+    {
+        Background.volume = vol;
+    }
+
+    public void SetOtherVols(float vol)
+    {
+        foreach (var sound in otherSounds)
+        {
+            sound.volume = vol;
+        }
     }
 
     public void SetVolume(float vol)

@@ -623,7 +623,7 @@ RectTransform:
   m_Children:
   - {fileID: 1463272003}
   m_Father: {fileID: 1102936364}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -14080,7 +14080,7 @@ RectTransform:
   - {fileID: 316148964}
   - {fileID: 1970333902}
   m_Father: {fileID: 1102936364}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -17553,7 +17553,7 @@ RectTransform:
   m_Children:
   - {fileID: 587137225}
   m_Father: {fileID: 1102936364}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -17972,7 +17972,18 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935458180}
+        m_MethodName: SetOtherVols
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &868502263
 GameObject:
   m_ObjectHideFlags: 0
@@ -26231,7 +26242,6 @@ RectTransform:
   - {fileID: 510461704}
   - {fileID: 175383064}
   - {fileID: 1168033671}
-  - {fileID: 1690942786}
   - {fileID: 846042473}
   - {fileID: 1788781472}
   - {fileID: 564019827}
@@ -27193,6 +27203,7 @@ RectTransform:
   m_LocalScale: {x: 1.0256424, y: 1.0020645, z: 0.94311947}
   m_Children:
   - {fileID: 423167862}
+  - {fileID: 1690942786}
   m_Father: {fileID: 1102936364}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52167,7 +52178,7 @@ RectTransform:
   m_Children:
   - {fileID: 447762505}
   m_Father: {fileID: 1102936364}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -52674,14 +52685,14 @@ RectTransform:
   m_GameObject: {fileID: 1690942785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9749987, y: 0.99793977, z: 1.0603111}
   m_Children: []
-  m_Father: {fileID: 1102936364}
-  m_RootOrder: 10
+  m_Father: {fileID: 1168033671}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 142.32004, y: 282.75}
+  m_AnchoredPosition: {x: 143.99126, y: 1.2816467}
   m_SizeDelta: {x: 36.351196, y: 36.351196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690942787
@@ -53290,7 +53301,7 @@ Transform:
   m_Children:
   - {fileID: 1015057105}
   m_Father: {fileID: 1102936364}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1788781473
 Animator:
@@ -65270,6 +65281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1935458179}
   - component: {fileID: 1935458178}
+  - component: {fileID: 1935458180}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -65308,6 +65320,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1935458180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935458177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3061e139efbfd04292f27cca5ad1034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Background: {fileID: 1218610475}
+  otherSounds:
+  - {fileID: 1599496831}
+  - {fileID: 401302809}
+  - {fileID: 2107942374}
+  - {fileID: 1566027214}
+  - {fileID: 1663800578}
+  - {fileID: 271646882}
 --- !u!1 &1939268274
 GameObject:
   m_ObjectHideFlags: 0
@@ -66124,7 +66156,7 @@ RectTransform:
   - {fileID: 2103281940}
   - {fileID: 867152303}
   m_Father: {fileID: 1102936364}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -67485,7 +67517,18 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935458180}
+        m_MethodName: SetBackgroundVol
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2107942372
 GameObject:
   m_ObjectHideFlags: 0
