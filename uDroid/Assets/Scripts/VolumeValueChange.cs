@@ -4,23 +4,8 @@ using UnityEngine;
 
 public class VolumeValueChange : MonoBehaviour
 {
-    private AudioSource audioSrc;
     public AudioSource Background;
     public AudioSource[] otherSounds;
-
-    private float musicVolume = 1f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        audioSrc = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        audioSrc.volume = musicVolume;
-    }
 
     public void SetBackgroundVol(float vol)
     {
@@ -37,15 +22,15 @@ public class VolumeValueChange : MonoBehaviour
 
     public void SetVolume(float vol)
     {
-        musicVolume = vol;
+        Background.volume = vol;
     }
 
     public void MuteSound()
     {
-        musicVolume = 0.001f;
+        Background.volume = 0.001f;
     }
     public void unMuteSound()
     {
-        musicVolume = 1f;
+        Background.volume = 1f;
     }
 }

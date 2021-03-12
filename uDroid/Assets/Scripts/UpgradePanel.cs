@@ -18,6 +18,8 @@ public class UpgradePanel : MonoBehaviour
     public GameObject upgradeCLickCoinGeneration;
     public GameObject upgradeCLickCoinGenerationText;
 
+
+
     //public void OpenPanel()
     //{
     //    //Toggles panel
@@ -34,6 +36,8 @@ public class UpgradePanel : MonoBehaviour
         Animator anim = panel.GetComponent<Animator>();
         if (anim != null)
         {
+
+
             bool isOpen = anim.GetBool("open");
             anim.SetBool("open", !isOpen);
         }

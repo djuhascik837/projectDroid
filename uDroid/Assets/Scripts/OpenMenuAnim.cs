@@ -8,6 +8,7 @@ public class OpenMenuAnim : MonoBehaviour
     public Animator anim;
     public Canvas canvas;
 
+    public GameObject optionsMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class OpenMenuAnim : MonoBehaviour
     {
         if (anim != null)
         {
+            optionsMenu.SetActive(false);
+
             bool isOpen = anim.GetBool("open");
             anim.SetBool("open", !isOpen);
             anim.enabled = true;

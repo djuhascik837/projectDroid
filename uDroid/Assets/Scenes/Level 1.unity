@@ -14173,6 +14173,7 @@ MonoBehaviour:
   - {fileID: 368954810}
   - {fileID: 182986951}
   - {fileID: 1222857576}
+  optionsMenu: {fileID: 1991875074}
   runScriptParticles: {fileID: 224642963}
   codingChallengePanel: {fileID: 1970333901}
   tutorialInputFields1:
@@ -17593,6 +17594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 846042474}
   canvas: {fileID: 1102936367}
+  optionsMenu: {fileID: 1991875074}
 --- !u!1001 &855559608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28479,7 +28481,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 2.5009995, y: 0}
   m_SizeDelta: {x: 5.0020294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -52027,7 +52029,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 2.5009995, y: 0}
   m_SizeDelta: {x: 5.0020294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -53336,6 +53338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1788781473}
   canvas: {fileID: 1102936367}
+  optionsMenu: {fileID: 0}
 --- !u!111 &1788781475
 Animation:
   m_ObjectHideFlags: 0
@@ -66140,7 +66143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1991875075
 RectTransform:
   m_ObjectHideFlags: 0

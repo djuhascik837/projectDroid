@@ -11,6 +11,7 @@ public class OpenIDE : MonoBehaviour
     //public Text textInput;
     public GameObject[] challenges;
     public GameObject[] tutorials;
+    public GameObject optionsMenu;
     public GameObject runScriptParticles;
     public GameObject codingChallengePanel;
 
@@ -28,6 +29,7 @@ public class OpenIDE : MonoBehaviour
             bool isOpen = anim.GetBool("open");
 
             runScriptParticles.SetActive(false);
+            optionsMenu.SetActive(false);
 
             if (isOpen)
             {

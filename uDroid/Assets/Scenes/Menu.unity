@@ -1182,6 +1182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3061e139efbfd04292f27cca5ad1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Background: {fileID: 851013537}
+  otherSounds: []
 --- !u!1 &1143149715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1956,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 851013538}
-        m_MethodName: SetVolume
+        m_MethodName: SetBackgroundVol
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
