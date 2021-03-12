@@ -17807,6 +17807,42 @@ MonoBehaviour:
   optionsMenu: {fileID: 1991875074}
   runScriptParticles: {fileID: 224642963}
   codingChallengePanel: {fileID: 1970333901}
+  ChallengeInputFields1:
+  - {fileID: 1910392811}
+  - {fileID: 43280188}
+  ChallengeInputFields2:
+  - {fileID: 1077266062}
+  - {fileID: 381555430}
+  ChallengeInputFields3:
+  - {fileID: 108385083}
+  - {fileID: 483090112}
+  - {fileID: 1531880274}
+  ChallengeInputFields4:
+  - {fileID: 210848234}
+  ChallengeInputFields5:
+  - {fileID: 402058965}
+  ChallengeInputFields6:
+  - {fileID: 2100983318}
+  - {fileID: 2123670634}
+  ChallengeInputFields7:
+  - {fileID: 1117485781}
+  - {fileID: 237378548}
+  ChallengeInputFields8:
+  - {fileID: 1030088797}
+  - {fileID: 983576906}
+  - {fileID: 1896450753}
+  - {fileID: 782943861}
+  ChallengeInputFields9:
+  - {fileID: 2088336013}
+  - {fileID: 567292242}
+  - {fileID: 1894881923}
+  ChallengeInputFields10:
+  - {fileID: 588721936}
+  ChallengeInputFields11:
+  - {fileID: 281508449}
+  ChallengeInputFields12:
+  - {fileID: 173431559}
+  - {fileID: 1721681513}
   tutorialInputFields1:
   - {fileID: 957059216}
   tutorialInputFields2:
@@ -22071,7 +22107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &809412668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31973,8 +32009,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "int arr = new int[    ];\n\nfor (int i = 0; i <    ; i++)\n{\n\tConsole.Write(\"Element
-    :\", \n\t\tarr[    ]);"
+  m_Text: "int arr = new int[    ];\n\nfor (int i = 0; i <    ; i++)\n{\n\tConsole.WriteLine(\"Element
+    :\" + \n\t\tarr[    ]);\n}"
 --- !u!222 &1051700550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48585,7 +48621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41.4, y: 132.39993}
+  m_AnchoredPosition: {x: -35, y: 129}
   m_SizeDelta: {x: 24.911243, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531880276

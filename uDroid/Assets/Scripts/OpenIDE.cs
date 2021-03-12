@@ -54,14 +54,18 @@ public class OpenIDE : MonoBehaviour
         }
     }
 
-
-    // -- to be removed
-    //Variable for Select Random Challenge
-    //private readonly string strIdePanel = "IDE - Panel";
-    //private readonly string level2 = "Level 2 - Basic For Loop";
-    //private readonly string level1 = "Level 1 - Basic If";
-    //private readonly string tutHelloWorld = "Tutorial - HelloWorld";
-    //private readonly string tutHWCodeConsole = "CodeConsole";
+    public GameObject[] ChallengeInputFields1;
+    public GameObject[] ChallengeInputFields2;
+    public GameObject[] ChallengeInputFields3;
+    public GameObject[] ChallengeInputFields4;
+    public GameObject[] ChallengeInputFields5;
+    public GameObject[] ChallengeInputFields6;
+    public GameObject[] ChallengeInputFields7;
+    public GameObject[] ChallengeInputFields8;
+    public GameObject[] ChallengeInputFields9;
+    public GameObject[] ChallengeInputFields10;
+    public GameObject[] ChallengeInputFields11;
+    public GameObject[] ChallengeInputFields12;
 
     public void StartRandomChallenge()
     {
