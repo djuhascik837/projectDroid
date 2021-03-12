@@ -87,11 +87,11 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields1[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "currentDay";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields1[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "Its Friday!";
                 GameController.inputSuccess2 = true;
 
                 GameController.numOfInputs = 2;
@@ -107,11 +107,11 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields2[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "For";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields2[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "i++";
                 GameController.inputSuccess2 = true;
 
                 GameController.numOfInputs = 2;
@@ -128,15 +128,15 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields3[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "10";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields3[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "10";
                 GameController.inputSuccess2 = true;
 
                 GameController.input3 = ChallengeInputFields3[2];
-                GameController.textFieldCompare3 = "Hello World";
+                GameController.textFieldCompare3 = "i";
                 GameController.inputSuccess3 = true;
 
                 GameController.numOfInputs = 3;
@@ -151,7 +151,7 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields4[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "float";
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
@@ -166,7 +166,7 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields5[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "displayWindow()";
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
@@ -182,11 +182,11 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields6[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "int";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields6[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "*";
                 GameController.inputSuccess2 = true;
 
                 GameController.numOfInputs = 2;
@@ -202,11 +202,11 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields7[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "String";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields7[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "str";
                 GameController.inputSuccess2 = true;
 
                 GameController.numOfInputs = 2;
@@ -224,19 +224,19 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields8[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "%";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields8[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "2";
                 GameController.inputSuccess2 = true;
 
                 GameController.input3 = ChallengeInputFields8[2];
-                GameController.textFieldCompare3 = "Hello World";
+                GameController.textFieldCompare3 = "%";
                 GameController.inputSuccess3 = true;
 
                 GameController.input4 = ChallengeInputFields8[3];
-                GameController.textFieldCompare4 = "Hello World";
+                GameController.textFieldCompare4 = "1";
                 GameController.inputSuccess4 = true;
 
                 GameController.numOfInputs = 4;
@@ -253,15 +253,15 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields9[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "isActive";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields9[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "counter";
                 GameController.inputSuccess2 = true;
 
                 GameController.input3 = ChallengeInputFields9[2];
-                GameController.textFieldCompare3 = "Hello World";
+                GameController.textFieldCompare3 = "counter";
                 GameController.inputSuccess3 = true;
 
                 GameController.numOfInputs = 3;
@@ -276,7 +276,7 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields10[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "Random";
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
@@ -291,7 +291,7 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields11[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "Return";
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
@@ -307,11 +307,11 @@ public class OpenIDE : MonoBehaviour
                 SetInputSuccessToFalse();
 
                 GameController.input = ChallengeInputFields12[0];
-                GameController.textFieldCompare = "Hello World";
+                GameController.textFieldCompare = "str";
                 GameController.inputSuccess = true;
 
                 GameController.input2 = ChallengeInputFields12[1];
-                GameController.textFieldCompare2 = "Hello World";
+                GameController.textFieldCompare2 = "else";
                 GameController.inputSuccess2 = true;
 
                 GameController.numOfInputs = 2;
