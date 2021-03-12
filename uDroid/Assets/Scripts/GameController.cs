@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
     public static bool successful;
     public static bool submit;
 
+    public static bool isChallenge = false;
+
     public static int globalCoinsToGive = 50;
 
     public ParticleSystem starParticles;
@@ -104,8 +106,20 @@ public class GameController : MonoBehaviour
 
             SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
             soundManager.successSound.Play();
+
             OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
-            script.StartNextTutorial();
+
+            if (isChallenge)
+            {
+                // set to currently start next challenge
+                //script.StartRandomChallenge();
+                //----- Make it just close?
+                script.StartIDEOpenAnim();
+            }
+            else
+            {
+                script.StartNextTutorial();
+            }
         }
         else if ((inputSuccess || inputSuccess2 || inputSuccess3 || inputSuccess4) && submit)
         {

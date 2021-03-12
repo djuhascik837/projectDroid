@@ -54,103 +54,269 @@ public class OpenIDE : MonoBehaviour
         }
     }
 
-    public GameObject[] ChallengeInputFields1;
-    public GameObject[] ChallengeInputFields2;
-    public GameObject[] ChallengeInputFields3;
-    public GameObject[] ChallengeInputFields4;
-    public GameObject[] ChallengeInputFields5;
-    public GameObject[] ChallengeInputFields6;
-    public GameObject[] ChallengeInputFields7;
-    public GameObject[] ChallengeInputFields8;
-    public GameObject[] ChallengeInputFields9;
-    public GameObject[] ChallengeInputFields10;
-    public GameObject[] ChallengeInputFields11;
-    public GameObject[] ChallengeInputFields12;
+    public InputField[] ChallengeInputFields1;
+    public InputField[] ChallengeInputFields2;
+    public InputField[] ChallengeInputFields3;
+    public InputField[] ChallengeInputFields4;
+    public InputField[] ChallengeInputFields5;
+    public InputField[] ChallengeInputFields6;
+    public InputField[] ChallengeInputFields7;
+    public InputField[] ChallengeInputFields8;
+    public InputField[] ChallengeInputFields9;
+    public InputField[] ChallengeInputFields10;
+    public InputField[] ChallengeInputFields11;
+    public InputField[] ChallengeInputFields12;
 
     public void StartRandomChallenge()
     {
         Debug.Log("Starting Challenge");
         HideCodingChallengePanel(true);
 
+        GameController.isChallenge = true;
+
         int rand = RandomNumber(0, challenges.Length);
 
         switch (rand)
         {
-            case 0:
+            case 0: //1
+                ChallengeInputFields1[0].text = "";
+                ChallengeInputFields1[1].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields1[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields1[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
 
                 StartHints.messageToDisplay = "Don't forget to use the equal to operator when comparing with currentDay";
                 break;
-            case 1:
+            case 1: //2
+                ChallengeInputFields2[0].text = "";
+                ChallengeInputFields2[1].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields2[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields2[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
 
                 StartHints.messageToDisplay = "Which for loop are we using? Also don't forget to use the increment operator";
                 break;
-            case 2:
+            case 2: //3
+                ChallengeInputFields3[0].text = "";
+                ChallengeInputFields3[1].text = "";
+                ChallengeInputFields3[2].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields3[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields3[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.input3 = ChallengeInputFields3[2];
+                GameController.textFieldCompare3 = "Hello World";
+                GameController.inputSuccess3 = true;
+
+                GameController.numOfInputs = 3;
 
                 StartHints.messageToDisplay = "How many elements do we want? Also which int should we call within the for loop to print all the numbers?";
                 break;
-            case 3:
+            case 3: //4
+                ChallengeInputFields4[0].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields4[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.numOfInputs = 1;
 
                 StartHints.messageToDisplay = "Round to int only accepts float numbers";
                 break;
-            case 4:
+            case 4: //5
+                ChallengeInputFields5[0].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields5[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.numOfInputs = 1;
 
                 StartHints.messageToDisplay = "We need to call the displayWindow method within main. Don't forget to use () when calling a method";
                 break;
-            case 5:
+            case 5: //6
+                ChallengeInputFields6[0].text = "";
+                ChallengeInputFields6[1].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields6[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields6[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
 
                 StartHints.messageToDisplay = "Check what type of variable a is. Also check the name of the method";
                 break;
-            case 6:
+            case 6: //7
+                ChallengeInputFields7[0].text = "";
+                ChallengeInputFields7[1].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields7[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields7[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
 
                 StartHints.messageToDisplay = "We need to check for the variable string, and then display the string in the console";
                 break;
-            case 7:
+            case 7: //8
+                ChallengeInputFields8[0].text = "";
+                ChallengeInputFields8[1].text = "";
+                ChallengeInputFields8[2].text = "";
+                ChallengeInputFields8[3].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields8[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields8[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.input3 = ChallengeInputFields8[2];
+                GameController.textFieldCompare3 = "Hello World";
+                GameController.inputSuccess3 = true;
+
+                GameController.input4 = ChallengeInputFields8[3];
+                GameController.textFieldCompare4 = "Hello World";
+                GameController.inputSuccess4 = true;
+
+                GameController.numOfInputs = 4;
 
                 StartHints.messageToDisplay = "Don't forget to use the modulo operator, the rest is just good old math";
                 break;
-            case 8:
+            case 8: //9
+                ChallengeInputFields9[0].text = "";
+                ChallengeInputFields9[1].text = "";
+                ChallengeInputFields9[2].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields9[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields9[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.input3 = ChallengeInputFields9[2];
+                GameController.textFieldCompare3 = "Hello World";
+                GameController.inputSuccess3 = true;
+
+                GameController.numOfInputs = 3;
 
                 StartHints.messageToDisplay = "Use the isActive and the counter variable in the right place.";
                 break;
-            case 9:
+            case 9: //10
+                ChallengeInputFields10[0].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields10[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.numOfInputs = 1;
 
                 StartHints.messageToDisplay = "We need to call the Random method here, don't forget to use () when making a method call";
                 break;
-            case 10:
+            case 10: //11
+                ChallengeInputFields11[0].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields11[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.numOfInputs = 1;
 
                 StartHints.messageToDisplay = "We need to return the value of num1 and 2";
                 break;
-            case 11:
+            case 11: //12
+                ChallengeInputFields12[0].text = "";
+                ChallengeInputFields12[1].text = "";
+
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+                SetInputSuccessToFalse();
+
+                GameController.input = ChallengeInputFields12[0];
+                GameController.textFieldCompare = "Hello World";
+                GameController.inputSuccess = true;
+
+                GameController.input2 = ChallengeInputFields12[1];
+                GameController.textFieldCompare2 = "Hello World";
+                GameController.inputSuccess2 = true;
+
+                GameController.numOfInputs = 2;
 
                 StartHints.messageToDisplay = "Don't forget the name of the string and also think about the structure of an if else statement.";
-                break;
-            case 12:
-                HideCodingChallengePanel(true);
-                SetTutorialsOrChallengesInactive(challenges, rand);
                 break;
             default:
                 Debug.LogWarning("Challenges rand defaulted");
@@ -175,6 +341,8 @@ public class OpenIDE : MonoBehaviour
     public void StartTutorial()
     {
         Debug.Log("Starting Tutorial");
+
+        GameController.isChallenge = false;
 
         switch (tutLevel)
         {
