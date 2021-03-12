@@ -80,51 +80,73 @@ public class OpenIDE : MonoBehaviour
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
 
-                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive.";
+                StartHints.messageToDisplay = "Don't forget to use the equal to operator when comparing with currentDay";
                 break;
             case 1:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Which for loop are we using? Also don't forget to use the increment operator";
                 break;
             case 2:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "How many elements do we want? Also which int should we call within the for loop to print all the numbers?";
                 break;
             case 3:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Round to int only accepts float numbers";
                 break;
             case 4:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "We need to call the displayWindow method within main. Don't forget to use () when calling a method";
                 break;
             case 5:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Check what type of variable a is. Also check the name of the method";
                 break;
             case 6:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "We need to check for the variable string, and then display the string in the console";
                 break;
             case 7:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Don't forget to use the modulo operator, the rest is just good old math";
                 break;
             case 8:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Use the isActive and the counter variable in the right place.";
                 break;
             case 9:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "We need to call the Random method here, don't forget to use () when making a method call";
                 break;
             case 10:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "We need to return the value of num1 and 2";
                 break;
             case 11:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Don't forget the name of the string and also think about the structure of an if else statement.";
                 break;
             case 12:
                 HideCodingChallengePanel(true);
