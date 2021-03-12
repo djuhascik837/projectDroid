@@ -75,6 +75,8 @@ public class OpenIDE : MonoBehaviour
             case 0:
                 HideCodingChallengePanel(true);
                 SetTutorialsOrChallengesInactive(challenges, rand);
+
+                StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive.";
                 break;
             case 1:
                 HideCodingChallengePanel(true);
