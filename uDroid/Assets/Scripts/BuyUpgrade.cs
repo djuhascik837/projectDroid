@@ -23,9 +23,9 @@ public class BuyUpgrade : MonoBehaviour
     public SoundManager soundManager;
 
     public double currentCoins;
-    public float balancer = 1;
+    public float balancer;
 
-    public static float upgradeMultiplier = 2.75f;
+    public static float upgradeMultiplier = 1.75f;
     public static bool buyNewPlotClicked = false;
     public static bool autoCoinClicked = false;
     public static bool autoCoinIncreaseClicked = false;
@@ -810,6 +810,7 @@ public class BuyUpgrade : MonoBehaviour
     {
         float coinsToGiveFloat = (float)GameController.globalCoinsToGive;
         coinsToGiveFloat *= upgradeMultiplier * balancer;
+        print(coinsToGiveFloat);
         GameController.globalCoinsToGive = (int)coinsToGiveFloat;
     }
 

@@ -3618,7 +3618,7 @@ MonoBehaviour:
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
   currentCoins: 0
-  balancer: 1
+  balancer: 0.55
   upgradePlotValue1: 550
   upgradePlotValue2: 10000
   upgradePlotValue3: 10000000
@@ -18496,7 +18496,7 @@ PrefabInstance:
     - target: {fileID: 2863415240920484281, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -81649,7 +81649,7 @@ PrefabInstance:
     - target: {fileID: 2863415240920484281, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
@@ -84734,7 +84734,7 @@ PrefabInstance:
     - target: {fileID: 2863415240920484281, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3618940496774057319, guid: acfde4d33d0ecc341879a6aaeee98266,
         type: 3}
