@@ -3618,7 +3618,7 @@ MonoBehaviour:
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
   currentCoins: 0
-  balancer: 0.55
+  balancer: 0.6
   upgradePlotValue1: 550
   upgradePlotValue2: 10000
   upgradePlotValue3: 10000000
