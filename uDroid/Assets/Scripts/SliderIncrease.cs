@@ -7,7 +7,7 @@ public class SliderIncrease : MonoBehaviour
 {
     public Slider sld;
     public Text displayText;
-    public double multiplier = 0.1f;
+    public double multiplier = 0.07f;
     private bool update = false;
     public AudioSource playSelectOn;
     public AudioSource playSelectOff;

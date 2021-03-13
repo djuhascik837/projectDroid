@@ -25,7 +25,7 @@ public class BuyUpgrade : MonoBehaviour
     public double currentCoins;
 
 
-    public static float upgradeMultiplier = 1.75f;
+    public static float upgradeMultiplier = 2.75f;
     public static bool buyNewPlotClicked = false;
     public static bool autoCoinClicked = false;
     public static bool autoCoinIncreaseClicked = false;
@@ -455,7 +455,7 @@ public class BuyUpgrade : MonoBehaviour
     public void SliderMultiplier(SliderIncrease sliderIncrease)
     {
         updatePrice();
-        sliderIncrease.multiplier *= 1.7f;
+        sliderIncrease.multiplier *= 1.15f;
     }
 
     //This increases the amount of coins generated per click
@@ -478,7 +478,7 @@ public class BuyUpgrade : MonoBehaviour
     public void droidSpeed(AutoCoins autoCoins)
     {
         updatePrice();
-        autoCoins.seconds /= 1.05f;
+        autoCoins.seconds /= 0.75f;
 
     }
 

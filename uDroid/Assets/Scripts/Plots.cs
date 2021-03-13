@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Plots : MonoBehaviour
 {
-    public double amountPerClick = 1.0;
-    public double clickPower = 1.25;
+    public double amountPerClick = 0.75;
+    public double clickPower = 1.15;
     
     public double sliderMulUpgradeValue = 1;
     public double perClickUpgradeValue = 1;

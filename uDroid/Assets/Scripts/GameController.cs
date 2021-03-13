@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class GameController : MonoBehaviour
     public SoundManager soundManager;
     public BuyUpgrade buyUpgrade;
     public GlobalCoins globalCoins;
+
+    public GameObject challengeStartButton;
+    public GameObject challengeStartButtonText;
+
+    private float waitForSeconds = 5;
 
     private void CheckInput(InputField methodInput, string compareField)
     {
@@ -106,6 +112,8 @@ public class GameController : MonoBehaviour
 
             SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
             soundManager.successSound.Play();
+
+            TimeOutButton(waitForSeconds);
 
             OpenIDE script = GameObject.Find("IDE - Panel").GetComponent<OpenIDE>();
 
@@ -305,7 +313,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-
     #region Loading and Saving player data
     private void Awake()
     {
@@ -400,6 +407,18 @@ public class GameController : MonoBehaviour
         {
             LoadPlayerData();
         }
+    }
+
+    IEnumerator TimeOutButton(float seconds)
+    {
+        challengeStartButton.GetComponent<Button>().interactable = false;
+        yield return new WaitForSeconds(seconds);
+        challengeStartButton.GetComponent<Button>().interactable = true;
+    }
+
+    public void Update()
+    {
+        //challengeStartButton.GetComponent<Text>().text = "Time until next challenge: " + waitForSeconds;
     }
 
     #endregion

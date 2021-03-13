@@ -3617,10 +3617,10 @@ MonoBehaviour:
   runScriptParticles: {fileID: 224642963}
   coinParticlesObj: {fileID: 1202679405}
   soundManager: {fileID: 1935458178}
-  currentCoins: 6000
-  upgradePlotValue1: 1
-  upgradePlotValue2: 2
-  upgradePlotValue3: 3
+  currentCoins: 0
+  upgradePlotValue1: 550
+  upgradePlotValue2: 10000
+  upgradePlotValue3: 10000000
   unlockedPlot1: 0
   unlockedPlot2: 0
   unlockedPlot3: 0
@@ -15988,7 +15988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -5.6000004, y: -224.9}
+  m_AnchoredPosition: {x: -1.4, y: -209.7}
   m_SizeDelta: {x: 209.47475, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402058967
@@ -22012,7 +22012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &668960444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33775,7 +33775,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "public windows[] windows;\n\npublic void displayWindow() \n{\n\tfor(int
     i = 0; i < windows.Length; \n\t\ti++;) {\n\t\twindows[i].SetActive(true);\n\t}\n}\n\npublic
-    static void Main() {\n\t//this method displays the window\n\t\t\t\t\t\t\t   ;\n}"
+    static void Main() {\n//this method displays the window\n\t\t\t\t\t\t\t   ;\n}"
 --- !u!222 &995312216
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38658,7 +38658,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 15943cfd4007e214aabf1f4b2d3083e7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0664e867eb2a2934ebb17f84c2a3e811, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.055
   m_Pitch: 1
@@ -67451,6 +67451,8 @@ MonoBehaviour:
   soundManager: {fileID: 1935458178}
   buyUpgrade: {fileID: 134837129}
   globalCoins: {fileID: 1803127344}
+  challengeStartButton: {fileID: 2146965220}
+  challengeStartButtonText: {fileID: 52520472}
   successFailureMsgPanel: {fileID: 36749212}
   deactivateList:
   - {fileID: 1047588881}
@@ -79281,7 +79283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 17.4, y: -224.4}
+  m_AnchoredPosition: {x: 18.7, y: -223.1}
   m_SizeDelta: {x: 174.62898, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894881925
@@ -80504,7 +80506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1970333902
 RectTransform:
   m_ObjectHideFlags: 0
