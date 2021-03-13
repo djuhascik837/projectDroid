@@ -23,7 +23,7 @@ public class BuyUpgrade : MonoBehaviour
     public SoundManager soundManager;
 
     public double currentCoins;
-
+    public float balancer = 1;
 
     public static float upgradeMultiplier = 2.75f;
     public static bool buyNewPlotClicked = false;
@@ -81,7 +81,7 @@ public class BuyUpgrade : MonoBehaviour
             autoCoinClicked = true;
             upgradePurchased(3);
 
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
+            IncreaseCoinsToGiveOnChallengeCompletion(balancer);
         }
     }
 
@@ -100,7 +100,7 @@ public class BuyUpgrade : MonoBehaviour
 
             upgradePurchased(4);
 
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
+            IncreaseCoinsToGiveOnChallengeCompletion(balancer);
         }
     }
 
@@ -119,7 +119,7 @@ public class BuyUpgrade : MonoBehaviour
 
             upgradePurchased(5);
 
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
+            IncreaseCoinsToGiveOnChallengeCompletion(balancer);
         }
     }
 
@@ -138,7 +138,7 @@ public class BuyUpgrade : MonoBehaviour
             sliderMultiClicked = true;
             upgradePurchased(6);
 
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
+            IncreaseCoinsToGiveOnChallengeCompletion(balancer);
         }
     }
 
@@ -156,7 +156,7 @@ public class BuyUpgrade : MonoBehaviour
             upgradePerClicked = true;
             upgradePurchased(7);
 
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
+            IncreaseCoinsToGiveOnChallengeCompletion(balancer);
         }
     }
 
@@ -174,7 +174,7 @@ public class BuyUpgrade : MonoBehaviour
             upgradeClickPowerMul = true;
             upgradePurchased(8);
 
-            IncreaseCoinsToGiveOnChallengeCompletion(1);
+            IncreaseCoinsToGiveOnChallengeCompletion(balancer);
         }
     }
 
