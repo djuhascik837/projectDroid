@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     public static bool isChallenge = false;
 
     public static int globalCoinsToGive = 50;
+    public static int tutorialValue = 50;
 
     public ParticleSystem starParticles;
     public SoundManager soundManager;
@@ -106,11 +107,8 @@ public class GameController : MonoBehaviour
         //print("inputSuccesses: " + (inputSuccess || inputSuccess2 || inputSuccess3 || inputSuccess4) + ", submit: " + submit);
         if((!inputSuccess && !inputSuccess2 && !inputSuccess3 && !inputSuccess4) && submit)
         {
-            //GlobalCoins.CoinCount += coinsToGive;
-            buyUpgrade.currentCoins += coinsToGive;
             ToggleParticleOn(starParticles, true);
 
-            SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
             soundManager.successSound.Play();
 
             TimeOutButton(waitForSeconds);
@@ -123,10 +121,16 @@ public class GameController : MonoBehaviour
                 //script.StartRandomChallenge();
                 //----- Make it just close?
                 script.StartIDEOpenAnim();
+
+                buyUpgrade.currentCoins += coinsToGive;
+                SuccessMessage("Correct! Well done, here's " + coinsToGive + " coins.");
             }
             else
             {
                 script.StartNextTutorial();
+
+                buyUpgrade.currentCoins += tutorialValue;
+                SuccessMessage("Correct! Well done, here's " + tutorialValue + " coins.");
             }
         }
         else if ((inputSuccess || inputSuccess2 || inputSuccess3 || inputSuccess4) && submit)

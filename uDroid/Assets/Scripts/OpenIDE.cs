@@ -359,6 +359,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess = true;
 
                 StartHints.messageToDisplay = "Try typing Hello World into the empty field - This is not case sensitive.";
+
+                GameController.tutorialValue = 50;
                 GameController.numOfInputs = 1;
                 break;
             case 1: // Comments
@@ -375,6 +377,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess = true;
 
                 StartHints.messageToDisplay = "Try typing into the box with // as the first two characters.";
+
+                GameController.tutorialValue = 50;
                 GameController.numOfInputs = 1;
                 break;
             case 2: // Variables
@@ -402,6 +406,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess3 = true;
 
                 StartHints.messageToDisplay = "The primitive code version of an Integer, the name given to the variable that consists of a list of Chars and Lastly used for True/False Statements.";
+
+                GameController.tutorialValue = 75;
                 GameController.numOfInputs = 3;
                 break;
             case 3: // Operators
@@ -435,6 +441,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess4 = true;
 
                 StartHints.messageToDisplay = "The four most used mathematical symbols '/', '*', '+', '-'.";
+
+                GameController.tutorialValue = 75;
                 GameController.numOfInputs = 4;
                 break;
             case 4: // If Else
@@ -449,6 +457,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
+
+                GameController.tutorialValue = 100;
                 StartHints.messageToDisplay = "If something is true, then do something, otherwise do something else.";
                 break;
             case 5: // Switch
@@ -468,6 +478,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess2 = true;
 
                 GameController.numOfInputs = 2;
+
+                GameController.tutorialValue = 125;
                 StartHints.messageToDisplay = "Each case in a block of a switch has a different name/number which is referred to as an identifier.";
                 break;
             case 6: // Break
@@ -482,6 +494,8 @@ public class OpenIDE : MonoBehaviour
                 GameController.inputSuccess = true;
 
                 GameController.numOfInputs = 1;
+
+                GameController.tutorialValue = 125;
                 StartHints.messageToDisplay = "This is often used to exit a loop early, or to break free from the loop.";
                 break;
             case 7: // For Loops
@@ -505,6 +519,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare3 = "<";
                 GameController.inputSuccess3 = true;
 
+                GameController.tutorialValue = 150;
                 GameController.numOfInputs = 3;
                 StartHints.messageToDisplay = "For this hint you will be given the required inputs but not in the correct order. 'Int', '<' and 'for'.";
                 break;
@@ -529,6 +544,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare3 = "i";
                 GameController.inputSuccess3 = true;
 
+                GameController.tutorialValue = 150;
                 GameController.numOfInputs = 3;
                 StartHints.messageToDisplay = "For this hint you will be given the required inputs but not necessarily in the correct order. 'i', 'while' and '<'.";
 
@@ -545,6 +561,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.methodsCheck = true;
                 GameController.inputSuccess = true;
 
+                GameController.tutorialValue = 175;
                 GameController.numOfInputs = 1;
                 StartHints.messageToDisplay = "All you are required to do here is define a method name, any name as long as it ends with '()' no parenthesis are required.";
                 break;
@@ -559,6 +576,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare = "Double[]";
                 GameController.inputSuccess = true;
 
+                GameController.tutorialValue = 175;
                 GameController.numOfInputs = 1;
                 StartHints.messageToDisplay = "In order to define an array of any var type all is required is [] after typing the variable type.";
                 break;
@@ -592,6 +610,7 @@ public class OpenIDE : MonoBehaviour
                 GameController.textFieldCompare2 = "y";
                 GameController.inputSuccess2 = true;
 
+                GameController.tutorialValue = 200;
                 GameController.numOfInputs = 2;
                 StartHints.messageToDisplay = "In order to find the highest number between two you would be looking for the Maximum value of the given numbers.";
                 break;
