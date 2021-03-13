@@ -23,8 +23,8 @@ public class AutoCoins : MonoBehaviour
     }
 
     IEnumerator CreateCoin()
-    { 
-        GlobalCoins.CoinCount += internalIncrease;
+    {
+        buyUpgrade.currentCoins += internalIncrease;
         yield return new WaitForSeconds(seconds);
         creatingCoin = false;
     }

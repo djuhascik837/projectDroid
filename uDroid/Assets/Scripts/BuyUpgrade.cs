@@ -478,7 +478,7 @@ public class BuyUpgrade : MonoBehaviour
     public void droidSpeed(AutoCoins autoCoins)
     {
         updatePrice();
-        autoCoins.seconds /= 0.75f;
+        autoCoins.seconds *= 0.75f;
 
     }
 
