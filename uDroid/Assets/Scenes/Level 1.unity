@@ -4607,7 +4607,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b7032e5be4009984d828d451a0be329d,
+      objectReference: {fileID: 21300000, guid: 50dfc0d2687d18e49bb4c400ce351bca,
         type: 3}
     - target: {fileID: 4106988199335691070, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -7064,13 +7064,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.71140933, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7032e5be4009984d828d451a0be329d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50dfc0d2687d18e49bb4c400ce351bca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7349,12 +7349,12 @@ RectTransform:
   m_Children:
   - {fileID: 411419675}
   - {fileID: 1426646345}
-  m_Father: {fileID: 564019827}
-  m_RootOrder: 32
+  m_Father: {fileID: 1970333902}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00010681, y: -490.28}
+  m_AnchoredPosition: {x: 0, y: -382.42902}
   m_SizeDelta: {x: 317.33807, y: 150.2742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258683532
@@ -19287,7 +19287,6 @@ RectTransform:
   - {fileID: 365637990}
   - {fileID: 316148964}
   - {fileID: 1970333902}
-  - {fileID: 258683531}
   m_Father: {fileID: 1102936364}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64387,7 +64386,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b7032e5be4009984d828d451a0be329d,
+      objectReference: {fileID: 21300000, guid: 50dfc0d2687d18e49bb4c400ce351bca,
         type: 3}
     - target: {fileID: 4106988199335691070, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -77201,7 +77200,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b7032e5be4009984d828d451a0be329d,
+      objectReference: {fileID: 21300000, guid: 50dfc0d2687d18e49bb4c400ce351bca,
         type: 3}
     - target: {fileID: 4106988199335691070, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
@@ -79909,6 +79908,7 @@ RectTransform:
   - {fileID: 88896774}
   - {fileID: 781103013}
   - {fileID: 2146965221}
+  - {fileID: 258683531}
   m_Father: {fileID: 564019827}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83911,6 +83911,12 @@ PrefabInstance:
       propertyPath: buyUpgrade
       value: 
       objectReference: {fileID: 134837129}
+    - target: {fileID: 4106988199335691070, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 50dfc0d2687d18e49bb4c400ce351bca,
+        type: 3}
     - target: {fileID: 4106988199602810643, guid: 09455e7bfa7b7bf4eb817c0ae9705207,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
