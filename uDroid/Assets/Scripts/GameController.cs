@@ -341,6 +341,9 @@ public class GameController : MonoBehaviour
         globalCoinsToGive = data.globalCoinsToGive;
         OpenIDE.tutLevel = data.tutLevel;
 
+        buyUpgrade.autoCoinsToGive = data.autoCoinsToGive;
+        
+
         //Updates all the different coin modifiers from the save file
         buyUpgrade.autoCoinUpgradeValue = data.autoCoinUpgradeValue;
         buyUpgrade.autoCoinIncreaseValue = data.autoCoinIncreaseValue;

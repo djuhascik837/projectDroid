@@ -47,12 +47,13 @@ public class BuyUpgrade : MonoBehaviour
     public bool unlockedPlot3 = false;
     public bool autoCoinUnlocked = false;
 
-    public double autoCoinUpgradeValue = 1;
-    public double autoCoinIncreaseValue = 1;
+    public double autoCoinUpgradeValue = 1000;
+    public double autoCoinIncreaseValue = 500;
     public double droidSpeedUpgradeValue = 1;
 
     public double numOfDroids;
     public double coinsPerDroid = 1;
+    public double autoCoinsToGive;
 
 
     //All private variables
@@ -255,7 +256,7 @@ public class BuyUpgrade : MonoBehaviour
         if (autoCoinClicked == true)
         {
             currentCoins -= autoCoinUpgradeValue;
-            autoCoinUpgradeValue *= upgradeMultiplier;
+            autoCoinUpgradeValue *= 3.75;
         }
 
         else if (autoCoinIncreaseClicked == true)
@@ -443,6 +444,8 @@ public class BuyUpgrade : MonoBehaviour
         numOfDroids += 1;
         //coinsPerDroid *= numOfDroids;
         AutoCoins.coinsToGive = coinsPerDroid * numOfDroids;
+        autoCoinsToGive = AutoCoins.coinsToGive;
+
     }
 
     public void autoCoinIncrease()
@@ -456,7 +459,7 @@ public class BuyUpgrade : MonoBehaviour
     public void droidSpeed(AutoCoins autoCoins)
     {
         updatePrice();
-        autoCoins.seconds *= 0.75f;
+        autoCoins.seconds *= 0.99f;
 
     }
 
@@ -797,10 +800,10 @@ public class BuyUpgrade : MonoBehaviour
 
         if (numOfDroids == 0)
         {
-            droidStats.GetComponent<Text>().text = "Buy Droids help to generate coins";
+            droidStats.GetComponent<Text>().text = "Buy Droids to help generate coins";
         } else
         {
-            droidStats.GetComponent<Text>().text = numOfDroids + " Droids: " + coinsPerDroid + " coins per " + autoCoins.seconds.ToString("F2") + "(s) ";
+            droidStats.GetComponent<Text>().text = numOfDroids + " Droids making " + numOfDroids*coinsPerDroid + " coins per " + autoCoins.seconds.ToString("F2") + "(s)";
         }
 
 

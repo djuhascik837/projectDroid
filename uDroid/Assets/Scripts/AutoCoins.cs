@@ -26,7 +26,7 @@ public class AutoCoins : MonoBehaviour
 
     IEnumerator CreateCoin()
     {
-        buyUpgrade.currentCoins += coinsToGive;
+        buyUpgrade.currentCoins += buyUpgrade.autoCoinsToGive;
         yield return new WaitForSeconds(seconds);
         creatingCoin = false;
     }

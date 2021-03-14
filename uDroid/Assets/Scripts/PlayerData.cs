@@ -26,6 +26,7 @@ public class PlayerData
     public double sliderMultiplier2;
     public double sliderMultiplier3;
     public double sliderMultiplier4;
+    public double autoCoinsToGive;
 
     #region Plot Variables
 
@@ -62,8 +63,11 @@ public class PlayerData
         globalCoinsToGive = GameController.globalCoinsToGive;
         tutLevel = OpenIDE.tutLevel;
 
+        autoCoinsToGive = buyUpgrade.autoCoinsToGive;
+
         autoCoinUnlocked = buyUpgrade.autoCoinUnlocked;
         autoCoinsSeconds = buyUpgrade.autoCoins.seconds;
+
 
         autoCoinUpgradeValue = buyUpgrade.autoCoinUpgradeValue;
         autoCoinIncreaseValue = buyUpgrade.autoCoinIncreaseValue;
