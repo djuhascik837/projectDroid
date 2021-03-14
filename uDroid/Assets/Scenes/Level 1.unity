@@ -15242,13 +15242,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Similarly to an if statement we can use a switch to select one of many
-    code blocks to be executed. The switch statement is evaluated once and the value
-    of the expression is then compared with the values of each case.
+  m_Text: 'Similarly to an if statement we can use a ''switch'' to select one of
+    many code blocks to be executed. The ''switch'' statement is evaluated once and
+    the value of the expression is then compared with the values of each case.
 
 
-    For more
-    info click the book icon below...
+    For
+    more info click the book icon below...
 
 
     Finish the switch statement below...'
@@ -16724,9 +16724,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You may have seen that within the switch statement we used a break. This
-    is used to jump out of a switch statement and it can also be used to jump out
-    of a loop.
+  m_Text: 'You may have seen that within the switch statement we used a ''break''.
+    This is used to jump out of a switch statement and it can also be used to jump
+    out of a loop.
 
 
     If you wish to know more click the book icon at the bottom.
@@ -19452,8 +19452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.16, y: -419.75}
-  m_SizeDelta: {x: 314.34537, y: 333.1184}
+  m_AnchoredPosition: {x: -0.16, y: -425.15}
+  m_SizeDelta: {x: 314.34537, y: 322.3299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550166798
 MonoBehaviour:
@@ -33377,16 +33377,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Next up, for loops. When you know exactly how many times you want to loop
-    through a block of code, use the for loop.
+  m_Text: 'Next up, ''for'' loops. When you know exactly how many times you want
+    to loop through a block of code, use the ''for'' loop.
 
 
-    If you would like more information
-    on for loops please click the book icon below.
+    If you would like
+    more information on for loops please click the book icon below.
 
 
-    Examine the code below and
-    finish the for loop...'
+    Examine
+    the code below and finish the ''for'' loop...'
 --- !u!222 &985107555
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -80509,7 +80509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1970333902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -81379,14 +81379,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Well done! Here we will learn about if statements. You can use if to specify
-    a block of code to be executed based on whether a specified condition is true.
-    You can use else if the same condition is false and an else if to add new conditions
-    if the first one is false.
+  m_Text: 'Well done! Here we will learn about if statements. You can use ''if''
+    to specify a block of code to be executed based on whether a specified condition
+    is true. You can use ''else'' if the same condition is false and an ''else if''
+    to add new conditions if the first one is false.
 
 
-    If you would like to learn more then please
-    click the book icon...
+    If you would like to learn
+    more then please click the book icon...
 
 
     Complete the if statement below...'
@@ -83673,17 +83673,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'We are now going to learn about Loops. Loops can execute a block of code
-    as long as a specified condition is reached. They can help make code more readable.
+  m_Text: 'Loops can execute a block of code as long as a specified condition is
+    reached. They can help make code more readable.
 
 
-    The
-    while loop goes through a block of code as long as a condition is True. If you
-    want to know more please click the book icon below
+    The ''while'' loop goes
+    through a block of code as long as a condition is True. If you want to know more
+    please click the book icon below
 
 
-    Print i as long as i
-    is less than x;'
+    Print i as long as i is less than x;'
 --- !u!222 &2136215660
 CanvasRenderer:
   m_ObjectHideFlags: 0
