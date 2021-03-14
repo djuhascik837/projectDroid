@@ -15,10 +15,12 @@ public class PlayerData
     public double droidSpeedUpgradeValue;
     public double numOfDroids;
     public double coinsPerDroid;
+    public double autoCoinsSeconds;
 
     public bool unlockedPlot1;
     public bool unlockedPlot2;
     public bool unlockedPlot3;
+    public bool autoCoinUnlocked;
 
     public double sliderMultiplier1;
     public double sliderMultiplier2;
@@ -59,6 +61,9 @@ public class PlayerData
         coins = GlobalCoins.CoinCount;
         globalCoinsToGive = GameController.globalCoinsToGive;
         tutLevel = OpenIDE.tutLevel;
+
+        autoCoinUnlocked = buyUpgrade.autoCoinUnlocked;
+        autoCoinsSeconds = buyUpgrade.autoCoins.seconds;
 
         autoCoinUpgradeValue = buyUpgrade.autoCoinUpgradeValue;
         autoCoinIncreaseValue = buyUpgrade.autoCoinIncreaseValue;

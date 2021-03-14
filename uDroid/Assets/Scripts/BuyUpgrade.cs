@@ -45,6 +45,7 @@ public class BuyUpgrade : MonoBehaviour
     public bool unlockedPlot1 = false;
     public bool unlockedPlot2 = false;
     public bool unlockedPlot3 = false;
+    public bool autoCoinUnlocked = false;
 
     public double autoCoinUpgradeValue = 1;
     public double autoCoinIncreaseValue = 1;
@@ -80,8 +81,9 @@ public class BuyUpgrade : MonoBehaviour
             isAvailable = true;
             autoCoinClicked = true;
             upgradePurchased(3);
-
+            
             IncreaseCoinsToGiveOnChallengeCompletion(balancer);
+            autoCoinUnlocked = true;
         }
     }
 
@@ -97,7 +99,6 @@ public class BuyUpgrade : MonoBehaviour
         {
             isAvailable = true;
             autoCoinIncreaseClicked = true;
-
             upgradePurchased(4);
 
             IncreaseCoinsToGiveOnChallengeCompletion(balancer);
@@ -440,6 +441,7 @@ public class BuyUpgrade : MonoBehaviour
         autoCoinObj.SetActive(true);
         //fillBar.start = true;
         numOfDroids += 1;
+        coinsPerDroid *= numOfDroids;
     }
 
     public void autoCoinIncrease()
@@ -449,7 +451,13 @@ public class BuyUpgrade : MonoBehaviour
         coinsPerDroid = Mathf.RoundToInt((float)coinsPerDroid);
     }
 
+    //This speeds up the generation of coins for the AutoCoins
+    public void droidSpeed(AutoCoins autoCoins)
+    {
+        updatePrice();
+        autoCoins.seconds *= 0.75f;
 
+    }
 
     //This increases the time it takes for the slider to finish
     public void SliderMultiplier(SliderIncrease sliderIncrease)
@@ -474,13 +482,7 @@ public class BuyUpgrade : MonoBehaviour
     }
 
 
-    //This speeds up the generation of coins for the AutoCoins
-    public void droidSpeed(AutoCoins autoCoins)
-    {
-        updatePrice();
-        autoCoins.seconds *= 0.75f;
-
-    }
+    
 
     #endregion
 

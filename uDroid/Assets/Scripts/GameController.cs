@@ -274,6 +274,11 @@ public class GameController : MonoBehaviour
         {
             buyUpgrade.inactivePlots[2].SetActive(false);
         }
+
+        if (buyUpgrade.autoCoinUnlocked)
+        {
+            buyUpgrade.autoCoinObj.SetActive(true);
+        }
     }
 
     public GameObject[] deactivateList;
@@ -347,6 +352,9 @@ public class GameController : MonoBehaviour
         buyUpgrade.unlockedPlot1 = data.unlockedPlot1;
         buyUpgrade.unlockedPlot2 = data.unlockedPlot2;
         buyUpgrade.unlockedPlot3 = data.unlockedPlot3;
+
+        buyUpgrade.autoCoinUnlocked = data.autoCoinUnlocked;
+        buyUpgrade.autoCoins.seconds = (float)data.autoCoinsSeconds;
 
         //This loads the speed of the sliders
         buyUpgrade.sliderIncrease[0].multiplier = data.sliderMultiplier1;
