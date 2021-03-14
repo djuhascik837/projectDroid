@@ -10,6 +10,8 @@ public class AutoCoins : MonoBehaviour
     public float seconds = 1f;
     public BuyUpgrade buyUpgrade;
 
+    public static double coinsToGive;
+
     private void Update()
     {
         coinIncrease = buyUpgrade.coinsPerDroid;
@@ -24,7 +26,7 @@ public class AutoCoins : MonoBehaviour
 
     IEnumerator CreateCoin()
     {
-        buyUpgrade.currentCoins += internalIncrease;
+        buyUpgrade.currentCoins += coinsToGive;
         yield return new WaitForSeconds(seconds);
         creatingCoin = false;
     }

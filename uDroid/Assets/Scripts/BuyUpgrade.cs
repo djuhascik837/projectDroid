@@ -81,7 +81,7 @@ public class BuyUpgrade : MonoBehaviour
             isAvailable = true;
             autoCoinClicked = true;
             upgradePurchased(3);
-            
+
             IncreaseCoinsToGiveOnChallengeCompletion(balancer);
             autoCoinUnlocked = true;
         }
@@ -441,7 +441,8 @@ public class BuyUpgrade : MonoBehaviour
         autoCoinObj.SetActive(true);
         //fillBar.start = true;
         numOfDroids += 1;
-        coinsPerDroid *= numOfDroids;
+        //coinsPerDroid *= numOfDroids;
+        AutoCoins.coinsToGive = coinsPerDroid * numOfDroids;
     }
 
     public void autoCoinIncrease()
@@ -482,7 +483,7 @@ public class BuyUpgrade : MonoBehaviour
     }
 
 
-    
+
 
     #endregion
 
@@ -796,7 +797,7 @@ public class BuyUpgrade : MonoBehaviour
 
         if (numOfDroids == 0)
         {
-            droidStats.GetComponent<Text>().text = "Droids help to generate coins";
+            droidStats.GetComponent<Text>().text = "Buy Droids help to generate coins";
         } else
         {
             droidStats.GetComponent<Text>().text = numOfDroids + " Droids: " + coinsPerDroid + " coins per " + autoCoins.seconds.ToString("F2") + "(s) ";
