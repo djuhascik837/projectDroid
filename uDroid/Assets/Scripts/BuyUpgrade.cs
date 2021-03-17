@@ -599,31 +599,31 @@ public class BuyUpgrade : MonoBehaviour
         if (UpgradeClick1 == true)
         {
 
-            displayUpgradeIndividualValyes(plots[0]);
+            displayUpgradeIndividualValues(plots[0]);
         }
 
         if (UpgradeClick2 == true)
         {
 
-            displayUpgradeIndividualValyes(plots[1]);
+            displayUpgradeIndividualValues(plots[1]);
         }
 
         if (UpgradeClick3 == true)
         {
 
-            displayUpgradeIndividualValyes(plots[2]);
+            displayUpgradeIndividualValues(plots[2]);
         }
 
         if (UpgradeClick4 == true)
         {
 
-            displayUpgradeIndividualValyes(plots[3]);
+            displayUpgradeIndividualValues(plots[3]);
         }
 
 
     }
 
-    private void displayUpgradeIndividualValyes(Plots plot)
+    private void displayUpgradeIndividualValues(Plots plot)
     {
         upgradePanel.upgradeSliderText.GetComponent<Text>().text = "Increase Slider: " + Mathf.Round((float)plot.sliderMulUpgradeValue);
         upgradePanel.upgradeClickText.GetComponent<Text>().text = "Coins per Click: " + Mathf.Round((float)plot.perClickUpgradeValue);
