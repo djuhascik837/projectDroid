@@ -7,10 +7,16 @@ public class SliderIncrease : MonoBehaviour
 {
     public Slider sld;
     public Text displayText;
-    public float multiplier = 0.153f;
+    public double multiplier = 0.07f;
     private bool update = false;
     public AudioSource playSelectOn;
     public AudioSource playSelectOff;
+    public Plots plot;
+    public GameObject img;
+    public Texture textureON;
+    public Texture textureIDLE;
+    public ParticleSystem particleSystem0, particleSystem1;
+    public BuyUpgrade buyUpgrade;
 
     public void SetText(string text)
     {
@@ -25,28 +31,51 @@ public class SliderIncrease : MonoBehaviour
         playSelectOn.Play();
     }
 
+    public void ToggleParticleOn()
+    {
+        if (!particleSystem0.isPlaying)
+        {
+            particleSystem0.Play();
+            particleSystem1.Play();
+        }
+
+    }
+
+    public void ToggleParticleOff()
+    {
+        if (particleSystem0.isPlaying)
+        {
+            particleSystem0.Stop();
+            particleSystem1.Stop();
+        }
+    }
+
+
     void Update()
     {
+
         //check if update should be running
         if (update == true)
         {
-            
             //check if slider is == null
             if (sld != null)
             {
-                
                 //increment the slider progress
-                sld.value += multiplier;
+                sld.value += (float)multiplier;
+                img.GetComponent<RawImage>().texture = textureON;
+                ToggleParticleOn();
 
                 //check if slider has reached the end
                 if (sld.value >= 1)
                 {
                     //change button text, slider value and stop updating
                     SetText("Run Script");
+                    img.GetComponent<RawImage>().texture = textureIDLE;
+                    ToggleParticleOff();
                     sld.value = 0;
                     update = false;
                     playSelectOff.Play();
-                    GlobalCoins.CoinCount += 1;
+                    buyUpgrade.currentCoins += plot.amountPerClick;
                 }
 
                 //display progress bar percentages

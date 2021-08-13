@@ -5,12 +5,16 @@ using UnityEngine;
 public class AutoCoins : MonoBehaviour
 {
     public bool creatingCoin = false;
-    public static double coinIncrease = 1;
+    public double coinIncrease = 1;
     public double internalIncrease;
+    public float seconds = 1f;
+    public BuyUpgrade buyUpgrade;
+
+    public static double coinsToGive;
 
     private void Update()
     {
-        coinIncrease = BuyUpgrade.coinsPerSec;
+        coinIncrease = buyUpgrade.coinsPerDroid;
         internalIncrease = coinIncrease;
         //if coin is being created don't start creating another
         if(!creatingCoin)
@@ -21,9 +25,9 @@ public class AutoCoins : MonoBehaviour
     }
 
     IEnumerator CreateCoin()
-    { 
-        GlobalCoins.CoinCount += internalIncrease;
-        yield return new WaitForSeconds(1);
+    {
+        buyUpgrade.currentCoins += buyUpgrade.autoCoinsToGive;
+        yield return new WaitForSeconds(seconds);
         creatingCoin = false;
     }
 }
